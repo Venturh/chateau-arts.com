@@ -1,0 +1,32 @@
+{
+	"home": "Start",
+	"exhibitions": "Austellungen",
+	"exhibits": "Werke",
+
+	"pages": "Seiten",
+	"language": "Sprachen",
+	"legal": "Rechtliches",
+	"disclosure": "Impressum",
+	"privacy": "Datenschutz-Bestimmungen",
+	"about": "Über",
+
+	"hero_title": "Kunst Konzeption",
+	"hero_desc": "",
+	"to_exhibition": "Zur Austellung",
+	"to_current_exhibition": "Aktuelle Austellung",
+	"all_exhibitions": "Alle Austellungen ansehen",
+
+	"current_exhibitions": "Aktuelle Austellungen",
+	"past_exhibitions": "Vergangene Austellungen",
+	"filters": "Filter",
+	"details": "Details",
+	"read_more": "Mehr anzeigen",
+	"read_less": "Weniger anzeigen",
+	"show_all": "Alle ansehen ",
+
+	"not_specified": "Keine Angabe",
+	"date": "Datum",
+	"artists": "Künstler",
+	"dimension": "Maße",
+	"time": "Zeit"
+}

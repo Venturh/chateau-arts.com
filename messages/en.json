@@ -1,0 +1,32 @@
+{
+	"home": "Home",
+	"exhibitions": "Exhibitions",
+	"exhibits": "Exhibits",
+
+	"pages": "Pages",
+	"language": "Languages",
+	"legal": "Legal",
+	"disclosure": "Disclosure",
+	"privacy": "Privacy Policy",
+	"about": "About",
+
+	"hero_title": "Art Conception",
+	"hero_desc": "",
+	"to_exhibition": "To the exhibition",
+	"to_current_exhibition": "Current exhibition",
+	"all_exhibitions": "View all exhibitions",
+
+	"current_exhibitions": "Current Exhibitions",
+	"past_exhibitions": "Past Exhibitions",
+	"filters": "Filters",
+	"details": "Details",
+	"read_more": "Read more",
+	"read_less": "Read less",
+	"show_all": "Show all",
+
+	"not_specified": "Not specified",
+	"date": "Date",
+	"artists": "Artists",
+	"dimension": "Dimension",
+	"time": "Time"
+}

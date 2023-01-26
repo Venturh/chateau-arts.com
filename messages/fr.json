@@ -1,0 +1,32 @@
+{
+	"home": "Page d'accueil",
+	"exhibitions": "Expositions",
+	"exhibits": "Modèles d'exposition",
+
+	"pages": "Pages",
+	"language": "Langues",
+	"legal": "Légal",
+	"disclosure": "Mentions légales",
+	"privacy": "Politique de confidentialité",
+	"about": "Description",
+
+	"hero_title": "Conception Artistique",
+	"hero_desc": "",
+	"to_exhibition": "Voir l'exposition",
+	"all_exhibitions": "Voir toutes les expositions",
+
+	"current_exhibitions": "Expositions en cours",
+	"to_current_exhibition": "L'exposition en cours",
+	"past_exhibitions": "Expositions passées",
+	"filters": "Filtres",
+	"details": "Détails",
+	"read_more": "Plus de détails",
+	"read_less": "Moins de´détails",
+	"show_all": "Voir tout",
+
+	"not_specified": "Non précisé",
+	"date": "Date",
+	"artists": "Artistes",
+	"dimension": "Dimensions",
+	"time": "Temps"
+}
