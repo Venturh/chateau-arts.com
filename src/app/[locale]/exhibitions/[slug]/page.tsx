@@ -1,28 +1,19 @@
-import { getAllExhibitions, getExhibitionBySlug } from "@/src/lib/sanity.client"
-
+import { getAllExhibitions, getExhibitionBySlug } from 'lib/sanity.client'
 
 type Props = {
-    params: {
-        slug: string
-    }
+	params: {
+		slug: string
+	}
 }
 
-export const revalidate = 60;
-
+export const revalidate = 60
 
 export async function generateStaticParams() {
-    const exhibitions = await getAllExhibitions()
-    return exhibitions.map(({ slug }) => ({ slug }));
-
+	const exhibitions = await getAllExhibitions()
+	return exhibitions.map(({ slug }) => ({ slug }))
 }
 
 export default async function ExhibitionPage({ params: { slug } }: Props) {
-    const exhibition = await getExhibitionBySlug(slug)
-
-
-    return (
-        <main >
-           {exhibition.title.en}
-        </main>
-    )
+	const exhibition = await getExhibitionBySlug(slug)
+	return <main>{exhibition.title.en}</main>
 }

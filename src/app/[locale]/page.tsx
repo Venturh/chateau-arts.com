@@ -1,11 +1,12 @@
-import {useTranslations} from 'next-intl';
+import Layout from 'components/layout'
+import { useTranslations } from 'next-intl'
 
 export default function Index() {
-  const t = useTranslations();
+	const t = useTranslations()
 
-  return (
-    <div >
-      <p>{t('hero_title')}</p>
-    </div>
-  );
+	return (
+		<Layout>
+			<p>{t('hero_title')}</p>
+		</Layout>
+	)
 }

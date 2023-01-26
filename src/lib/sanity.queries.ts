@@ -1,7 +1,4 @@
-
-
 import { groq } from 'next-sanity'
-
 
 const exhibitFields = groq`
   _id,
@@ -15,7 +12,6 @@ const exhibitFields = groq`
   images,
 `
 
-
 const exhibitionFields = groq`
   _id,
   title,
@@ -28,8 +24,6 @@ const exhibitionFields = groq`
     }
 `
 
-
-
 export const exhibitionIndexQuery = groq`
 *[_type == "exhibition"] | order(date desc, _updatedAt desc) {
   ${exhibitionFields}
@@ -40,36 +34,31 @@ export const exhibitionSlugQuery = groq`
   ${exhibitionFields}
 }`
 
-
 interface localeString {
-    _type: string
-    en: string
-    de: string
-    fr: string
+	_type: string
+	en: string
+	de: string
+	fr: string
 }
-
-
 
 export interface Exhibit {
-    _id: string
-    title: string
-    artist: string
-    year: string
-    dimension: string
-    other: string
-    price: number
-    sold: boolean
-    images: any
+	_id: string
+	title: string
+	artist: string
+	year: string
+	dimension: string
+	other: string
+	price: number
+	sold: boolean
+	images: any
 }
 
-
-
 export interface Exhibition {
-    _id: string
-    title: localeString
-    coverImage: any
-    from: string
-    to: string
-    mainImage?: any
-    slug: string
+	_id: string
+	title: localeString
+	coverImage: any
+	from: string
+	to: string
+	mainImage?: any
+	slug: string
 }
