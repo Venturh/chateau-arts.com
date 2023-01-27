@@ -1,9 +1,9 @@
 'use client'
 
 import { useMemo, useState } from 'react'
-import Link from 'next/link'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import * as Dialog from '@radix-ui/react-dialog'
+import Link from 'next/link'
 
 type Props = {
 	navigation: {

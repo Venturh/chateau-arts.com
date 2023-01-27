@@ -7,7 +7,7 @@ type Props = {
 	children: ReactNode
 }
 
-export default function Layout({ children }: Props) {
+export function MainLayout({ children }: Props) {
 	const locale = useLocale()
 	const t = useTranslations()
 

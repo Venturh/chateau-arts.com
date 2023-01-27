@@ -1,7 +1,7 @@
 'use client'
 
-import type { LinkProps } from 'next/link'
 import { LocalizedLink } from 'next-intl'
+import type { LinkProps } from 'next/link'
 
 type Props = {
 	children: React.ReactNode

@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 import { Inter as FontSans } from '@next/font/google'
-import Layout from 'components/layout'
-import { useLocale } from 'next-intl'
+import { MainLayout } from 'components/main-layout'
+import { useLocale, useTranslations } from 'next-intl'
 
 import 'styles/globals.css'
 
@@ -10,16 +10,13 @@ const fontSans = FontSans({
 	variable: '--font-sans',
 })
 
-type Props = {
-	children: ReactNode
-}
-
 export default async function RootLayout({ children }) {
 	const locale = useLocale()
+
 	return (
 		<html lang={locale} className={fontSans.className}>
 			<head />
-			<body>{children}</body>
+			<MainLayout>{children}</MainLayout>
 		</html>
 	)
 }

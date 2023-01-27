@@ -1,25 +1,22 @@
 import { use } from 'react'
-import Layout from 'components/layout'
 import { getAllExhibitions } from 'lib/sanity.client'
-import { useTranslations } from 'next-intl'
-
-export const revalidate = 60
+import { useLocale, useTranslations } from 'next-intl'
 
 export default function Home() {
 	const exhibitions = use(getAllExhibitions())
-
 	const t = useTranslations()
+	const locale = useLocale()
 
 	return (
-		<Layout>
+		<div>
 			<h1>{t('exhibitions')}</h1>
 			<div className="space-y-4">
-				{exhibitions.map((exhibition) => (
-					<div key={exhibition.slug}>
-						<h1>{exhibition.title.en}</h1>
+				{exhibitions.map(({ title, slug }) => (
+					<div key={slug}>
+						<div>{title[locale]}</div>
 					</div>
 				))}
 			</div>
-		</Layout>
+		</div>
 	)
 }

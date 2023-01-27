@@ -32,6 +32,7 @@ specifiers:
   '@radix-ui/react-tooltip': ^1.0.3
   '@sanity/eslint-config-studio': ^2.0.1
   '@sanity/image-url': ^1.0.2
+  '@sanity/ui': ^1.2.0
   '@sanity/vision': ^3.0.0
   '@types/node': ^17.0.12
   '@types/react': ^18.0.22
@@ -46,7 +47,7 @@ specifiers:
   eslint-plugin-react: ^7.31.11
   eslint-plugin-tailwindcss: ^3.8.0
   lucide-react: 0.105.0-alpha.4
-  next: ^13.1.5
+  next: ^13.1.1
   next-intl: 2.11.0-beta.4
   next-sanity: ^4.1.1
   next-themes: ^0.2.1
@@ -57,7 +58,7 @@ specifiers:
   react-is: ^18.2.0
   sanity: ^3.2.5
   sharp: ^0.31.3
-  styled-components: ^5.2.0
+  styled-components: ^5.3.6
   tailwind-merge: ^1.8.0
   tailwindcss: ^3.1.7
   tailwindcss-animate: ^1.0.5
@@ -92,6 +93,7 @@ dependencies:
   '@radix-ui/react-toggle-group': 1.0.2_biqbaboplfbrettd7655fr4n2y
   '@radix-ui/react-tooltip': 1.0.3_5ndqzdd6t4rivxsukjv3i3ak2q
   '@sanity/image-url': 1.0.2
+  '@sanity/ui': 1.2.0_23mhwjhnzfjwvdn7ol54k26zom
   '@sanity/vision': 3.2.5_23mhwjhnzfjwvdn7ol54k26zom
   class-variance-authority: 0.4.0_typescript@4.9.4
   clsx: 1.2.1
@@ -99,7 +101,7 @@ dependencies:
   lucide-react: 0.105.0-alpha.4_react@18.2.0
   next: 13.1.5_biqbaboplfbrettd7655fr4n2y
   next-intl: 2.11.0-beta.4_next@13.1.5+react@18.2.0
-  next-sanity: 4.1.1_smwq2asma2eozsnvqepo55esoq
+  next-sanity: 4.1.1_hnad2w3kskj3qyjxertso6maqm
   next-themes: 0.2.1_s6zlkfvllybxhmcq5pkr2zsuza
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -3333,8 +3335,8 @@ packages:
       - supports-color
     dev: false
 
-  /@sanity/ui/1.0.14_23mhwjhnzfjwvdn7ol54k26zom:
-    resolution: {integrity: sha512-+f/hOk9PMz9Vnd3G2yrfCXrYsJKai+BmHHQfquv+5ZPNsdZgQlQuDZ5h2qAEaEtJgg5YdPcMMaowyybVLWMMNQ==}
+  /@sanity/ui/1.2.0_23mhwjhnzfjwvdn7ol54k26zom:
+    resolution: {integrity: sha512-X5j6b4lfXFuPvGT+ML5cLv+c6d9RLdKmwhQ+iZdfTcSldU8sN1qoZYe3LL8iO2dorIpXvkqanq1x4JOGlboGJg==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       react: ^18
@@ -3404,7 +3406,7 @@ packages:
       '@rexxars/react-split-pane': 0.1.93_biqbaboplfbrettd7655fr4n2y
       '@sanity/color': 2.2.2
       '@sanity/icons': 2.2.2_react@18.2.0
-      '@sanity/ui': 1.0.14_23mhwjhnzfjwvdn7ol54k26zom
+      '@sanity/ui': 1.2.0_23mhwjhnzfjwvdn7ol54k26zom
       '@uiw/react-codemirror': 4.19.7_pcbegg3kgob43pbchw6ytohx4u
       hashlru: 2.3.0
       is-hotkey: 0.1.8
@@ -6567,7 +6569,7 @@ packages:
       use-intl: 2.11.0-alpha.2_react@18.2.0
     dev: false
 
-  /next-sanity/4.1.1_smwq2asma2eozsnvqepo55esoq:
+  /next-sanity/4.1.1_hnad2w3kskj3qyjxertso6maqm:
     resolution: {integrity: sha512-v3xAL5MAD09Co70uGOTIHg1/WsGdZTyZ989MnZnrvZNLcjKJtfZZZYEYmk8HX7B6VgYd1Tsc4e84+QOGzlbtig==}
     engines: {node: '>=16'}
     peerDependencies:
@@ -6581,6 +6583,7 @@ packages:
     dependencies:
       '@sanity/client': 4.0.1
       '@sanity/preview-kit': 1.3.2_react@18.2.0
+      '@sanity/ui': 1.2.0_23mhwjhnzfjwvdn7ol54k26zom
       '@sanity/webhook': 2.0.0
       groq: 3.2.5
       next: 13.1.5_biqbaboplfbrettd7655fr4n2y
@@ -7641,7 +7644,7 @@ packages:
       '@sanity/portable-text-editor': 3.2.5_cqtqtcaqdwtl72brpteczjdiui
       '@sanity/schema': 3.2.5
       '@sanity/types': 3.2.5
-      '@sanity/ui': 1.0.14_23mhwjhnzfjwvdn7ol54k26zom
+      '@sanity/ui': 1.2.0_23mhwjhnzfjwvdn7ol54k26zom
       '@sanity/util': 3.2.5
       '@sanity/uuid': 3.0.1
       '@sanity/validation': 3.2.5_@sanity+client@4.0.1
