@@ -1,4 +1,4 @@
-import { getAllExhibitions, getExhibitionBySlug } from 'lib/sanity.client'
+import { getExhibitBySlug } from 'lib/sanity.client'
 
 type Props = {
 	params: {
@@ -14,7 +14,7 @@ type Props = {
 // }
 
 export default async function ExhibitionPage({ params: { slug } }: Props) {
-	const exhibition = await getExhibitionBySlug(slug)
+	const exhibition = await getExhibitBySlug(slug)
 
 	return <div>{exhibition.title}</div>
 }

@@ -4,11 +4,22 @@ export default defineType({
 	name: 'exhibition',
 	title: 'Austellungen',
 	type: 'document',
+	i18n: true,
 	fields: [
 		defineField({
 			name: 'title',
 			title: 'Titel',
-			type: 'localeString',
+			type: 'string',
+			validation: (Rule) => Rule.required(),
+		}),
+		defineField({
+			name: 'slug',
+			title: 'Slug',
+			type: 'slug',
+			options: {
+				source: 'title',
+				maxLength: 96,
+			},
 			validation: (Rule) => Rule.required(),
 		}),
 		defineField({
@@ -26,16 +37,6 @@ export default defineType({
 			type: 'date',
 			options: {
 				dateFormat: 'DD.MM.YYYY',
-			},
-			validation: (Rule) => Rule.required(),
-		}),
-		defineField({
-			name: 'slug',
-			title: 'Slug',
-			type: 'slug',
-			options: {
-				source: 'title.en',
-				maxLength: 96,
 			},
 			validation: (Rule) => Rule.required(),
 		}),
@@ -74,10 +75,18 @@ export default defineType({
 		select: {
 			title: 'title',
 			media: 'mainImage',
+			lang: '__i18n_lang',
+			refs: '__i18n_refs',
 		},
 		prepare(selection) {
-			console.log(selection)
-			return { ...selection, title: selection.title.de ?? 'Unbenannt' }
+			const refCount = selection.refs?.length ?? 0
+			const subtitle =
+				refCount > 0 ? `${refCount} Übersetzung${refCount > 1 ? 'en' : ''}` : 'Keine Übersetzung'
+			return {
+				...selection,
+				title: selection.title ?? 'Unbenannt',
+				subtitle,
+			}
 		},
 	},
 })

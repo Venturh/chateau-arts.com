@@ -1,15 +1,13 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
+import Link from 'next/link'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import * as Dialog from '@radix-ui/react-dialog'
-import Link from 'next/link'
+import { NavItem } from 'types/nav'
 
 type Props = {
-	navigation: {
-		name: string
-		href: string
-	}[]
+	navigation: NavItem[]
 }
 
 export function MainNavigation({ navigation }: Props) {
@@ -27,8 +25,11 @@ export function MainNavigation({ navigation }: Props) {
 	}
 
 	return (
-		<div className="px-6 pt-6 lg:px-8">
-			<nav className="flex items-center justify-between" aria-label="Global">
+		<div className="border-b">
+			<nav
+				className="mx-auto flex max-w-5xl items-center justify-between px-6 py-3 lg:px-8"
+				aria-label="Global"
+			>
 				<div className="flex lg:flex-1">
 					<Logo />
 				</div>
