@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation'
 import { createClient } from 'next-sanity'
 
 import {
@@ -20,30 +21,26 @@ const client = createClient({
 	useCdn: typeof document !== 'undefined',
 })
 
+async function fetchAPI(query: string, previewData?: {}) {
+	const res = await client.fetch(query, previewData)
+	if (!res) {
+		return notFound()
+	}
+	return res
+}
+
 export async function getAllExhibitions(lang: string): Promise<Exhibition[]> {
-	if (client) {
-		return (await client.fetch(exhibitionIndexQuery, { lang })) || []
-	}
-	return []
+	return await fetchAPI(exhibitionIndexQuery, { lang })
 }
 
-export async function getExhibitionBySlug(slug: string): Promise<Exhibition> {
-	if (client) {
-		return (await client.fetch(exhibitionSlugQuery, { slug })) || ({} as any)
-	}
-	return {} as any
+export async function getExhibitionBySlug(lang: string, slug: string): Promise<Exhibition> {
+	return await fetchAPI(exhibitionSlugQuery, { lang, slug })
 }
 
-export async function getAllExhibits(): Promise<Exhibit[]> {
-	if (client) {
-		return (await client.fetch(exhibitIndexQuery, {})) || []
-	}
-	return []
+export async function getAllExhibits(lang: string): Promise<Exhibit[]> {
+	return await fetchAPI(exhibitIndexQuery, { lang })
 }
 
-export async function getExhibitBySlug(slug: string): Promise<Exhibit> {
-	if (client) {
-		return (await client.fetch(exhibitSlugQuery, { slug })) || ({} as any)
-	}
-	return {} as any
+export async function getExhibitBySlug(lang: string, slug: string): Promise<Exhibit> {
+	return await fetchAPI(exhibitSlugQuery, { lang, slug })
 }

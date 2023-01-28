@@ -5,11 +5,11 @@ const exhibitFields = groq`
   title,
   artist,
   year,
-  dimension,
-  other,
+  info,
   price,
   sold,
   images,
+  "slug": slug.current,
 `
 
 const exhibitionFields = groq`
@@ -19,9 +19,6 @@ const exhibitionFields = groq`
   to,
   mainImage,
   "slug": slug.current,
-  "exhibits": *[_type == "exhibit"] {
-    ${exhibitFields}
-    }
 `
 
 export const exhibitionIndexQuery = groq`
@@ -30,30 +27,23 @@ export const exhibitionIndexQuery = groq`
 }`
 
 export const exhibitionSlugQuery = groq`
-*[_type=='exhibition' && slug.current == $slug][0] {
-  ${exhibitionFields}
+*[_type=='exhibition' && __i18n_lang == $lang &&slug.current == $slug][0]{
+    ${exhibitionFields}
+    ${groq`
+    exhibits[]->{
+        ${exhibitFields}
+        }
+    `}
 }`
 
-const exhibitsFields = groq`
-  _id,
-  title,
-  from,
-  to,
-  mainImage,
-  "slug": slug.current,
-  "exhibits": *[_type == "exhibit"] {
-    ${exhibitFields}
-    }
-`
-
 export const exhibitIndexQuery = groq`
-*[_type == "exhibit"] | order(date desc, _updatedAt desc) {
-  ${exhibitsFields}
+*[_type == "exhibit" && __i18n_lang == $lang] | order(date desc, _updatedAt desc) {
+  ${exhibitFields}
 }`
 
 export const exhibitSlugQuery = groq`
-*[_type=='exhibit' && slug.current == $slug][0] {
-  ${exhibitsFields}
+*[_type=='exhibit' && __i18n_lang == $lang && slug.current == $slug][0] {
+  ${exhibitFields}
 }`
 
 export interface Exhibit {
@@ -62,7 +52,7 @@ export interface Exhibit {
 	slug: string
 	artist: string
 	year: string
-	dimension: string
+	info: any
 	other: string
 	price: number
 	sold: boolean
@@ -77,4 +67,5 @@ export interface Exhibition {
 	from: string
 	to: string
 	mainImage?: any
+	exhibits: Exhibit[]
 }

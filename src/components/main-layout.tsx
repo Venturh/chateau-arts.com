@@ -33,8 +33,8 @@ export function MainLayout({ children }: Props) {
 			},
 		],
 		[t('legal')]: [
-			{ name: t('disclosure'), href: `/${locale}/discloser` },
 			{ name: t('privacy'), href: `/${locale}/privacy` },
+			{ name: t('disclosure'), href: `/${locale}/discloser` },
 		],
 	}
 
@@ -46,7 +46,7 @@ export function MainLayout({ children }: Props) {
 			<main className="mx-auto h-full w-full max-w-5xl px-6 py-3 pt-20 pb-16 lg:px-8">
 				{children}
 			</main>
-			<Footer footer={footer} />
+			<Footer languageLocale={t('language')} locale={locale} footer={footer} />
 		</>
 	)
 }

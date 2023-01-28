@@ -1,5 +1,7 @@
 import { defineField, defineType } from 'sanity'
 
+import { getI18nSubtitle } from '../i18n'
+
 export default defineType({
 	name: 'exhibition',
 	title: 'Austellungen',
@@ -66,7 +68,23 @@ export default defineType({
 			name: 'exhibits',
 			title: 'Austellungstücke',
 			type: 'array',
-			of: [{ type: 'reference', to: { type: 'exhibit' } }],
+
+			of: [
+				{
+					type: 'reference',
+					to: { type: 'exhibit' },
+					options: {
+						filter: ({ document }) => {
+							const locale = document.__i18n_lang
+
+							return {
+								filter: `__i18n_lang == $lang`,
+								params: { lang: locale },
+							}
+						},
+					},
+				},
+			],
 			validation: (Rule) => Rule.required(),
 		}),
 	],
@@ -79,9 +97,9 @@ export default defineType({
 			refs: '__i18n_refs',
 		},
 		prepare(selection) {
-			const refCount = selection.refs?.length ?? 0
-			const subtitle =
-				refCount > 0 ? `${refCount} Übersetzung${refCount > 1 ? 'en' : ''}` : 'Keine Übersetzung'
+			const { lang, refs } = selection
+			const refCount = refs?.length ?? 0
+			const subtitle = getI18nSubtitle(lang, refCount)
 			return {
 				...selection,
 				title: selection.title ?? 'Unbenannt',

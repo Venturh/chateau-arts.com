@@ -31,7 +31,7 @@ export function Collapsible({ title, content }: Props) {
 						key={`collapsible-${title}-${i}`}
 						className={cn(
 							'group',
-							'flex select-none items-center justify-between rounded-md px-4 py-2 text-left text-sm font-medium'
+							'flex select-none items-center justify-between rounded-md px-4 py-2 text-sm leading-6 text-gray-600 hover:text-gray-900'
 						)}
 					>
 						{c}

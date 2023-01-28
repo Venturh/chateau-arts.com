@@ -4,7 +4,9 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import * as Dialog from '@radix-ui/react-dialog'
-import { NavItem } from 'types/nav'
+
+import { Logo } from '@/components/logo'
+import { NavItem } from '@/types/nav'
 
 type Props = {
 	navigation: NavItem[]
@@ -12,17 +14,6 @@ type Props = {
 
 export function MainNavigation({ navigation }: Props) {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-
-	function Logo() {
-		const href = navigation[0].href
-		return (
-			<div className="flex lg:flex-1">
-				<Link href={href} className="-m-1.5 p-1.5">
-					<span className="">elisabeth werpers</span>
-				</Link>
-			</div>
-		)
-	}
 
 	return (
 		<div className="border-b">

@@ -1,4 +1,5 @@
 import { getExhibitBySlug } from 'lib/sanity.client'
+import { useLocale } from 'next-intl'
 
 type Props = {
 	params: {
@@ -14,7 +15,8 @@ type Props = {
 // }
 
 export default async function ExhibitionPage({ params: { slug } }: Props) {
-	const exhibition = await getExhibitBySlug(slug)
+	const locale = useLocale()
+	const exhibit = await getExhibitBySlug(locale, slug)
 
-	return <div>{exhibition.title}</div>
+	return <div>{exhibit.title}</div>
 }

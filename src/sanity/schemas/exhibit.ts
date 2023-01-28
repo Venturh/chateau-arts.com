@@ -1,9 +1,12 @@
 import { defineField, defineType } from 'sanity'
 
+import { getI18nSubtitle } from '../i18n'
+
 export default defineType({
 	name: 'exhibit',
 	title: 'Werke',
 	type: 'document',
+	i18n: true,
 	fields: [
 		defineField({
 			name: 'title',
@@ -34,17 +37,6 @@ export default defineType({
 			validation: (Rule) => Rule.required(),
 		}),
 		defineField({
-			name: 'dimension',
-			title: 'Massangabe',
-			type: 'string',
-			validation: (Rule) => Rule.required(),
-		}),
-		defineField({
-			name: 'other',
-			title: 'Sonstiges',
-			type: 'text',
-		}),
-		defineField({
 			name: 'price',
 			title: 'Preis',
 			type: 'number',
@@ -54,6 +46,13 @@ export default defineType({
 			name: 'sold',
 			title: 'Verkauft',
 			type: 'boolean',
+			initialValue: false,
+		}),
+		defineField({
+			name: 'info',
+			title: 'Infos',
+			type: 'blockContent',
+			validation: (Rule) => Rule.required(),
 		}),
 		defineField({
 			name: 'images',
@@ -67,10 +66,14 @@ export default defineType({
 			title: 'title',
 			artist: 'artist',
 			images: 'images',
+			lang: '__i18n_lang',
+			refs: '__i18n_refs',
 		},
 		prepare(selection) {
-			const { title, artist } = selection
-			return { title, subtitle: artist, media: selection.images[0] }
+			const { title, refs, lang } = selection
+			const refCount = refs?.length ?? 0
+			const subtitle = getI18nSubtitle(lang, refCount)
+			return { title, subtitle: subtitle, media: selection.images[0] }
 		},
 	},
 })

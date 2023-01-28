@@ -6,7 +6,8 @@ import { getAllExhibits } from '@/lib/sanity.client'
 
 export default function Home() {
 	const t = useTranslations()
-	const exhibits = use(getAllExhibits())
+	const locale = useLocale()
+	const exhibits = use(getAllExhibits(locale))
 
 	return (
 		<div>
