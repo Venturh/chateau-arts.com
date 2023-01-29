@@ -1,4 +1,4 @@
-import { ExhibitCard } from '@/components/exhibit-card'
+import { ExhibitCard } from '@/components/exhibits/exhibit-card'
 import { SectionHeader } from '@/components/ui/section-header'
 import { Exhibit } from '@/lib/sanity.queries'
 

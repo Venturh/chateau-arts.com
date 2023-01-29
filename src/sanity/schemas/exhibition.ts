@@ -79,7 +79,7 @@ export default defineType({
 
 							return {
 								filter: `__i18n_lang == $lang`,
-								params: { lang: locale },
+								params: { lang: locale ?? 'de' },
 							}
 						},
 					},
@@ -98,8 +98,7 @@ export default defineType({
 		},
 		prepare(selection) {
 			const { lang, refs } = selection
-			const refCount = refs?.length ?? 0
-			const subtitle = getI18nSubtitle(lang, refCount)
+			const subtitle = getI18nSubtitle(lang, refs)
 			return {
 				...selection,
 				title: selection.title ?? 'Unbenannt',

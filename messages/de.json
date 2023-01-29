@@ -21,12 +21,11 @@
 	"to_current_exhibition": "Aktuelle Austellung",
 	"all_exhibitions": "Alle Austellungen ansehen",
 
-	"current_exhibitions": "Aktuelle Austellungen",
-	"past_exhibitions": "Vergangene Austellungen",
+	"current": "Aktuelle",
+	"past": "Vergangene",
 	"filters": "Filter",
 	"details": "Details",
-	"read_more": "Mehr anzeigen",
-	"read_less": "Weniger anzeigen",
+	"read_more": "Weiterlesen",
 	"show_all": "Alle ansehen ",
 
 	"not_specified": "Keine Angabe",

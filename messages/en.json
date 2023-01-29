@@ -22,12 +22,11 @@
 	"to_current_exhibition": "Current exhibition",
 	"all_exhibitions": "View all exhibitions",
 
-	"current_exhibitions": "Current Exhibitions",
-	"past_exhibitions": "Past Exhibitions",
+	"current": "Current",
+	"past": "Past",
 	"filters": "Filters",
 	"details": "Details",
 	"read_more": "Read more",
-	"read_less": "Read less",
 	"show_all": "Show all",
 
 	"not_specified": "Not specified",

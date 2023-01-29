@@ -31,7 +31,7 @@ export function MainNavigation({ navigation, locale }: Props) {
 	return (
 		<div className="border-b border-gray-900/10 bg-zinc-50">
 			<nav
-				className="mx-auto flex max-w-5xl items-center justify-between px-6 py-3 lg:px-8"
+				className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-8"
 				aria-label="Global"
 			>
 				<div className="flex lg:flex-1">

@@ -11,17 +11,18 @@ export function ExhibitCard(exhibit: Exhibit) {
 	const t = useTranslations()
 	return (
 		<Link className="group  space-y-3" href={`/exhibits/${exhibit.slug}`}>
-			<div className="relative overflow-hidden rounded-md border">
-				<SainityImage height={250} width={250} image={exhibit.images[0]} alt={exhibit.title} />
-				{sold && (
-					<div className="absolute bottom-1 left-1">
-						<Badge>{t('sold')}</Badge>
-					</div>
-				)}
-			</div>
+			<SainityImage
+				className="overflow-hidden rounded-md border"
+				ratio={3 / 4}
+				image={exhibit.images[0]}
+				alt={exhibit.title}
+			/>
 
-			<div className="">
-				<h3 className="font-medium leading-none">{exhibit.title}</h3>
+			<div>
+				<div className="flex items-start justify-between">
+					<h3 className="font-medium leading-none">{exhibit.title}</h3>
+					{sold && <Badge>{t('sold')}</Badge>}
+				</div>
 				<p className="mt-2 text-sm text-zinc-500">{exhibit.artist}</p>
 				<p className="mt-1 text-sm text-zinc-500">{exhibit.year}</p>
 				<p className="mt-1 text-sm text-zinc-500">{toCurrency(exhibit.price)}</p>

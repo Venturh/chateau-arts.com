@@ -6,7 +6,16 @@ export const languages = [
 
 export const baseLanguage = languages[0]
 
-export function getI18nSubtitle(lang?: string, refCount?: number) {
+export function getI18nSubtitle(lang?: string, refs?: { _key: string }[]): string {
 	if (!lang) return 'Noch nicht veröffentlicht'
-	return `${lang} | ${refCount && refCount > 0 ? refCount : 'keine'} Übersetzungen`
+
+	const locale = languages.find((l) => l.id === lang)?.title || ''
+	if (!refs) return locale
+
+	const locales = refs
+		.map((ref) => languages.find((l) => l.id === ref._key)?.title)
+		.filter(Boolean)
+		.join(', ')
+
+	return locales ? `${locale}, ${locales}` : locale
 }

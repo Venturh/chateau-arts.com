@@ -71,8 +71,7 @@ export default defineType({
 		},
 		prepare(selection) {
 			const { title, refs, lang } = selection
-			const refCount = refs?.length ?? 0
-			const subtitle = getI18nSubtitle(lang, refCount)
+			const subtitle = getI18nSubtitle(lang, refs)
 			return { title, subtitle: subtitle, media: selection.images[0] }
 		},
 	},

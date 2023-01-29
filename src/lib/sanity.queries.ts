@@ -19,6 +19,7 @@ const exhibitionFields = groq`
   from,
   to,
   mainImage,
+  images,
   "slug": slug.current,
 `
 
