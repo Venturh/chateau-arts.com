@@ -1,7 +1,11 @@
 {
 	"home": "Start",
 	"exhibitions": "Austellungen",
+	"exhibitions_description": "Sammlung meiner wöchentlich wechselnde Austellungen",
 	"exhibits": "Werke",
+	"exhibits_description": "Alle Werke aus den Austellungen",
+	"exhibition_exhibits_description": "Werke der Austellung",
+
 
 	"pages": "Seiten",
 	"social": "Kontakt",
@@ -29,5 +33,6 @@
 	"date": "Datum",
 	"artists": "Künstler",
 	"dimension": "Maße",
-	"time": "Zeit"
+	"time": "Zeit",
+    "sold": "Verkauft"
 }

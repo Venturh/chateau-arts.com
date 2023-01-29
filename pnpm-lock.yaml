@@ -5,6 +5,7 @@ specifiers:
   '@ianvs/prettier-plugin-sort-imports': ^3.7.1
   '@next/font': ^13.1.5
   '@portabletext/react': ^2.0.0
+  '@radix-ui/react-aspect-ratio': ^1.0.1
   '@radix-ui/react-collapsible': ^1.0.1
   '@radix-ui/react-dialog': ^1.0.2
   '@radix-ui/react-select': ^1.2.0
@@ -13,6 +14,7 @@ specifiers:
   '@sanity/image-url': ^1.0.2
   '@sanity/ui': ^1.2.0
   '@sanity/vision': ^3.0.0
+  '@tailwindcss/line-clamp': ^0.4.2
   '@types/node': ^17.0.12
   '@types/react': ^18.0.22
   '@types/react-dom': ^18.0.7
@@ -46,6 +48,7 @@ specifiers:
 dependencies:
   '@next/font': 13.1.5
   '@portabletext/react': 2.0.0_react@18.2.0
+  '@radix-ui/react-aspect-ratio': 1.0.1_biqbaboplfbrettd7655fr4n2y
   '@radix-ui/react-collapsible': 1.0.1_biqbaboplfbrettd7655fr4n2y
   '@radix-ui/react-dialog': 1.0.2_5ndqzdd6t4rivxsukjv3i3ak2q
   '@radix-ui/react-select': 1.2.0_5ndqzdd6t4rivxsukjv3i3ak2q
@@ -53,6 +56,7 @@ dependencies:
   '@sanity/image-url': 1.0.2
   '@sanity/ui': 1.2.0_23mhwjhnzfjwvdn7ol54k26zom
   '@sanity/vision': 3.2.5_23mhwjhnzfjwvdn7ol54k26zom
+  '@tailwindcss/line-clamp': 0.4.2_tailwindcss@3.2.4
   class-variance-authority: 0.4.0_typescript@4.9.4
   clsx: 1.2.1
   eslint-plugin-prettier: 4.2.1_cn4lalcyadplruoxa5mhp7j3dq
@@ -2210,6 +2214,18 @@ packages:
       react-dom: 18.2.0_react@18.2.0
     dev: false
 
+  /@radix-ui/react-aspect-ratio/1.0.1_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-wwsJUTTuDC8w3Nu/B61Cy3mpzm6pj/tJVG6ajkQAJcCqt1q+XRB3DxDRFDBzjm8JfK125Z6esf5yOmfOAAr0Og==}
+    peerDependencies:
+      react: ^16.8 || ^17.0 || ^18.0
+      react-dom: ^16.8 || ^17.0 || ^18.0
+    dependencies:
+      '@babel/runtime': 7.20.13
+      '@radix-ui/react-primitive': 1.0.1_biqbaboplfbrettd7655fr4n2y
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
+
   /@radix-ui/react-collapsible/1.0.1_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-0maX4q91iYa4gjt3PsNf7dq/yqSR+HGAE8I5p54dQ6gnveS+ETWlMoijxrhmgV1k8svxpm34mQAtqIrJt4XZmA==}
     peerDependencies:
@@ -2995,6 +3011,14 @@ packages:
     resolution: {integrity: sha512-4C7nX/dvpzB7za4Ql9K81xK3HPxCpHMgwTZVyf+9JQ6VUbn9jjZVN7/Nkdz/Ugzs2CSjqnL/UPXroiVBVHUWUw==}
     dependencies:
       tslib: 2.4.1
+    dev: false
+
+  /@tailwindcss/line-clamp/0.4.2_tailwindcss@3.2.4:
+    resolution: {integrity: sha512-HFzAQuqYCjyy/SX9sLGB1lroPzmcnWv1FHkIpmypte10hptf4oPUfucryMKovZh2u0uiS9U5Ty3GghWfEJGwVw==}
+    peerDependencies:
+      tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
+    dependencies:
+      tailwindcss: 3.2.4_postcss@8.4.21
     dev: false
 
   /@tanstack/react-virtual/3.0.0-beta.29_react@18.2.0:

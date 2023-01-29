@@ -1,7 +1,12 @@
 {
 	"home": "Page d'accueil",
 	"exhibitions": "Expositions",
+	"exhibitions_description": "Collection de mes expositions hebdomadaires changeantes",
 	"exhibits": "Modèles d'exposition",
+	"exhibits_description": "Toutes les modèles d'exposition de l'expositions",
+	"exhibition_exhibits_description": "Toutes les modèles d'exposition de l'exposition",
+
+
 
 	"pages": "Pages",
 	"social": "Réseaux sociaux",
@@ -29,5 +34,6 @@
 	"date": "Date",
 	"artists": "Artistes",
 	"dimension": "Dimensions",
-	"time": "Temps"
+	"time": "Temps",
+    "sold": "Vendu"
 }

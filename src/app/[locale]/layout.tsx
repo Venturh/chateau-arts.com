@@ -14,12 +14,9 @@ export default async function RootLayout({ children }) {
 	const locale = useLocale()
 
 	return (
-		<html
-			lang={locale}
-			className={cn('h-full scroll-smooth bg-white antialiased', fontSans.className)}
-		>
+		<html lang={locale} className={fontSans.className}>
 			<head></head>
-			<body className="flex h-full flex-col">
+			<body>
 				<MainLayout>{children}</MainLayout>
 			</body>
 		</html>

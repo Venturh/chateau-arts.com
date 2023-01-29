@@ -44,7 +44,7 @@ export function Footer({ footer, locale, languageLocale }: Props) {
 					))}
 
 					<div className="space-y-2">
-						<h3 className="text-secondary text-xs uppercase tracking-wider">{languageLocale}</h3>
+						<h3 className="text-sm font-semibold leading-6 text-gray-900">{languageLocale}</h3>
 						<LanguageSelect locale={locale} />
 					</div>
 				</div>
@@ -53,11 +53,11 @@ export function Footer({ footer, locale, languageLocale }: Props) {
 						<Collapsible title={title} content={content} key={i} />
 					))}
 					<div className=" flex items-center justify-between px-4 pb-4 ">
-						<span className="text-sm">{languageLocale}</span>
+						<span className="text-sm font-medium">{languageLocale}</span>
 						<LanguageSelect locale={locale} />
 					</div>
 				</div>
-				<div className="flex items-center justify-between border-t py-6">
+				<div className="flex items-center justify-between border-t py-6 text-sm">
 					<span>© {new Date().getFullYear()}</span>
 					<Logo />
 				</div>

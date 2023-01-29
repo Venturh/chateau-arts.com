@@ -1,7 +1,12 @@
 {
 	"home": "Home",
 	"exhibitions": "Exhibitions",
+	"exhibitions_description": "Collection of my weekly rotating exhibitions",
 	"exhibits": "Exhibits",
+	"exhibits_description": "All exhibits from the exhibitions",
+	"exhibition_exhibits_description": "Exhibits of the exhibition",
+
+
 
 	"pages": "Pages",
 	"social": "Social",
@@ -29,5 +34,7 @@
 	"date": "Date",
 	"artists": "Artists",
 	"dimension": "Dimension",
-	"time": "Time"
+	"time": "Time",
+    "sold": "Sold"
+
 }

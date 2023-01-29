@@ -13,7 +13,7 @@ export function MainLayout({ children }: Props) {
 	const t = useTranslations()
 
 	const navigation = [
-		{ name: t('home'), href: `/${locale}/` },
+		{ name: t('home'), href: `/${locale}` },
 		{ name: t('exhibitions'), href: `/${locale}/exhibitions` },
 		{ name: t('exhibits'), href: `/${locale}/exhibits` },
 	]
@@ -41,11 +41,9 @@ export function MainLayout({ children }: Props) {
 	return (
 		<>
 			<header>
-				<MainNavigation navigation={navigation} />
+				<MainNavigation navigation={navigation} locale={locale} />
 			</header>
-			<main className="mx-auto h-full w-full max-w-5xl px-6 py-3 pt-20 pb-16 lg:px-8">
-				{children}
-			</main>
+			<main className="mx-auto h-full w-full max-w-5xl px-6  py-12 lg:px-8">{children}</main>
 			<Footer languageLocale={t('language')} locale={locale} footer={footer} />
 		</>
 	)

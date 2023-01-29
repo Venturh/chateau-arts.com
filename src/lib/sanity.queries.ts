@@ -15,6 +15,7 @@ const exhibitFields = groq`
 const exhibitionFields = groq`
   _id,
   title,
+  description,
   from,
   to,
   mainImage,
@@ -63,9 +64,10 @@ export interface Exhibition {
 	_id: string
 	title: string
 	slug: string
-	coverImage: any
 	from: string
 	to: string
 	mainImage?: any
+	description?: any
+	images?: any[]
 	exhibits: Exhibit[]
 }

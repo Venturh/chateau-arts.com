@@ -1,7 +1,10 @@
-import { getAllExhibitions, getExhibitionBySlug } from 'lib/sanity.client'
-import { useLocale } from 'next-intl'
+import { use } from 'react'
+import { getExhibitionBySlug } from 'lib/sanity.client'
+import { useLocale, useTranslations } from 'next-intl'
 
-import { ExhibitCard } from '@/components/exhibit-card'
+import { ExhibitGrid } from '@/components/exhibits/exhibit-grid'
+import { SectionHeader } from '@/components/ui/section-header'
+import { toDate } from '@/lib/utils'
 
 type Props = {
 	params: {
@@ -16,19 +19,22 @@ type Props = {
 // 	return exhibitions.map(({ slug }) => ({ slug }))
 // }
 
-export default async function ExhibitionPage({ params: { slug } }: Props) {
+export default function ExhibitionPage({ params: { slug } }: Props) {
 	const locale = useLocale()
+	const t = useTranslations()
 
-	const exhibition = await getExhibitionBySlug(locale, slug)
-
+	const exhibition = use(getExhibitionBySlug(locale, slug))
 	return (
 		<div>
-			<h1>{exhibition.title}</h1>
-			<div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-4">
-				{exhibition.exhibits.map((exhibit) => (
-					<ExhibitCard key={exhibit._id} {...exhibit} />
-				))}
-			</div>
+			<SectionHeader
+				title={exhibition.title}
+				description={`${toDate(exhibition.from)} - ${toDate(exhibition.to)}`}
+			/>
+			<ExhibitGrid
+				title={t('exhibits')}
+				description={t('exhibition_exhibits_description')}
+				exhibits={exhibition.exhibits}
+			/>
 		</div>
 	)
 }

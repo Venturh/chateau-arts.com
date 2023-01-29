@@ -1,7 +1,7 @@
 import { use } from 'react'
 import { useLocale, useTranslations } from 'next-intl'
 
-import { Link } from '@/components/link'
+import { ExhibitGrid } from '@/components/exhibits/exhibit-grid'
 import { getAllExhibits } from '@/lib/sanity.client'
 
 export default function Home() {
@@ -11,14 +11,11 @@ export default function Home() {
 
 	return (
 		<div>
-			<h1>{t('exhibits')}</h1>
-			<div className="space-y-4">
-				{exhibits.map(({ title, slug }) => (
-					<Link href={`/exhibits/${slug}`} key={slug}>
-						<div>{title}</div>
-					</Link>
-				))}
-			</div>
+			<ExhibitGrid
+				title={t('exhibits')}
+				description={t('exhibits_description')}
+				exhibits={exhibits}
+			/>
 		</div>
 	)
 }

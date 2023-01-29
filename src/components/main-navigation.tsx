@@ -2,21 +2,34 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import * as Dialog from '@radix-ui/react-dialog'
 
 import { Logo } from '@/components/logo'
+import { cn } from '@/lib/utils'
 import { NavItem } from '@/types/nav'
 
 type Props = {
 	navigation: NavItem[]
+	locale: string
 }
 
-export function MainNavigation({ navigation }: Props) {
+export function MainNavigation({ navigation, locale }: Props) {
+	const pathName = usePathname()
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
+	function isActive(href: string) {
+		const pathNameWithoutLocale = pathName.replace(`/${locale}`, '')
+		const hrefWithoutLocale = href.replace(`/${locale}`, '')
+
+		if (pathNameWithoutLocale === '' && hrefWithoutLocale === '') return true
+
+		return pathNameWithoutLocale.startsWith(hrefWithoutLocale) && hrefWithoutLocale !== ''
+	}
+
 	return (
-		<div className="border-b">
+		<div className="border-b border-gray-900/10 bg-zinc-50">
 			<nav
 				className="mx-auto flex max-w-5xl items-center justify-between px-6 py-3 lg:px-8"
 				aria-label="Global"
@@ -34,12 +47,17 @@ export function MainNavigation({ navigation }: Props) {
 						<Bars3Icon className="h-6 w-6" aria-hidden="true" />
 					</button>
 				</div>
-				<div className="hidden lg:flex lg:gap-x-12">
+				<div className="hidden lg:flex lg:gap-x-4">
 					{navigation.map((item) => (
 						<Link
 							key={item.name}
 							href={item.href}
-							className="text-sm font-semibold leading-6 text-gray-900"
+							className={cn(
+								'inline-flex items-center rounded-md py-2 px-3 text-sm font-medium',
+								isActive(item.href)
+									? 'bg-gray-100 text-gray-900'
+									: 'text-gray-900 hover:bg-gray-50 hover:text-gray-900'
+							)}
 						>
 							{item.name}
 						</Link>
@@ -47,30 +65,37 @@ export function MainNavigation({ navigation }: Props) {
 				</div>
 			</nav>
 			<Dialog.Root open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-				<Dialog.Content className="fixed inset-0 z-10 overflow-y-auto bg-white p-6 lg:hidden">
-					<div className="flex items-center justify-between">
-						<Logo />
-						<button
-							type="button"
-							className="-m-2.5 rounded-md p-2.5 text-gray-700"
-							onClick={() => setMobileMenuOpen(false)}
-						>
-							<span className="sr-only">Close menu</span>
-							<XMarkIcon className="h-6 w-6" aria-hidden="true" />
-						</button>
-					</div>
-					<div className="mt-6 flow-root">
-						<div className="-my-6 divide-y divide-gray-500/10">
-							<div className="space-y-2 py-6">
-								{navigation.map((item) => (
-									<Link
-										key={item.name}
-										href={item.href}
-										className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10"
-									>
-										{item.name}
-									</Link>
-								))}
+				<Dialog.Content className="absolute inset-x-0 top-0 z-50 origin-top px-2 transition md:hidden">
+					<div className="overflow-hidden rounded-lg bg-white shadow-md ring-1 ring-black/5">
+						<div className="flex items-center justify-between border-b  px-4 py-3 ">
+							<Logo />
+							<button
+								type="button"
+								className="-m-2.5 rounded-md p-2.5 text-gray-700"
+								onClick={() => setMobileMenuOpen(false)}
+							>
+								<span className="sr-only">Close menu</span>
+								<XMarkIcon className="h-6 w-6" aria-hidden="true" />
+							</button>
+						</div>
+						<div className="mt-2 flow-root">
+							<div className="-my-6 divide-y divide-gray-500/10">
+								<div className="space-y-2 py-6">
+									{navigation.map((item) => (
+										<Link
+											key={item.name}
+											href={item.href}
+											className={cn(
+												'block rounded-md py-2 px-3 text-sm font-medium',
+												isActive(item.href)
+													? 'bg-gray-100 text-gray-900'
+													: 'text-gray-900 hover:bg-gray-50 hover:text-gray-900'
+											)}
+										>
+											{item.name}
+										</Link>
+									))}
+								</div>
 							</div>
 						</div>
 					</div>
