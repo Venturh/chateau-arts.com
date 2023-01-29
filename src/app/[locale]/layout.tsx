@@ -14,9 +14,9 @@ export default async function RootLayout({ children }) {
 	const locale = useLocale()
 
 	return (
-		<html lang={locale} className={fontSans.className}>
+		<html lang={locale} className={cn('h-full', fontSans.className)}>
 			<head></head>
-			<body>
+			<body className="h-full">
 				<MainLayout>{children}</MainLayout>
 			</body>
 		</html>

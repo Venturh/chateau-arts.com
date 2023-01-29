@@ -39,12 +39,11 @@ export function MainLayout({ children }: Props) {
 	}
 
 	return (
-		<>
-			<header>
-				<MainNavigation navigation={navigation} locale={locale} />
-			</header>
-			<main className="mx-auto h-full w-full max-w-5xl px-6  py-12 lg:px-8">{children}</main>
+		<div className="flex h-screen flex-col">
+			<MainNavigation navigation={navigation} locale={locale} />
+
+			<main className="mx-auto w-full max-w-5xl grow px-6 py-12 lg:px-8">{children}</main>
 			<Footer languageLocale={t('language')} locale={locale} footer={footer} />
-		</>
+		</div>
 	)
 }
