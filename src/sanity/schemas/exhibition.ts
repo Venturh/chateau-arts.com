@@ -49,20 +49,11 @@ export default defineType({
 			validation: (Rule) => Rule.required(),
 		}),
 		defineField({
-			name: 'mainImage',
-			title: 'Hauptbild',
-			type: 'image',
-			validation: (Rule) => Rule.required(),
-			options: {
-				hotspot: true,
-			},
-		}),
-		defineField({
 			name: 'images',
 			title: 'Bilder',
 			type: 'array',
 			of: [{ type: 'image' }],
-			validation: (Rule) => Rule.required(),
+			validation: (Rule) => Rule.required().min(1),
 		}),
 		defineField({
 			name: 'exhibits',

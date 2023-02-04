@@ -1,10 +1,8 @@
 {
 	"home": "Home",
 	"exhibitions": "Exhibitions",
-	"exhibitions_description": "Collection of my weekly rotating exhibitions",
 	"exhibits": "Exhibits",
-	"exhibits_description": "All exhibits from the exhibitions",
-	"exhibition_exhibits_description": "Exhibits of the exhibition",
+	"exhibition-exhibits": "Exhibits of the exhibition",
 
 
 
@@ -16,20 +14,20 @@
 	"privacy": "Privacy Policy",
 	"about": "About",
 
-	"hero_title": "Art Conception",
-	"hero_desc": "",
-	"to_exhibition": "To the exhibition",
-	"to_current_exhibition": "Current exhibition",
-	"all_exhibitions": "View all exhibitions",
+	"to-exhibition": "To the exhibition",
+	"to-current-exhibition": "Current exhibition",
+	"to-virtual-exhibition": "Virtual exhibition",
+	"all-exhibitions": "View all exhibitions",
+
 
 	"current": "Current",
 	"past": "Past",
 	"filters": "Filters",
 	"details": "Details",
-	"read_more": "Read more",
-	"show_all": "Show all",
+	"read-more": "Read more",
+	"show-all": "Show all",
 
-	"not_specified": "Not specified",
+	"not-specified": "Not specified",
 	"date": "Date",
 	"artists": "Artists",
 	"dimension": "Dimension",

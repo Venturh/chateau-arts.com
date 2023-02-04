@@ -1,5 +1,7 @@
 import * as React from 'react'
+import Link from 'next/link'
 import { VariantProps, cva } from 'class-variance-authority'
+import { LocalizedLink } from 'next-intl'
 
 import { cn } from '@/lib/utils'
 
@@ -18,7 +20,7 @@ const buttonVariants = cva(
 			size: {
 				default: 'h-10 py-2 px-4',
 				sm: 'h-9 px-2 rounded-md',
-				lg: 'h-11 px-8 rounded-md',
+				lg: 'h-11 px-6 rounded-md',
 			},
 		},
 		defaultVariants: {
@@ -31,6 +33,9 @@ const buttonVariants = cva(
 export interface ButtonProps
 	extends React.ButtonHTMLAttributes<HTMLButtonElement>,
 		VariantProps<typeof buttonVariants> {}
+export interface LinkProps
+	extends React.LinkHTMLAttributes<HTMLAnchorElement>,
+		VariantProps<typeof buttonVariants> {}
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 	({ className, variant, size, ...props }, ref) => {
@@ -39,6 +44,19 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 		)
 	}
 )
+const ButtonLink = React.forwardRef<HTMLAnchorElement, LinkProps>(
+	({ className, variant, size, ...props }, ref) => {
+		return (
+			<LocalizedLink
+				href={''}
+				className={cn(buttonVariants({ variant, size, className }))}
+				ref={ref}
+				{...props}
+			/>
+		)
+	}
+)
 Button.displayName = 'Button'
+ButtonLink.displayName = 'ButtonLink'
 
-export { Button, buttonVariants }
+export { Button, ButtonLink, buttonVariants }

@@ -11,9 +11,9 @@ export function ExhibitionCard({ exhibition }: Props) {
 	return (
 		<Link href={`/exhibitions/${slug}`} className="group overflow-hidden rounded" key={slug}>
 			<SainityImage
-				ratio={3 / 4}
+				ratio={4 / 3}
 				className="mt-1 rounded transition-transform duration-300 group-hover:scale-150"
-				image={exhibition.mainImage}
+				image={exhibition.images[0]}
 				alt={title}
 			/>
 			<div className="mt-4">

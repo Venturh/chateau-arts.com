@@ -21,7 +21,7 @@ export function ExhibitionRowCard({ exhibition }: Props) {
 				<SainityImage
 					ratio={4 / 3}
 					className="mt-1 rounded"
-					image={exhibition.mainImage}
+					image={exhibition.images[0]}
 					alt={title}
 				/>
 			</div>
@@ -31,7 +31,7 @@ export function ExhibitionRowCard({ exhibition }: Props) {
 					{toDate(exhibition.from)} - {toDate(exhibition.to)}
 				</span>
 				<span className="mt-4 block  line-clamp-3">{exhibition.description}</span>
-				<span className="mt-4 block text-sm">{t('read_more')}</span>
+				<span className="mt-4 block text-sm">{t('read-more')}</span>
 			</div>
 		</Link>
 	)

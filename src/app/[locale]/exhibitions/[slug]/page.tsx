@@ -3,9 +3,11 @@ import { getExhibitionBySlug } from 'lib/sanity.client'
 import { useLocale, useTranslations } from 'next-intl'
 
 import { ExhibitGrid } from '@/components/exhibits/exhibit-grid'
+import { Breadcrumb, Breadcrumbs } from '@/components/ui/breadcumbs'
+import { Button, ButtonLink } from '@/components/ui/button'
+import { SanityImagesSlider } from '@/components/ui/sainity-images-slider'
 import { SectionHeader } from '@/components/ui/section-header'
 import { toDate } from '@/lib/utils'
-import { SainityImage } from '../../../../components/ui/sanity-image'
 
 type Props = {
 	params: {
@@ -25,44 +27,36 @@ export default function ExhibitionPage({ params: { slug } }: Props) {
 	const t = useTranslations()
 
 	const exhibition = use(getExhibitionBySlug(locale, slug))
+
+	const breadcrumbs: Breadcrumb[] = [
+		{ name: t('home'), href: '/' },
+		{ name: t('exhibitions'), href: '/exhibitions' },
+		{ name: exhibition.title },
+	]
 	return (
-		// <div>
-		// 	<SectionHeader
-		// 		title={exhibition.title}
-		// 		description={`${toDate(exhibition.from)} - ${toDate(exhibition.to)}`}
-		// 	/>
-		// 	<div className="space-y-12">
-		// 		<SainityImage ratio={16 / 9} image={exhibition.mainImage} alt={exhibition.title} />
-		// 		<p className="prose prose-sm mx-auto mt-4 max-w-md text-gray-500">
-		// 			{exhibition.description}
-		// 		</p>
-		// 		<ExhibitGrid
-		// 			title={t('exhibits')}
-		// 			description={t('exhibition_exhibits_description')}
-		// 			exhibits={exhibition.exhibits}
-		// 		/>
-		// 	</div>
-		// </div>
-		<div className="lg:grid lg:auto-rows-min lg:grid-cols-12 lg:gap-x-8">
-			<div className="lg:col-span-5 lg:col-start-8">
-				<div>{exhibition.title}</div>
-				<p className="prose  text-gray-500">{exhibition.description}</p>
-			</div>
-			<div className="mt-8 lg:col-span-7 lg:col-start-1 lg:row-span-3 lg:row-start-1 lg:mt-0">
-				<div className="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-3 lg:gap-8">
-					<div className=" lg:col-span-2 lg:row-span-2">
-						<SainityImage
-							ratio={3 / 4}
-							image={exhibition.mainImage}
-							alt="Back of women's Basic Tee in black."
-							className="rounded-lg lg:col-span-2 lg:row-span-2"
-						/>
+		<div>
+			<Breadcrumbs breadcrumbs={breadcrumbs} />
+			<SanityImagesSlider images={exhibition.images} />
+			<div className="mx-auto flex max-w-2xl flex-col-reverse  pt-10 pb-16  lg:grid lg:max-w-7xl lg:grid-cols-3  lg:gap-x-8  lg:pt-16 lg:pb-24">
+				<div className="mt-6 lg:col-span-2 lg:mt-0 lg:border-r lg:border-gray-200  lg:pr-8">
+					<p className="mx-auto max-w-lg text-base text-gray-900">{exhibition.description}</p>
+				</div>
+				<div className="lg:row-span-3">
+					<SectionHeader
+						title={exhibition.title}
+						description={`${toDate(exhibition.from)} - ${toDate(exhibition.to)}`}
+					/>
+					<div className="flex items-center space-x-2">
+						<ButtonLink href={`/exhibitions/${slug}/virtual`} size="lg">
+							{t('to-virtual-exhibition')}
+						</ButtonLink>
+						<Button variant="subtle" size="lg">
+							{t('exhibits')}
+						</Button>
 					</div>
-					{exhibition.images.map((image, idx) => (
-						<SainityImage className="hidden rounded-lg lg:block" key={idx} image={image} alt="" />
-					))}
 				</div>
 			</div>
+			<ExhibitGrid title={t('exhibition-exhibits')} exhibits={exhibition.exhibits} />
 		</div>
 	)
 }

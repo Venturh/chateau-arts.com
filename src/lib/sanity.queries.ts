@@ -48,6 +48,13 @@ export const exhibitSlugQuery = groq`
   ${exhibitFields}
 }`
 
+export interface SanityImage {
+	asset: {
+		_ref: string
+		_type: string
+	}
+}
+
 export interface Exhibit {
 	_id: string
 	title: string
@@ -67,8 +74,7 @@ export interface Exhibition {
 	slug: string
 	from: string
 	to: string
-	mainImage?: any
 	description?: any
-	images?: any[]
+	images: SanityImage[]
 	exhibits: Exhibit[]
 }

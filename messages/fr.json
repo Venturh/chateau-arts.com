@@ -1,10 +1,8 @@
 {
 	"home": "Page d'accueil",
 	"exhibitions": "Expositions",
-	"exhibitions_description": "Collection de mes expositions hebdomadaires changeantes",
 	"exhibits": "Modèles d'exposition",
-	"exhibits_description": "Toutes les modèles d'exposition de l'expositions",
-	"exhibition_exhibits_description": "Toutes les modèles d'exposition de l'exposition",
+	"exhibition-exhibits": "Toutes les modèles d'exposition de l'exposition",
 
 
 
@@ -16,19 +14,18 @@
 	"privacy": "Politique de confidentialité",
 	"about": "Description",
 
-	"hero_title": "Conception Artistique",
-	"hero_desc": "",
-	"to_exhibition": "Voir l'exposition",
-	"all_exhibitions": "Voir toutes les expositions",
+	"to-exhibition": "Voir l'exposition",
+	"to-virtual-exhibition": "Voir l'exposition virtuelle",
+	"all-exhibitions": "Voir toutes les expositions",
 
 	"current": "En cours",
 	"past": "Passées",
 	"filters": "Filtres",
 	"details": "Détails",
-	"read_more": "Plus de détails",
-	"show_all": "Voir tout",
+	"read-more": "Plus de détails",
+	"show-all": "Voir tout",
 
-	"not_specified": "Non précisé",
+	"not-specified": "Non précisé",
 	"date": "Date",
 	"artists": "Artistes",
 	"dimension": "Dimensions",

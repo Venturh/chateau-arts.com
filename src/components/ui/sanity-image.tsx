@@ -1,10 +1,11 @@
 import Image from 'next/image'
 
 import { urlFor } from '@/lib/sanity.client'
+import { SanityImage } from '@/lib/sanity.queries'
 import { AspectRatio } from './aspect-ratio'
 
 type Props = {
-	image: any
+	image: SanityImage
 	alt: string
 	ratio?: number
 	width?: number

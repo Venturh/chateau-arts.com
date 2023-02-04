@@ -1,10 +1,8 @@
 {
 	"home": "Start",
 	"exhibitions": "Austellungen",
-	"exhibitions_description": "Sammlung meiner wöchentlich wechselnde Austellungen",
 	"exhibits": "Werke",
-	"exhibits_description": "Alle Werke aus den Austellungen",
-	"exhibition_exhibits_description": "Werke der Austellung",
+	"exhibition-exhibits": "Werke der Austellung",
 
 
 	"pages": "Seiten",
@@ -15,20 +13,19 @@
 	"privacy": "Datenschutz-Bestimmungen",
 	"about": "Über",
 
-	"hero_title": "Kunst Konzeption",
-	"hero_desc": "",
-	"to_exhibition": "Zur Austellung",
-	"to_current_exhibition": "Aktuelle Austellung",
-	"all_exhibitions": "Alle Austellungen ansehen",
+	"to-exhibition": "Zur Austellung",
+	"to-current-exhibition": "Aktuelle Austellung",
+	"to-virtual-exhibition": "Zur virtuellen Austellung",
+	"all-exhibitions": "Alle Austellungen ansehen",
 
 	"current": "Aktuelle",
 	"past": "Vergangene",
 	"filters": "Filter",
 	"details": "Details",
-	"read_more": "Weiterlesen",
-	"show_all": "Alle ansehen ",
+	"read-more": "Weiterlesen",
+	"show-all": "Alle ansehen ",
 
-	"not_specified": "Keine Angabe",
+	"not-specified": "Keine Angabe",
 	"date": "Datum",
 	"artists": "Künstler",
 	"dimension": "Maße",
