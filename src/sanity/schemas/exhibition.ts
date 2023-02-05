@@ -1,5 +1,6 @@
 import { defineField, defineType } from 'sanity'
 
+import { toDate, toShortDate } from '@/lib/utils'
 import { getI18nSubtitle } from '../i18n'
 
 export default defineType({
@@ -84,15 +85,20 @@ export default defineType({
 		select: {
 			title: 'title',
 			images: 'images',
+			from: 'from',
+			to: 'to',
 			lang: '__i18n_lang',
 			refs: '__i18n_refs',
 		},
 		prepare(selection) {
-			const { lang, refs } = selection
-			const subtitle = getI18nSubtitle(lang, refs)
+			const { lang, refs, from, to } = selection
+			const date = from ? `${toShortDate(from)} - ${toShortDate(to)}` : ''
+			const title = selection.title ?? 'Unbenannt'
+			const locales = getI18nSubtitle(lang, refs)
+			const subtitle = `${date} | ${locales}`
 			return {
 				...selection,
-				title: selection.title ?? 'Unbenannt',
+				title,
 				subtitle,
 				media: selection.images?.[0],
 			}

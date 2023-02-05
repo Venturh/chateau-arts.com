@@ -19,3 +19,9 @@ export function toDate(value: string) {
 		day: '2-digit',
 	})
 }
+export function toShortDate(value: string) {
+	return new Date(value).toLocaleDateString('de', {
+		month: 'numeric',
+		day: 'numeric',
+	})
+}

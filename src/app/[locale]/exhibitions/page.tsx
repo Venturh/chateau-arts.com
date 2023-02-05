@@ -5,15 +5,15 @@ import { ExhibitionCard } from '@/components/exhibition/exhibition-card'
 import { ExhibitionRowCard } from '@/components/exhibition/exhibition-row-card'
 import { Breadcrumb, Breadcrumbs } from '@/components/ui/breadcumbs'
 import { Divider } from '@/components/ui/divider'
-import { getAllExhibitions } from '@/lib/sanity.client'
+import { getAllExhibitions, getCurrentExhibitions, getPastExhibitions } from '@/lib/sanity.client'
 
 export default function Home() {
 	const t = useTranslations()
 	const locale = useLocale()
-	const exhibitions = use(getAllExhibitions(locale))
+	const currentExhibitions = use(getCurrentExhibitions(locale))
+	const pastExhibitions = use(getPastExhibitions(locale))
 
-	const currentExhibition = exhibitions[0]
-	const pastExhibitions = exhibitions.slice(1)
+	const currentExhibition = currentExhibitions[0]
 
 	const breadcrumbs: Breadcrumb[] = [{ name: t('home'), href: '/' }, { name: t('exhibitions') }]
 

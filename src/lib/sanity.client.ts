@@ -6,8 +6,13 @@ import {
 	Exhibit,
 	Exhibition,
 	exhibitIndexQuery,
+	exhibitLatestExceptSlugQuery,
+	exhibitLatestQuery,
 	exhibitSlugQuery,
+	exhibitionCurrentQuery,
 	exhibitionIndexQuery,
+	exhibitionLatestQuery,
+	exhibitionPastQuery,
 	exhibitionSlugQuery,
 } from './sanity.queries'
 
@@ -42,6 +47,15 @@ async function fetchAPI(query: string, previewData?: {}) {
 export async function getAllExhibitions(lang: string): Promise<Exhibition[]> {
 	return await fetchAPI(exhibitionIndexQuery, { lang })
 }
+export async function getLatest3Exhibitions(lang: string): Promise<Exhibition[]> {
+	return await fetchAPI(exhibitionLatestQuery, { lang })
+}
+export async function getCurrentExhibitions(lang: string): Promise<Exhibition[]> {
+	return await fetchAPI(exhibitionCurrentQuery, { lang })
+}
+export async function getPastExhibitions(lang: string): Promise<Exhibition[]> {
+	return await fetchAPI(exhibitionPastQuery, { lang })
+}
 
 export async function getExhibitionBySlug(lang: string, slug: string): Promise<Exhibition> {
 	return await fetchAPI(exhibitionSlugQuery, { lang, slug })
@@ -49,6 +63,12 @@ export async function getExhibitionBySlug(lang: string, slug: string): Promise<E
 
 export async function getAllExhibits(lang: string): Promise<Exhibit[]> {
 	return await fetchAPI(exhibitIndexQuery, { lang })
+}
+export async function getLatestExhibits(lang: string): Promise<Exhibit[]> {
+	return await fetchAPI(exhibitLatestQuery, { lang })
+}
+export async function getLatestExceptSlugExhibits(lang: string, slug: string): Promise<Exhibit[]> {
+	return await fetchAPI(exhibitLatestExceptSlugQuery, { lang, slug })
 }
 
 export async function getExhibitBySlug(lang: string, slug: string): Promise<Exhibit> {

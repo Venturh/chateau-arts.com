@@ -50,7 +50,7 @@ export default function ExhibitionPage({ params: { slug } }: Props) {
 						description={`${toDate(exhibition.from)} - ${toDate(exhibition.to)}`}
 					/>
 					<div className="flex items-center space-x-2">
-						<ButtonLink href={`/exhibitions/${slug}/virtual`} size="lg">
+						<ButtonLink href={`/${locale}/exhibitions/${slug}/virtual`} size="lg">
 							{t('to-virtual-exhibition')}
 						</ButtonLink>
 						<ScrollToButton targetId="exhibits" variant="subtle" size="lg">

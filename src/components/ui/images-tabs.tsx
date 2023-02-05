@@ -53,6 +53,7 @@ export function ImagesTabs({ images, fill }: Props) {
 			<Swiper
 				className="h-full w-full lg:col-span-10"
 				zoom
+				speed={900}
 				watchSlidesProgress
 				thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
 				pagination={pagination}
