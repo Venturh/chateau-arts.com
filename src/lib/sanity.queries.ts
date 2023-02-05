@@ -48,7 +48,15 @@ export const exhibitSlugQuery = groq`
   ${exhibitFields}
 }`
 
-export interface SanityImage {
+export interface SanityImageType {
+	_key: string
+	alt?: string
+	hotspot?: {
+		x: number
+		y: number
+		height: number
+		width: number
+	}
 	asset: {
 		_ref: string
 		_type: string
@@ -65,7 +73,7 @@ export interface Exhibit {
 	other: string
 	price: number
 	sold: boolean
-	images: any
+	images: SanityImageType[]
 }
 
 export interface Exhibition {
@@ -75,6 +83,6 @@ export interface Exhibition {
 	from: string
 	to: string
 	description?: any
-	images: SanityImage[]
+	images: SanityImageType[]
 	exhibits: Exhibit[]
 }

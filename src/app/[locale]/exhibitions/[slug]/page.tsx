@@ -4,8 +4,9 @@ import { useLocale, useTranslations } from 'next-intl'
 
 import { ExhibitGrid } from '@/components/exhibits/exhibit-grid'
 import { Breadcrumb, Breadcrumbs } from '@/components/ui/breadcumbs'
-import { Button, ButtonLink } from '@/components/ui/button'
-import { SanityImagesSlider } from '@/components/ui/sainity-images-slider'
+import { ButtonLink } from '@/components/ui/button'
+import { ImagesTabs } from '@/components/ui/images-tabs'
+import { ScrollToButton } from '@/components/ui/scroll-to-button'
 import { SectionHeader } from '@/components/ui/section-header'
 import { toDate } from '@/lib/utils'
 
@@ -33,10 +34,12 @@ export default function ExhibitionPage({ params: { slug } }: Props) {
 		{ name: t('exhibitions'), href: '/exhibitions' },
 		{ name: exhibition.title },
 	]
+
 	return (
 		<div>
 			<Breadcrumbs breadcrumbs={breadcrumbs} />
-			<SanityImagesSlider images={exhibition.images} />
+
+			<ImagesTabs images={exhibition.images} />
 			<div className="mx-auto flex max-w-2xl flex-col-reverse  pt-10 pb-16  lg:grid lg:max-w-7xl lg:grid-cols-3  lg:gap-x-8  lg:pt-16 lg:pb-24">
 				<div className="mt-6 lg:col-span-2 lg:mt-0 lg:border-r lg:border-gray-200  lg:pr-8">
 					<p className="mx-auto max-w-lg text-base text-gray-900">{exhibition.description}</p>
@@ -50,13 +53,15 @@ export default function ExhibitionPage({ params: { slug } }: Props) {
 						<ButtonLink href={`/exhibitions/${slug}/virtual`} size="lg">
 							{t('to-virtual-exhibition')}
 						</ButtonLink>
-						<Button variant="subtle" size="lg">
+						<ScrollToButton targetId="exhibits" variant="subtle" size="lg">
 							{t('exhibits')}
-						</Button>
+						</ScrollToButton>
 					</div>
 				</div>
 			</div>
-			<ExhibitGrid title={t('exhibition-exhibits')} exhibits={exhibition.exhibits} />
+			<div id="exhibits">
+				<ExhibitGrid title={t('exhibition-exhibits')} exhibits={exhibition.exhibits} />
+			</div>
 		</div>
 	)
 }

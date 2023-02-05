@@ -52,7 +52,7 @@ export default defineType({
 			name: 'images',
 			title: 'Bilder',
 			type: 'array',
-			of: [{ type: 'image' }],
+			of: [{ type: 'image', options: { hotspot: true, metadata: ['lqip'] } }],
 			validation: (Rule) => Rule.required().min(1),
 		}),
 		defineField({
@@ -83,7 +83,7 @@ export default defineType({
 	preview: {
 		select: {
 			title: 'title',
-			media: 'mainImage',
+			images: 'images',
 			lang: '__i18n_lang',
 			refs: '__i18n_refs',
 		},
@@ -94,6 +94,7 @@ export default defineType({
 				...selection,
 				title: selection.title ?? 'Unbenannt',
 				subtitle,
+				media: selection.images?.[0],
 			}
 		},
 	},

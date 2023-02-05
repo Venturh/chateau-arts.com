@@ -13,6 +13,7 @@
 	"disclosure": "Disclosure",
 	"privacy": "Privacy Policy",
 	"about": "About",
+    "contact": "Contact",
 
 	"to-exhibition": "To the exhibition",
 	"to-current-exhibition": "Current exhibition",
@@ -32,6 +33,11 @@
 	"artists": "Artists",
 	"dimension": "Dimension",
 	"time": "Time",
-    "sold": "Sold"
+    "sold": "Sold",
 
+    "contact_name": "Name",
+    "contact_email": "E-Mail",
+    "contact_message": "Message",
+    "contact_send": "Send",
+    "contact_success": "Your message has been sent successfully."
 }

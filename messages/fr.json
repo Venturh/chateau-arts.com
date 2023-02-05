@@ -13,6 +13,7 @@
 	"disclosure": "Mentions légales",
 	"privacy": "Politique de confidentialité",
 	"about": "Description",
+    "contact": "Contact",
 
 	"to-exhibition": "Voir l'exposition",
 	"to-virtual-exhibition": "Voir l'exposition virtuelle",
@@ -30,5 +31,11 @@
 	"artists": "Artistes",
 	"dimension": "Dimensions",
 	"time": "Temps",
-    "sold": "Vendu"
+    "sold": "Vendu",
+
+    "contact_name": "Votre nom",
+    "contact_email": "Votre email",
+    "contact_message": "Votre message",
+    "contact_send": "Envoyer",
+    "contact_success": "Votre message a été envoyé avec succès"
 }

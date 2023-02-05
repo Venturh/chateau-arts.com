@@ -1,7 +1,7 @@
 import { useTranslations } from 'next-intl'
 
 import { Link } from '@/components/link'
-import { SainityImage } from '@/components/ui/sanity-image'
+import { SanityImage } from '@/components/ui/sanity-image'
 import { Exhibition } from '@/lib/sanity.queries'
 import { toDate } from '@/lib/utils'
 
@@ -18,12 +18,7 @@ export function ExhibitionRowCard({ exhibition }: Props) {
 			key={slug}
 		>
 			<div className="md:w-[50%]">
-				<SainityImage
-					ratio={4 / 3}
-					className="mt-1 rounded"
-					image={exhibition.images[0]}
-					alt={title}
-				/>
+				<SanityImage className="mt-1 rounded" image={exhibition.images[0]} />
 			</div>
 			<div className="mt-4 self-center md:w-[40%] md:pl-32">
 				<h2 className="relative z-10 text-2xl  tracking-tight text-zinc-800">{title}</h2>
