@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/swiper.min.css'
 import 'swiper/css/free-mode'
 import 'swiper/css/navigation'
+import 'swiper/css/pagination'
 import 'swiper/css/thumbs'
 import { Pagination, Thumbs, Zoom } from 'swiper'
 import { PaginationOptions } from 'swiper/types'
@@ -26,12 +27,12 @@ export function ImagesTabs({ images, fill }: Props) {
 		clickable: true,
 	}
 
-	//the more images the more height
 	const heightMap = {
 		1: 'h-full',
-		2: 'h-[40%]',
-		3: 'h-[60%]',
-		5: 'h-full',
+		2: 'h-[300px]',
+		3: 'h-[300px]',
+		4: 'h-[300px]',
+		5: 'h-[700px]',
 	}
 	return (
 		<div className="lg:grid lg:grid-cols-12 lg:gap-x-8 ">
@@ -45,7 +46,7 @@ export function ImagesTabs({ images, fill }: Props) {
 			>
 				{images.map((image) => (
 					<SwiperSlide key={image._key}>
-						<SanityImage image={image} />
+						<SanityImage aspectRatio={2 / 3} image={image} />
 					</SwiperSlide>
 				))}
 			</Swiper>
@@ -60,7 +61,7 @@ export function ImagesTabs({ images, fill }: Props) {
 				{images.map((image) => (
 					<SwiperSlide key={image._key}>
 						<div className="swiper-zoom-container">
-							<SanityImage fill={fill} image={image} />
+							<SanityImage className="rounded border" aspectRatio={1} fill={fill} image={image} />
 						</div>
 					</SwiperSlide>
 				))}
