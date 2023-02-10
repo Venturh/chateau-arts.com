@@ -6,6 +6,7 @@ import { ExhibitGrid } from '@/components/exhibits/exhibit-grid'
 import { Breadcrumb, Breadcrumbs } from '@/components/ui/breadcumbs'
 import { ButtonLink } from '@/components/ui/button'
 import { ImagesTabs } from '@/components/ui/images-tabs'
+import { SanityImage } from '@/components/ui/sanity-image'
 import { ScrollToButton } from '@/components/ui/scroll-to-button'
 import { SectionHeader } from '@/components/ui/section-header'
 import { toDate } from '@/lib/utils'
@@ -39,10 +40,9 @@ export default function ExhibitionPage({ params: { slug } }: Props) {
 		<div>
 			<Breadcrumbs breadcrumbs={breadcrumbs} />
 
-			<ImagesTabs images={exhibition.images} />
 			<div className="mx-auto flex max-w-2xl flex-col-reverse  pt-10 pb-16  lg:grid lg:max-w-7xl lg:grid-cols-3  lg:gap-x-8  lg:pt-16 lg:pb-24">
 				<div className="mt-6 lg:col-span-2 lg:mt-0 lg:border-r lg:border-gray-200  lg:pr-8">
-					<p className="mx-auto max-w-lg text-base text-gray-900">{exhibition.description}</p>
+					<p className="mx-auto max-w-2xl text-base text-gray-900">{exhibition.description}</p>
 				</div>
 				<div className="lg:row-span-3">
 					<SectionHeader
@@ -58,6 +58,9 @@ export default function ExhibitionPage({ params: { slug } }: Props) {
 						</ScrollToButton>
 					</div>
 				</div>
+			</div>
+			<div className="my-6 ">
+				<ImagesTabs fill images={exhibition.images} />
 			</div>
 			<div id="exhibits">
 				<ExhibitGrid title={t('exhibition-exhibits')} exhibits={exhibition.exhibits} />
