@@ -42,7 +42,9 @@ export function ExhibitionLandingSlider({ exhibitions, locale }: Props) {
 								<SectionHeader title={title} description={`${toDate(from)} - ${toDate(to)}`} />
 								<ButtonLink href={`/${locale}/exhibitions/${slug}`}>Zur Austellung</ButtonLink>
 							</div>
-							<SanityImage className="rounded" image={images[0]} />
+							<div className="lg:h-[75vh]">
+								<SanityImage className="rounded" image={images[0]} />
+							</div>
 						</Link>
 					</SwiperSlide>
 				)

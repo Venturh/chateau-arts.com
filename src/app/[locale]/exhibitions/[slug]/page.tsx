@@ -59,7 +59,7 @@ export default function ExhibitionPage({ params: { slug } }: Props) {
 					</div>
 				</div>
 			</div>
-			<div className="my-6 ">
+			<div className="pb-12">
 				<ImagesTabs fill images={exhibition.images} />
 			</div>
 			<div id="exhibits">

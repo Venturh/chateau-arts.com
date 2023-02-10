@@ -34,8 +34,9 @@ export function ImagesTabs({ images, fill }: Props) {
 		4: 'h-[300px]',
 		5: 'h-[700px]',
 	}
+
 	return (
-		<div className="lg:grid lg:grid-cols-12 lg:gap-x-8 ">
+		<div className="h-96 lg:grid lg:h-[700px] lg:grid-cols-12 lg:gap-x-8">
 			<Swiper
 				onSwiper={setThumbsSwiper}
 				slidesPerView={images.length}
