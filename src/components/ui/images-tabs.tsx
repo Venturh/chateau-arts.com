@@ -19,7 +19,7 @@ type Props = {
 	images: SanityImageType[]
 }
 
-export function ImagesTabs({ images, fill }: Props) {
+export function ImagesTabs({ images }: Props) {
 	const [thumbsSwiper, setThumbsSwiper] = useState(null)
 
 	const pagination: PaginationOptions = {
