@@ -81,7 +81,7 @@ export default async function handler(req: NextRequest) {
 							lineHeight: 1.4,
 						}}
 					>
-						{mappedType[type] ? `${mappedType[type]}: ${pageTitle}` : pageTitle}
+						{mappedType[type] ? `${mappedType[type]} -  ${pageTitle}` : pageTitle}
 					</div>
 				) : null}
 			</div>

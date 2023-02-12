@@ -6,7 +6,7 @@ import { useLocale, useTranslations } from 'next-intl'
 import { ExhibitGrid } from '@/components/exhibits/exhibit-grid'
 import { Badge } from '@/components/ui/badge'
 import { Breadcrumb, Breadcrumbs } from '@/components/ui/breadcumbs'
-import { Button, ButtonLink } from '@/components/ui/button'
+import { ButtonLink } from '@/components/ui/button'
 import { ImagesTabs } from '@/components/ui/images-tabs'
 import { getOgImage, toCurrency } from '@/lib/utils'
 
@@ -27,6 +27,7 @@ export async function generateMetadata({ params }): Promise<Metadata> {
 	const title = `${exhibit.title} (${year}) - ${artist}`
 	const description = `${exhibit.title}  - ${artist}`
 	const ogImage = getOgImage(locale, exhibit.title, 'exhibit')
+
 	return {
 		title,
 		description,
