@@ -33,6 +33,7 @@ export default function ExhibitContact({ params: { slug } }: Props) {
 					<SectionHeader title={t('contact')} />
 					<ExhibitRowCard {...exhibit} />
 					<ContactForm
+						exhibit={exhibit}
 						contactName={t('contact_name')}
 						contactEmail={t('contact_email')}
 						contactMessage={t('contact_message')}

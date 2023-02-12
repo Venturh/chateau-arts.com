@@ -19,6 +19,7 @@ specifiers:
   '@tailwindcss/line-clamp': ^0.4.2
   '@tailwindcss/typography': ^0.5.9
   '@types/node': ^17.0.12
+  '@types/nodemailer': ^6.4.7
   '@types/react': ^18.0.22
   '@types/react-dom': ^18.0.7
   autoprefixer: ^10.4.13
@@ -36,6 +37,7 @@ specifiers:
   next-sanity: ^4.1.1
   next-sanity-image: ^5.0.0
   next-themes: ^0.2.1
+  nodemailer: ^6.9.1
   postcss: ^8.4.14
   prettier: ^2.8.3
   react: ^18.2.0
@@ -64,6 +66,7 @@ dependencies:
   '@sanity/ui': 1.2.0_23mhwjhnzfjwvdn7ol54k26zom
   '@sanity/vision': 3.2.5_23mhwjhnzfjwvdn7ol54k26zom
   '@tailwindcss/line-clamp': 0.4.2_tailwindcss@3.2.4
+  '@types/nodemailer': 6.4.7
   class-variance-authority: 0.4.0_typescript@4.9.4
   clsx: 1.2.1
   eslint-plugin-prettier: 4.2.1_cn4lalcyadplruoxa5mhp7j3dq
@@ -73,6 +76,7 @@ dependencies:
   next-sanity: 4.1.1_ssercycgwticy7yh7tiii5qqh4
   next-sanity-image: 5.0.0_ng3quvz6hhaj3so3chv6telgeq
   next-themes: 0.2.1_3x5l3eqgjwm4gbmm5f6wmjtosy
+  nodemailer: 6.9.1
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-is: 18.2.0
@@ -3155,6 +3159,12 @@ packages:
 
   /@types/node/17.0.45:
     resolution: {integrity: sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==}
+
+  /@types/nodemailer/6.4.7:
+    resolution: {integrity: sha512-f5qCBGAn/f0qtRcd4SEn88c8Fp3Swct1731X4ryPKqS61/A3LmmzN8zaEz7hneJvpjFbUUgY7lru/B/7ODTazg==}
+    dependencies:
+      '@types/node': 17.0.45
+    dev: false
 
   /@types/normalize-package-data/2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
@@ -6451,6 +6461,11 @@ packages:
 
   /node-releases/2.0.8:
     resolution: {integrity: sha512-dFSmB8fFHEH/s81Xi+Y/15DQY6VHW81nXRj86EMSL3lmuTmK1e+aT4wrFCkTbm+gSwkw4KpX+rT/pMM2c1mF+A==}
+
+  /nodemailer/6.9.1:
+    resolution: {integrity: sha512-qHw7dOiU5UKNnQpXktdgQ1d3OFgRAekuvbJLcdG5dnEo/GtcTHRYM7+UfJARdOFU9WUQO8OiIamgWPmiSFHYAA==}
+    engines: {node: '>=6.0.0'}
+    dev: false
 
   /normalize-package-data/2.5.0:
     resolution: {integrity: sha512-/5CMN3T0R4XTj4DcGaexo+roZSdSFW/0AOOTROrjxzCG1wrWXEsGbRKevjlIL+ZDE4sZlJr5ED4YW0yqmkK+eA==}

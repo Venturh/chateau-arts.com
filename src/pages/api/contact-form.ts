@@ -1,33 +1,26 @@
 import { NextApiRequest, NextApiResponse } from 'next'
+import { SendMailOptions, createTransport } from 'nodemailer'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+	const transporter = createTransport({
+		host: 'smtp.ethereal.email', //mail.privateemail.com
+		port: 587, //465
+		// 	secure: true,
+		auth: {
+			user: process.env.PRIVATE_MAIL,
+			pass: process.env.PRIVATE_MAIL_PASSWORD,
+		},
+	})
 	const body = req.body
-
-	const msg = {
-		template_id: process.env.SENDGRID_TEMPLATE_ID,
-		from: { email: process.env.SENDGRID_MAIL },
-		personalizations: [
-			{
-				to: [{ email: 'venturh94@gmail.com', name: '' }],
-				dynamic_template_data: {
-					exhibit: body.exhibit,
-					name: body.name,
-					email: body.email,
-					message: body.message,
-				},
-			},
-		],
+	const msg: SendMailOptions = {
+		from: body.email,
+		to: process.env.PRIVATE_MAIL,
+		subject: 'Neue Nachricht von ' + body.name,
+		html: `<div> <h1>Neue Nachricht von ${body.name}</h1> <div>Exhibit: ${body.exhibit}</div> <p>Email: ${body.email}</p> <p>Nachricht: ${body.message}</p> </div>`,
 	}
 
 	try {
-		const data = await fetch('https://api.sendgrid.com/v3/mail/send', {
-			method: 'POST',
-			body: JSON.stringify(msg),
-			headers: {
-				'content-type': 'application/json',
-				Authorization: `Bearer ${process.env.SENDGRID_TOKEN}`,
-			},
-		})
+		await transporter.sendMail(msg)
 		return res.status(200).end()
 	} catch (error) {
 		return res.status(500).end()
