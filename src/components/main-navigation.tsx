@@ -9,6 +9,7 @@ import * as Dialog from '@radix-ui/react-dialog'
 import { Logo } from '@/components/logo'
 import { cn } from '@/lib/utils'
 import { NavItem } from '@/types/nav'
+import { LanguageSelect } from './language-select'
 
 type Props = {
 	navigation: NavItem[]
@@ -62,6 +63,7 @@ export function MainNavigation({ navigation, locale }: Props) {
 							{item.name}
 						</Link>
 					))}
+					<LanguageSelect locale={locale} />
 				</div>
 			</nav>
 			<Dialog.Root open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>

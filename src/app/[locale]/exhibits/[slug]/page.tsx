@@ -1,5 +1,6 @@
 import { use } from 'react'
-import { getExhibitBySlug, getLatestExceptSlugExhibits, getLatestExhibits } from 'lib/sanity.client'
+import type { Metadata } from 'next'
+import { getExhibitBySlug, getLatestExceptSlugExhibits } from 'lib/sanity.client'
 import { useLocale, useTranslations } from 'next-intl'
 
 import { ExhibitGrid } from '@/components/exhibits/exhibit-grid'
@@ -7,7 +8,7 @@ import { Badge } from '@/components/ui/badge'
 import { Breadcrumb, Breadcrumbs } from '@/components/ui/breadcumbs'
 import { Button, ButtonLink } from '@/components/ui/button'
 import { ImagesTabs } from '@/components/ui/images-tabs'
-import { toCurrency } from '@/lib/utils'
+import { getOgImage, toCurrency } from '@/lib/utils'
 
 type Props = {
 	params: {
@@ -15,12 +16,41 @@ type Props = {
 	}
 }
 
-//not supported by next-i18n yet, using headers
-//export const revalidate = 60
-// export async function generateStaticParams() {
-// 	const exhibitions = await getAllExhibitions()
-// 	return exhibitions.map(({ slug }) => ({ slug }))
-// }
+export async function generateMetadata({ params }): Promise<Metadata> {
+	const { locale, slug } = params
+	const exhibit = await getExhibitBySlug(locale, slug)
+
+	if (!exhibit) {
+		return
+	}
+	const { artist, year } = exhibit
+	const title = `${exhibit.title} (${year}) - ${artist}`
+	const description = `${exhibit.title}  - ${artist}`
+	const ogImage = getOgImage(locale, exhibit.title, 'exhibit')
+	return {
+		title,
+		description,
+		openGraph: {
+			//@ts-expect-error seems to be wrong
+			title,
+			description,
+			//@ts-expect-error seems to be wrong
+			type: 'article',
+			locale,
+			url: `https://elisabethwerpers.com/exhibits/${slug}`,
+			images: [
+				{
+					url: ogImage,
+				},
+			],
+		},
+		twitter: {
+			card: 'summary_large_image',
+			title,
+			images: [ogImage],
+		},
+	}
+}
 
 export default function ExhibitionPage({ params: { slug } }: Props) {
 	const locale = useLocale()

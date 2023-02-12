@@ -25,3 +25,10 @@ export function toShortDate(value: string) {
 		day: 'numeric',
 	})
 }
+
+export function getOgImage(locale: string, title?: string, type?: 'exhibition' | 'exhibit') {
+	let url = `https://elisabethwerpers.com/api/og?locale=${locale}`
+	if (title) url += `&title=${title}`
+	if (type) url += `&type=${type}`
+	return url
+}
