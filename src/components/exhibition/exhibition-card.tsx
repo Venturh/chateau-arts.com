@@ -5,16 +5,19 @@ import { toDate } from '@/lib/utils'
 
 interface Props {
 	exhibition: Exhibition
-	withBlur?: boolean
+	upcoming?: boolean
 }
-export function ExhibitionCard({ exhibition, withBlur }: Props) {
+export function ExhibitionCard({ exhibition, upcoming }: Props) {
 	const { slug, title } = exhibition
+	const Tag = upcoming ? 'div' : Link
 	return (
-		<Link href={`/exhibitions/${slug}`} className="group overflow-hidden rounded" key={slug}>
-			{withBlur ? (
-				<div className="h-48 w-full bg-gray-100 lg:h-96" />
+		<Tag href={`/exhibitions/${slug}`} className="group  overflow-hidden rounded" key={slug}>
+			{upcoming ? (
+				<div className="h-48 w-full bg-gray-100 lg:h-72" />
 			) : (
-				<SanityImage className="mt-1 rounded" image={exhibition.images[0]} />
+				<div className="relative h-[250px] w-full">
+					<SanityImage fill className="rounde relative mt-1 h-72" image={exhibition.images[0]} />
+				</div>
 			)}
 			<div className="mt-4">
 				<h2 className="relative z-10 text-xl  tracking-tight text-zinc-800">{title}</h2>
@@ -22,6 +25,6 @@ export function ExhibitionCard({ exhibition, withBlur }: Props) {
 					{toDate(exhibition.from)} - {toDate(exhibition.to)}
 				</span>
 			</div>
-		</Link>
+		</Tag>
 	)
 }

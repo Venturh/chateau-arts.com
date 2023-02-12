@@ -26,8 +26,12 @@ export function ExhibitionLandingShowcase({ exhibition, locale, height, width }:
 	return (
 		<Link href={href} className="relative h-full w-full ">
 			<div className="absolute top-4 left-4 rounded bg-zinc-200 p-2">
-				<SectionHeader title={title} description={`${toDate(from)} - ${toDate(to)}`} />
+				<h1 className="text-xl font-bold tracking-tight text-gray-900 lg:text-3xl">{title}</h1>
+				<p className="mt-2 max-w-xl text-sm text-gray-700  lg:text-base">
+					{`${toDate(from)} - ${toDate(to)}`}
+				</p>
 			</div>
+
 			<div>
 				<SanityImage
 					width={width}

@@ -37,14 +37,12 @@ export default function Index() {
 				<Divider>{t('upcoming-exhibitions')}</Divider>
 				<div className="grid gap-x-6 md:grid-cols-2  md:gap-y-6">
 					{upcomingExhibtions.length > 0 ? (
-						[...[currentExhibition], ...upcomingExhibtions, ...upcomingExhibtions].map(
-							(exhibition) => (
-								<div key={exhibition.slug}>
-									<ExhibitionCard exhibition={exhibition} withBlur />
-									<div className="z-10 my-6 h-[1px] w-full bg-zinc-200 md:hidden " />
-								</div>
-							)
-						)
+						upcomingExhibtions.map((exhibition) => (
+							<div key={exhibition.slug}>
+								<ExhibitionCard exhibition={exhibition} upcoming />
+								<div className="z-10 my-6 h-[1px] w-full bg-zinc-200 md:hidden " />
+							</div>
+						))
 					) : (
 						<EmptyState text={t('no-upcoming-exhibitions')} icon={<PhotoIcon />} />
 					)}

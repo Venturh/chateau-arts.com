@@ -39,9 +39,6 @@ export function urlFor(source: unknown) {
 
 async function fetchAPI(query: string, previewData?: {}) {
 	const res = await client.fetch(query, previewData)
-	if (!res) {
-		return notFound()
-	}
 	return res
 }
 

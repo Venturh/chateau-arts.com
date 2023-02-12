@@ -6,7 +6,6 @@ import { ExhibitGrid } from '@/components/exhibits/exhibit-grid'
 import { Breadcrumb, Breadcrumbs } from '@/components/ui/breadcumbs'
 import { ButtonLink } from '@/components/ui/button'
 import { ImagesTabs } from '@/components/ui/images-tabs'
-import { SanityImage } from '@/components/ui/sanity-image'
 import { ScrollToButton } from '@/components/ui/scroll-to-button'
 import { SectionHeader } from '@/components/ui/section-header'
 import { toDate } from '@/lib/utils'
@@ -60,7 +59,7 @@ export default function ExhibitionPage({ params: { slug } }: Props) {
 				</div>
 			</div>
 			<div className="pb-12">
-				<ImagesTabs fill images={exhibition.images} />
+				<ImagesTabs images={exhibition.images} />
 			</div>
 			<div id="exhibits">
 				<ExhibitGrid title={t('exhibition-exhibits')} exhibits={exhibition.exhibits} />

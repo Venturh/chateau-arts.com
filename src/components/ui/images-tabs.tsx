@@ -8,7 +8,7 @@ import 'swiper/css/free-mode'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/thumbs'
-import { Pagination, Thumbs, Zoom } from 'swiper'
+import { Pagination, Thumbs } from 'swiper'
 import { PaginationOptions } from 'swiper/types'
 
 import type { SanityImageType } from '@/lib/sanity.queries'
@@ -17,7 +17,6 @@ import { SanityImage } from './sanity-image'
 
 type Props = {
 	images: SanityImageType[]
-	fill?: boolean
 }
 
 export function ImagesTabs({ images, fill }: Props) {
@@ -28,7 +27,7 @@ export function ImagesTabs({ images, fill }: Props) {
 	}
 
 	const heightMap = {
-		1: 'h-full',
+		1: 'h-[100px]',
 		2: 'h-[300px]',
 		3: 'h-[300px]',
 		4: 'h-[300px]',
@@ -36,7 +35,7 @@ export function ImagesTabs({ images, fill }: Props) {
 	}
 
 	return (
-		<div className="h-96 lg:grid lg:h-[700px] lg:grid-cols-12 lg:gap-x-8">
+		<div className="h-96 lg:grid lg:h-[650px] lg:grid-cols-12 lg:gap-x-8">
 			<Swiper
 				onSwiper={setThumbsSwiper}
 				slidesPerView={images.length}
@@ -47,24 +46,22 @@ export function ImagesTabs({ images, fill }: Props) {
 			>
 				{images.map((image) => (
 					<SwiperSlide key={image._key}>
-						<SanityImage aspectRatio={2 / 3} image={image} />
+						<SanityImage fill image={image} />
 					</SwiperSlide>
 				))}
 			</Swiper>
 			<Swiper
-				className="h-full w-full lg:col-span-10"
+				className="h-full w-full rounded-md border lg:col-span-8"
 				zoom
 				speed={900}
 				watchSlidesProgress
 				thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
 				pagination={pagination}
-				modules={[Zoom, Pagination, Thumbs]}
+				modules={[Pagination, Thumbs]}
 			>
 				{images.map((image) => (
 					<SwiperSlide key={image._key}>
-						<div className="swiper-zoom-container">
-							<SanityImage className="rounded border" aspectRatio={1} fill={fill} image={image} />
-						</div>
+						<SanityImage fill image={image} />
 					</SwiperSlide>
 				))}
 			</Swiper>

@@ -10,8 +10,10 @@ export function ExhibitCard(exhibit: Exhibit) {
 	const { sold } = exhibit
 	const t = useTranslations()
 	return (
-		<Link className="group  space-y-3" href={`/exhibits/${exhibit.slug}`}>
-			<SanityImage className="overflow-hidden rounded-md border" image={exhibit.images[0]} />
+		<Link className="group relative space-y-3" href={`/exhibits/${exhibit.slug}`}>
+			<div className="relative h-[250px] w-full">
+				<SanityImage fill className="rounded-md border bg-zinc-50" image={exhibit.images[0]} />
+			</div>
 
 			<div>
 				<div className="flex items-start justify-between">
