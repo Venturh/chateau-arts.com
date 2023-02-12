@@ -18,10 +18,15 @@
 	"to-current-exhibition": "Aktuelle Austellung",
 	"to-virtual-exhibition": "Zur virtuellen Austellung",
 	"all-exhibitions": "Alle Austellungen ansehen",
-    "no-current-exhibitions": "Keine aktuellen Austellungen",
+    "no-current-exhibitions": "Derzeit gibt es keine aktuelle Austellungen",
+    "no-upcoming-exhibitions": "Derzeit gibt es keine kommenden Austellungen",
+    "no-past-exhibitions": "Derzeit gibt es keine vergangenen Austellungen",
+
 
 	"current": "Aktuelle",
 	"past": "Vergangene",
+	"upcoming": "Kommende",
+	"upcoming-exhibitions": "Kommende Austellungen",
 	"filters": "Filter",
 	"details": "Details",
 	"read-more": "Weiterlesen",

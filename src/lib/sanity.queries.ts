@@ -41,12 +41,17 @@ export const exhibitionLatestQuery = groq`
   }`
 
 export const exhibitionCurrentQuery = groq`
-*[_type == "exhibition" && __i18n_lang == $lang && from <= "${today}" && "${today}" <= to ] | order(from desc) | order(to desc) [0...3] {
+*[_type == "exhibition" && __i18n_lang == $lang && from <= "${today}" && "${today}" <= to ] | order(from desc) | order(to desc) [0] {
     ${exhibitionFields}
   }`
 
 export const exhibitionPastQuery = groq`
 *[_type == "exhibition" && __i18n_lang == $lang && from <= "${today}" && to < "${today}" ] | order(from desc) | order(to desc) [0...3] {
+    ${exhibitionFields}
+  }`
+
+export const exhibitionUpcomingQuery = groq`
+*[_type == "exhibition" && __i18n_lang == $lang && from > "${today}"] | order(from desc) | order(to desc) [0...3] {
     ${exhibitionFields}
   }`
 

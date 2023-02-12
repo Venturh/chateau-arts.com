@@ -14,6 +14,7 @@ import {
 	exhibitionLatestQuery,
 	exhibitionPastQuery,
 	exhibitionSlugQuery,
+	exhibitionUpcomingQuery,
 } from './sanity.queries'
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID
@@ -50,11 +51,14 @@ export async function getAllExhibitions(lang: string): Promise<Exhibition[]> {
 export async function getLatest3Exhibitions(lang: string): Promise<Exhibition[]> {
 	return await fetchAPI(exhibitionLatestQuery, { lang })
 }
-export async function getCurrentExhibitions(lang: string): Promise<Exhibition[]> {
+export async function getCurrentExhibition(lang: string): Promise<Exhibition> {
 	return await fetchAPI(exhibitionCurrentQuery, { lang })
 }
 export async function getPastExhibitions(lang: string): Promise<Exhibition[]> {
 	return await fetchAPI(exhibitionPastQuery, { lang })
+}
+export async function getUpcommingExhibitions(lang: string): Promise<Exhibition[]> {
+	return await fetchAPI(exhibitionUpcomingQuery, { lang })
 }
 
 export async function getExhibitionBySlug(lang: string, slug: string): Promise<Exhibition> {

@@ -49,7 +49,7 @@ export default function ExhibitionPage({ params: { slug } }: Props) {
 						title={exhibition.title}
 						description={`${toDate(exhibition.from)} - ${toDate(exhibition.to)}`}
 					/>
-					<div className="flex items-center space-x-2">
+					<div className="mt-6 flex items-center space-x-2">
 						<ButtonLink href={`/${locale}/exhibitions/${slug}/virtual`} size="lg">
 							{t('to-virtual-exhibition')}
 						</ButtonLink>

@@ -4,8 +4,6 @@
 	"exhibits": "Exhibits",
 	"exhibition-exhibits": "Exhibits of the exhibition",
 
-
-
 	"pages": "Pages",
 	"social": "Social",
 	"language": "Languages",
@@ -19,12 +17,15 @@
 	"to-current-exhibition": "Current exhibition",
 	"to-virtual-exhibition": "Virtual exhibition",
 	"all-exhibitions": "View all exhibitions",
-    "no-current-exhibitions": "No current exhibitions",
-
+    "no-current-exhibitions": "Currently there are no current exhibitions",
+    "no-upcoming-exhibitions": "Currently there are no upcoming exhibitions",
+    "no-past-exhibitions": "Currently there are no past exhibitions",
 
 
 	"current": "Current",
 	"past": "Past",
+	"upcoming": "Upcoming",
+	"upcoming-exhibitions": "Upcoming Exhibitions",
 	"filters": "Filters",
 	"details": "Details",
 	"read-more": "Read more",
