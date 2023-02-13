@@ -26,10 +26,10 @@ export function ExhibitionLandingShowcase({ exhibition, locale, height, width }:
 	return (
 		<Link href={href} className="relative h-full w-full ">
 			<div className="absolute top-4 left-4 rounded bg-neutral-200 p-2 dark:bg-neutral-800">
-				<h1 className="text-xl font-bold tracking-tight text-gray-900 dark:text-neutral-100 lg:text-3xl">
+				<h1 className="text-xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 lg:text-3xl">
 					{title}
 				</h1>
-				<p className="mt-2 max-w-xl text-sm text-gray-700 dark:text-neutral-200 lg:text-base">
+				<p className="mt-2 max-w-xl text-sm text-neutral-700 dark:text-neutral-200 lg:text-base">
 					{`${toDate(from)} - ${toDate(to)}`}
 				</p>
 			</div>
@@ -38,7 +38,7 @@ export function ExhibitionLandingShowcase({ exhibition, locale, height, width }:
 				<SanityImage
 					width={width}
 					height={height}
-					className="rounded-md shadow-2xl ring-1 ring-gray-900/10"
+					className="rounded-md shadow-2xl ring-1 ring-neutral-900/10"
 					image={images[0]}
 				/>
 			</div>

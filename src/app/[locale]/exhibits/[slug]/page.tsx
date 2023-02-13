@@ -61,7 +61,7 @@ export default function ExhibitionPage({ params: { slug } }: Props) {
 					</div>
 					<div className="mt-10 space-y-6 px-4 sm:mt-16 sm:px-0 lg:mt-0">
 						<h1 className="sr-only">Title</h1>
-						<h1 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-neutral-100">
+						<h1 className="text-3xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100">
 							{exhibit.title}
 						</h1>
 						<div className="mt-3">
@@ -69,15 +69,15 @@ export default function ExhibitionPage({ params: { slug } }: Props) {
 							{exhibit.sold ? (
 								<Badge size="lg">{t('sold')}</Badge>
 							) : (
-								<p className="text-3xl tracking-tight text-gray-900 dark:text-neutral-100">
+								<p className="text-3xl tracking-tight text-neutral-900 dark:text-neutral-100">
 									{toCurrency(exhibit.price)}
 								</p>
 							)}
 						</div>
 						<div>
 							<h3 className="sr-only">Information</h3>
-							<div className="text-gray-800 dark:text-neutral-200">{exhibit.artist}</div>
-							<div className="text-gray-800 dark:text-neutral-200">{exhibit.year}</div>
+							<div className="text-neutral-800 dark:text-neutral-200">{exhibit.artist}</div>
+							<div className="text-neutral-800 dark:text-neutral-200">{exhibit.year}</div>
 						</div>
 						<ButtonLink href={`/${locale}/exhibits/${exhibit.slug}/contact`}>
 							{t('request-exhibit')}
@@ -92,7 +92,7 @@ export default function ExhibitionPage({ params: { slug } }: Props) {
 									.filter((line: string) => line !== '')
 									.map((line: string) => (
 										<li key={line}>
-											<div className="text-sm font-medium text-gray-900 dark:text-neutral-100">
+											<div className="text-sm font-medium text-neutral-900 dark:text-neutral-100">
 												{line}
 											</div>
 										</li>

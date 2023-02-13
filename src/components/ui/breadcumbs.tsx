@@ -21,7 +21,7 @@ export function Breadcrumbs({ breadcrumbs }: Props) {
 							<div className="flex items-center">
 								<Tag
 									href={href}
-									className={cn('mr-4 text-sm font-medium text-gray-900 dark:text-neutral-100', {
+									className={cn('mr-4 text-sm font-medium text-neutral-900 dark:text-neutral-100', {
 										underline: href,
 									})}
 								>
@@ -32,7 +32,7 @@ export function Breadcrumbs({ breadcrumbs }: Props) {
 										viewBox="0 0 6 20"
 										xmlns="http://www.w3.org/2000/svg"
 										aria-hidden="true"
-										className="h-5 w-auto text-gray-300"
+										className="h-5 w-auto text-neutral-300"
 									>
 										<path d="M4.878 4.34H3.551L.27 16.532h1.327l3.281-12.19z" fill="currentColor" />
 									</svg>

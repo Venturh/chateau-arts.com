@@ -29,7 +29,7 @@ export function LanguageSelect({ locale }: Props) {
 				</Button>
 			</SelectPrimitive.Trigger>
 			<SelectPrimitive.Content>
-				<SelectPrimitive.ScrollUpButton className="flex items-center justify-center text-gray-700">
+				<SelectPrimitive.ScrollUpButton className="flex items-center justify-center text-neutral-700">
 					<ChevronUpIcon />
 				</SelectPrimitive.ScrollUpButton>
 				<SelectPrimitive.Viewport className="rounded-lg bg-white p-2 shadow-lg dark:bg-neutral-800 ">
@@ -40,7 +40,7 @@ export function LanguageSelect({ locale }: Props) {
 								key={id}
 								value={id}
 								className={cn(
-									'relative flex items-center rounded-md px-8 py-2 text-sm font-medium text-gray-700 focus:bg-gray-100 dark:text-neutral-200 dark:focus:bg-neutral-700',
+									'relative flex items-center rounded-md px-8 py-2 text-sm font-medium text-neutral-700 focus:bg-neutral-100 dark:text-neutral-200 dark:focus:bg-neutral-700',
 									'radix-disabled:opacity-50',
 									'select-none focus:outline-none'
 								)}
@@ -50,7 +50,7 @@ export function LanguageSelect({ locale }: Props) {
 						))}
 					</SelectPrimitive.Group>
 				</SelectPrimitive.Viewport>
-				<SelectPrimitive.ScrollDownButton className="flex items-center justify-center text-gray-700">
+				<SelectPrimitive.ScrollDownButton className="flex items-center justify-center text-neutral-700">
 					<ChevronDownIcon className="h-4 w-4" />
 				</SelectPrimitive.ScrollDownButton>
 			</SelectPrimitive.Content>

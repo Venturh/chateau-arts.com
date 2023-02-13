@@ -31,22 +31,22 @@ export function Footer({ footer, locale, languageLocale }: Props) {
 		),
 	}))
 	return (
-		<div className="flex w-full flex-col space-y-6 border-t border-gray-900/10 bg-gray-50 pt-6 text-base dark:border-neutral-800 dark:bg-neutral-900">
+		<div className="flex w-full flex-col space-y-6 border-t border-neutral-900/10 bg-neutral-50 pt-6 text-base dark:border-neutral-800 dark:bg-neutral-900">
 			<div className="mx-auto w-full max-w-5xl px-6 py-3 lg:px-8">
 				<div className="hidden pb-4 md:grid md:grid-cols-4 md:gap-4">
 					{footerItems.map(({ title, content }) => (
 						<div className="space-y-2" key={title}>
-							<span className="text-sm font-semibold leading-6 text-gray-900 dark:text-neutral-100">
+							<span className="text-sm font-semibold leading-6 text-neutral-900 dark:text-neutral-100">
 								{title}
 							</span>
-							<div className="flex w-min flex-col space-y-3 text-sm leading-6 text-gray-600 hover:text-gray-900 dark:text-neutral-100 dark:hover:text-neutral-200 ">
+							<div className="flex w-min flex-col space-y-3 text-sm leading-6 text-neutral-600 hover:text-neutral-900 dark:text-neutral-100 dark:hover:text-neutral-200 ">
 								{content.map((c) => c)}
 							</div>
 						</div>
 					))}
 
 					<div className="space-y-2">
-						<h3 className="text-sm font-semibold leading-6 text-gray-900 dark:text-neutral-100">
+						<h3 className="text-sm font-semibold leading-6 text-neutral-900 dark:text-neutral-100">
 							{languageLocale}
 						</h3>
 						<LanguageSelect locale={locale} />

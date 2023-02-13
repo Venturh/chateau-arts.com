@@ -13,7 +13,7 @@ export function ExhibitionCard({ exhibition, upcoming }: Props) {
 	return (
 		<Tag href={`/exhibitions/${slug}`} className="group  overflow-hidden rounded" key={slug}>
 			{upcoming ? (
-				<div className="h-48 w-full bg-gray-100 dark:bg-neutral-800 lg:h-72" />
+				<div className="h-48 w-full bg-neutral-100 dark:bg-neutral-800 lg:h-72" />
 			) : (
 				<div className="relative h-[250px] w-full">
 					<SanityImage fill className="rounde relative mt-1 h-72" image={exhibition.images[0]} />

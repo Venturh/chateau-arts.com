@@ -26,15 +26,15 @@ export default function Landing() {
 	return (
 		<div className="space-y-24">
 			<div className="mx-auto max-w-2xl py-12 text-center">
-				<h1 className="text-4xl font-bold tracking-tight text-gray-700 dark:text-neutral-300 sm:text-5xl">
+				<h1 className="text-4xl font-bold tracking-tight text-neutral-700 dark:text-neutral-300 sm:text-5xl">
 					Elisabeth Werpers
 				</h1>
-				<p className="mt-6 text-4xl leading-8 text-gray-600 dark:text-neutral-400">
+				<p className="mt-6 text-4xl leading-8 text-neutral-600 dark:text-neutral-400">
 					{t('art_trade')}
 				</p>
 			</div>
 			<div className="mt-16 flow-root sm:mt-24">
-				<div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
+				<div className="-m-2 rounded-xl bg-neutral-900/5 p-2 ring-1 ring-inset ring-neutral-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
 					{currentExhibition ? (
 						<ExhibitionLandingShowcase
 							exhibition={currentExhibition}

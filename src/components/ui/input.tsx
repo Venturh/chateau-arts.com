@@ -11,7 +11,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 			<div>
 				<label
 					htmlFor="email"
-					className="block text-sm font-medium text-gray-700 dark:text-neutral-200"
+					className="block text-sm font-medium text-neutral-700 dark:text-neutral-200"
 				>
 					{label}
 				</label>
@@ -22,7 +22,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 						{...props}
 					/>
 					{hint && (
-						<p className="mt-2 text-sm text-gray-700 dark:text-neutral-200" id="hint">
+						<p className="mt-2 text-sm text-neutral-700 dark:text-neutral-200" id="hint">
 							{hint}
 						</p>
 					)}
