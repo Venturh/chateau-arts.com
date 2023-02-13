@@ -21,10 +21,10 @@ export function ExhibitionRowCard({ exhibition }: Props) {
 				<SanityImage className="mt-1 rounded" image={exhibition.images[0]} />
 			</div>
 			<div className="mt-4 self-center md:w-[40%] md:pl-32">
-				<h2 className="relative z-10 text-2xl  tracking-tight text-zinc-900 dark:text-zinc-50">
+				<h2 className="relative z-10 text-2xl  tracking-tight text-neutral-900 dark:text-neutral-100">
 					{title}
 				</h2>
-				<span className="relative z-10 mt-2 block text-sm text-zinc-800 dark:text-zinc-200">
+				<span className="relative z-10 mt-2 block text-sm text-neutral-800 dark:text-neutral-200">
 					{toDate(exhibition.from)} - {toDate(exhibition.to)}
 				</span>
 				<span className="mt-4 block  line-clamp-3">{exhibition.description}</span>

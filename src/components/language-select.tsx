@@ -32,7 +32,7 @@ export function LanguageSelect({ locale }: Props) {
 				<SelectPrimitive.ScrollUpButton className="flex items-center justify-center text-gray-700">
 					<ChevronUpIcon />
 				</SelectPrimitive.ScrollUpButton>
-				<SelectPrimitive.Viewport className="rounded-lg bg-white p-2 shadow-lg dark:bg-zinc-800 ">
+				<SelectPrimitive.Viewport className="rounded-lg bg-white p-2 shadow-lg dark:bg-neutral-800 ">
 					<SelectPrimitive.Group>
 						{languages.map(({ id, title }, i) => (
 							<SelectPrimitive.Item
@@ -40,7 +40,7 @@ export function LanguageSelect({ locale }: Props) {
 								key={id}
 								value={id}
 								className={cn(
-									'relative flex items-center rounded-md px-8 py-2 text-sm font-medium text-gray-700 focus:bg-gray-100 dark:text-zinc-200 dark:focus:bg-zinc-700',
+									'relative flex items-center rounded-md px-8 py-2 text-sm font-medium text-gray-700 focus:bg-gray-100 dark:text-neutral-200 dark:focus:bg-neutral-700',
 									'radix-disabled:opacity-50',
 									'select-none focus:outline-none'
 								)}

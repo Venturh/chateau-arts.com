@@ -26,19 +26,25 @@ export default function Landing() {
 	return (
 		<div className="space-y-24">
 			<div className="mx-auto max-w-2xl py-12 text-center">
-				<h1 className="text-4xl font-bold tracking-tight text-gray-700 dark:text-zinc-300 sm:text-5xl">
+				<h1 className="text-4xl font-bold tracking-tight text-gray-700 dark:text-neutral-300 sm:text-5xl">
 					Elisabeth Werpers
 				</h1>
-				<p className="mt-6 text-4xl leading-8 text-gray-600 dark:text-zinc-400">{t('art_trade')}</p>
+				<p className="mt-6 text-4xl leading-8 text-gray-600 dark:text-neutral-400">
+					{t('art_trade')}
+				</p>
 			</div>
 			<div className="mt-16 flow-root sm:mt-24">
 				<div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
-					<ExhibitionLandingShowcase
-						exhibition={currentExhibition}
-						width={2432}
-						height={1442}
-						locale={locale}
-					/>
+					{currentExhibition ? (
+						<ExhibitionLandingShowcase
+							exhibition={currentExhibition}
+							width={2432}
+							height={1442}
+							locale={locale}
+						/>
+					) : (
+						<div className="h-[75vh] w-full rounded bg-neutral-100 dark:bg-neutral-800"></div>
+					)}
 				</div>
 			</div>
 			<div className="">
@@ -48,7 +54,7 @@ export default function Landing() {
 						upcomingExhibtions.map((exhibition) => (
 							<div key={exhibition.slug}>
 								<ExhibitionCard exhibition={exhibition} upcoming />
-								<div className="z-10 my-6 h-[1px] w-full bg-zinc-200 md:hidden " />
+								<div className="z-10 my-6 h-[1px] w-full bg-neutral-200 md:hidden " />
 							</div>
 						))
 					) : (

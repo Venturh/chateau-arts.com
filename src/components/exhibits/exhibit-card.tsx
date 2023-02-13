@@ -12,7 +12,11 @@ export function ExhibitCard(exhibit: Exhibit) {
 	return (
 		<Link className="group relative space-y-3" href={`/exhibits/${exhibit.slug}`}>
 			<div className="relative h-[250px] w-full">
-				<SanityImage fill className="rounded-md border bg-zinc-50" image={exhibit.images[0]} />
+				<SanityImage
+					fill
+					className="rounded-md border bg-neutral-100 dark:border-neutral-800 dark:bg-neutral-800"
+					image={exhibit.images[0]}
+				/>
 			</div>
 
 			<div>
@@ -20,7 +24,7 @@ export function ExhibitCard(exhibit: Exhibit) {
 					<h3 className="font-medium leading-none">{exhibit.title}</h3>
 					{sold && <Badge>{t('sold')}</Badge>}
 				</div>
-				<div className="text-sm text-zinc-500 dark:text-zinc-200">
+				<div className="text-neutral-1000 text-sm dark:text-neutral-200">
 					<p className="mt-2 ">{exhibit.artist}</p>
 					<p className="mt-1 ">{exhibit.year}</p>
 					<p className="mt-1 ">{toCurrency(exhibit.price)}</p>

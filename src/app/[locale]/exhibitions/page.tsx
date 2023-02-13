@@ -46,7 +46,7 @@ export default function Exhibitions() {
 						{upcomingExhibtions.map((exhibition) => (
 							<div key={exhibition.slug}>
 								<ExhibitionCard exhibition={exhibition} upcoming />
-								<div className="z-10 my-6 h-[1px] w-full bg-zinc-200 md:hidden " />
+								<div className="z-10 my-6 h-[1px] w-full bg-neutral-200 md:hidden " />
 							</div>
 						))}
 					</div>
@@ -59,7 +59,7 @@ export default function Exhibitions() {
 						pastExhibitions.map((exhibition) => (
 							<div key={exhibition.slug}>
 								<ExhibitionCard exhibition={exhibition} />
-								<div className="z-10 my-6 h-[1px] w-full bg-zinc-200 md:hidden " />
+								<div className="z-10 my-6 h-[1px] w-full bg-neutral-200 md:hidden " />
 							</div>
 						))
 					) : (

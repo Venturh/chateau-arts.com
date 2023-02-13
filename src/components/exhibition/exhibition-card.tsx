@@ -13,17 +13,17 @@ export function ExhibitionCard({ exhibition, upcoming }: Props) {
 	return (
 		<Tag href={`/exhibitions/${slug}`} className="group  overflow-hidden rounded" key={slug}>
 			{upcoming ? (
-				<div className="h-48 w-full bg-gray-100 lg:h-72" />
+				<div className="h-48 w-full bg-gray-100 dark:bg-neutral-800 lg:h-72" />
 			) : (
 				<div className="relative h-[250px] w-full">
 					<SanityImage fill className="rounde relative mt-1 h-72" image={exhibition.images[0]} />
 				</div>
 			)}
 			<div className="mt-4">
-				<h2 className="relative z-10 text-xl tracking-tight text-zinc-900 dark:text-zinc-100">
+				<h2 className="relative z-10 text-xl tracking-tight text-neutral-900 dark:text-neutral-100">
 					{title}
 				</h2>
-				<span className="relative z-10 mt-2 block text-sm text-zinc-800 dark:text-zinc-200">
+				<span className="relative z-10 mt-2 block text-sm text-neutral-800 dark:text-neutral-200">
 					{toDate(exhibition.from)} - {toDate(exhibition.to)}
 				</span>
 			</div>

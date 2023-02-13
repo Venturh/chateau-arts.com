@@ -11,18 +11,18 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 			<div>
 				<label
 					htmlFor="email"
-					className="block text-sm font-medium text-gray-700 dark:text-zinc-200"
+					className="block text-sm font-medium text-gray-700 dark:text-neutral-200"
 				>
 					{label}
 				</label>
 				<div className="mt-1">
 					<input
-						className="flex h-10 w-full rounded-md border border-zinc-300 bg-transparent py-2 px-3 text-sm placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-zinc-400 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-zinc-700 dark:text-zinc-50 dark:focus:ring-zinc-400 dark:focus:ring-offset-zinc-900"
+						className="flex h-10 w-full rounded-md border border-neutral-300 bg-transparent py-2 px-3 text-sm placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-neutral-400 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-700 dark:text-neutral-100 dark:focus:ring-neutral-400 dark:focus:ring-offset-neutral-900"
 						ref={ref}
 						{...props}
 					/>
 					{hint && (
-						<p className="mt-2 text-sm text-gray-700 dark:text-zinc-200" id="hint">
+						<p className="mt-2 text-sm text-gray-700 dark:text-neutral-200" id="hint">
 							{hint}
 						</p>
 					)}
