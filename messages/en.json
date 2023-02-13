@@ -3,6 +3,7 @@
 	"exhibitions": "Exhibitions",
 	"exhibits": "Exhibits",
 	"exhibition-exhibits": "Exhibits of the exhibition",
+    "art_trade": "Art trade",
 
 	"pages": "Pages",
 	"social": "Social",
@@ -38,9 +39,15 @@
 	"time": "Time",
     "sold": "Sold",
 
+    "request-exhibit": "Enquire exhibit",
     "contact_name": "Name",
     "contact_email": "E-Mail",
     "contact_message": "Message",
     "contact_send": "Send",
-    "contact_success": "Your message has been sent successfully."
+    "contact_success": "Your message has been sent successfully.",
+
+    "og": {
+        "title": "Art trade - Elisabeth Werpers",
+        "description": "Art trade with a great variety of epochs and styles."
+    }
 }

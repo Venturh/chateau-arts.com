@@ -8,7 +8,7 @@ import { Badge } from '@/components/ui/badge'
 import { Breadcrumb, Breadcrumbs } from '@/components/ui/breadcumbs'
 import { ButtonLink } from '@/components/ui/button'
 import { ImagesTabs } from '@/components/ui/images-tabs'
-import { getOgImage, toCurrency } from '@/lib/utils'
+import { makeMetaData, toCurrency } from '@/lib/utils'
 
 type Props = {
 	params: {
@@ -23,34 +23,19 @@ export async function generateMetadata({ params }): Promise<Metadata> {
 	if (!exhibit) {
 		return
 	}
-	const { artist, year } = exhibit
-	const title = `${exhibit.title} (${year}) - ${artist}`
-	const description = `${exhibit.title}  - ${artist}`
-	const ogImage = getOgImage(locale, exhibit.title, 'exhibit')
+	const { artist, year, info, images } = exhibit
+	const title = `${exhibit.title}, ${artist}, ${year}`
+	const description = info
+	const url = `https://elisabethwerpers.com/exhibits/${slug}`
 
-	return {
-		title,
-		description,
-		openGraph: {
-			//@ts-expect-error seems to be wrong
-			title,
-			description,
-			//@ts-expect-error seems to be wrong
-			type: 'article',
-			locale,
-			url: `https://elisabethwerpers.com/exhibits/${slug}`,
-			images: [
-				{
-					url: ogImage,
-				},
-			],
-		},
-		twitter: {
-			card: 'summary_large_image',
-			title,
-			images: [ogImage],
-		},
-	}
+	const metaData = await makeMetaData(locale, {
+		optionalTitle: title,
+		optionalDescription: description,
+		optionalUrl: url,
+		optionalImage: images[0],
+	})
+
+	return metaData
 }
 
 export default function ExhibitionPage({ params: { slug } }: Props) {
@@ -91,7 +76,7 @@ export default function ExhibitionPage({ params: { slug } }: Props) {
 							<div className="text-gray-700">{exhibit.year}</div>
 						</div>
 						<ButtonLink href={`/${locale}/exhibits/${exhibit.slug}/contact`}>
-							Werk Anfragen
+							{t('request-exhibit')}
 						</ButtonLink>
 						<section aria-labelledby="details">
 							<h2 id="details-heading" className="sr-only">

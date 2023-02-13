@@ -10,6 +10,31 @@ const fontSans = FontSans({
 	variable: '--font-sans',
 })
 
+export const metadata = {
+	// title: {
+	// 	default: 'Elisabeth Werpers',
+	// 	template: '%s | Elisabeth Werpers',
+	// },
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			'max-video-preview': -1,
+			'max-image-preview': 'large',
+			'max-snippet': -1,
+		},
+	},
+	twitter: {
+		title: 'Elisabeth Werpers',
+		card: 'summary_large_image',
+	},
+	icons: {
+		shortcut: '/favicon.ico',
+	},
+}
+
 export default async function RootLayout({ children }) {
 	const locale = useLocale()
 

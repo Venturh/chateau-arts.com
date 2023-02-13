@@ -5,7 +5,7 @@
 	"exhibits": "Werke",
 	"exhibit": "Werk",
 	"exhibition-exhibits": "Werke der Austellung",
-
+    "art_trade": "Kunsthandel",
 
 	"pages": "Seiten",
 	"social": "Kontakt",
@@ -42,6 +42,7 @@
     "sold": "Verkauft",
 
 
+    "request-exhibit": "Werk anfragen",
     "contact_name": "Name",
     "contact_email": "Ihre E-Mail-Adresse",
     "contact_message": "Ihre Nachricht",
@@ -50,7 +51,6 @@
 
     "og": {
         "title": "Kunsthandel - Elisabeth Werpers",
-        "description": "Kunsthandel Elisabeth Werpers",
-        "image": "https://elisabethwerpers.com/og.svg"
+        "description": "Kunsthandel mit einer großen Vielfalt an Epochen und Stilen."
     }
 }

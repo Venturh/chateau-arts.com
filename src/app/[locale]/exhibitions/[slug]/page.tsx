@@ -1,4 +1,5 @@
 import { use } from 'react'
+import { Metadata } from 'next'
 import { getExhibitionBySlug } from 'lib/sanity.client'
 import { useLocale, useTranslations } from 'next-intl'
 
@@ -8,7 +9,7 @@ import { ButtonLink } from '@/components/ui/button'
 import { ImagesTabs } from '@/components/ui/images-tabs'
 import { ScrollToButton } from '@/components/ui/scroll-to-button'
 import { SectionHeader } from '@/components/ui/section-header'
-import { toDate } from '@/lib/utils'
+import { makeMetaData, toDate } from '@/lib/utils'
 
 type Props = {
 	params: {
@@ -16,14 +17,28 @@ type Props = {
 	}
 }
 
-//not supported by next-i18n yet, using headers
-//export const revalidate = 60
-// export async function generateStaticParams() {
-// 	const exhibitions = await getAllExhibitions()
-// 	return exhibitions.map(({ slug }) => ({ slug }))
-// }
+export async function generateMetadata({ params }): Promise<Metadata> {
+	const { locale, slug } = params
+	const exhibition = await getExhibitionBySlug(locale, slug)
 
-export default function ExhibitionPage({ params: { slug } }: Props) {
+	if (!exhibition) {
+		return
+	}
+	const { description, images, from, to } = exhibition
+	const title = `${exhibition.title}, ${toDate(from)} - ${toDate(to)}`
+	const url = `https://elisabethwerpers.com/exhibits/${slug}`
+
+	const metaData = await makeMetaData(locale, {
+		optionalTitle: title,
+		optionalDescription: description,
+		optionalUrl: url,
+		optionalImage: images[0],
+	})
+
+	return metaData
+}
+
+export default function Exhibition({ params: { slug } }: Props) {
 	const locale = useLocale()
 	const t = useTranslations()
 

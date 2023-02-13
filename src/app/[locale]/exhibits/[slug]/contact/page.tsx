@@ -1,4 +1,5 @@
 import { use } from 'react'
+import { Metadata } from 'next'
 import { useLocale, useTranslations } from 'next-intl'
 
 import { ContactForm } from '@/components/contact-form'
@@ -6,11 +7,23 @@ import { ExhibitRowCard } from '@/components/exhibits/exhibit-row-card'
 import { Breadcrumb, Breadcrumbs } from '@/components/ui/breadcumbs'
 import { SectionHeader } from '@/components/ui/section-header'
 import { getExhibitBySlug } from '@/lib/sanity.client'
+import { makeMetaData } from '@/lib/utils'
 
 type Props = {
 	params: {
 		slug: string
 	}
+}
+
+export async function generateMetadata({ params }): Promise<Metadata> {
+	const { locale, slug } = params
+
+	const metaData = await makeMetaData(locale, {
+		optionalTitleKey: 'request-exhibit',
+		optionalUrl: `https://elisabethwerpers.com/${locale}/exhibits/${slug}/contact`,
+	})
+
+	return metaData
 }
 
 export default function ExhibitContact({ params: { slug } }: Props) {

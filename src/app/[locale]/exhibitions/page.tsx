@@ -1,4 +1,5 @@
 import { use } from 'react'
+import { Metadata } from 'next'
 import { PhotoIcon } from '@heroicons/react/24/outline'
 import { useLocale, useTranslations } from 'next-intl'
 
@@ -12,8 +13,20 @@ import {
 	getPastExhibitions,
 	getUpcommingExhibitions,
 } from '@/lib/sanity.client'
+import { makeMetaData } from '@/lib/utils'
 
-export default function Home() {
+export async function generateMetadata({ params }): Promise<Metadata> {
+	const { locale } = params
+
+	const metaData = await makeMetaData(locale, {
+		optionalTitleKey: 'exhibitions',
+		optionalUrl: `https://elisabethwerpers.com/${locale}/exhibitions`,
+	})
+
+	return metaData
+}
+
+export default function Exhibitions() {
 	const t = useTranslations()
 	const locale = useLocale()
 	const currentExhibition = use(getCurrentExhibition(locale))

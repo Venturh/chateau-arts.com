@@ -1,15 +1,23 @@
 import { use } from 'react'
+import { Metadata } from 'next'
 import { PhotoIcon } from '@heroicons/react/24/outline'
 import { useLocale, useTranslations } from 'next-intl'
 
 import { ExhibitionCard } from '@/components/exhibition/exhibition-card'
 import { ExhibitionLandingShowcase } from '@/components/exhibition/exhibition-landing-showcase'
-import { ButtonLink } from '@/components/ui/button'
 import { Divider } from '@/components/ui/divider'
 import EmptyState from '@/components/ui/empty-state'
 import { getCurrentExhibition, getUpcommingExhibitions } from '@/lib/sanity.client'
+import { makeMetaData } from '@/lib/utils'
 
-export default function Index() {
+export async function generateMetadata({ params }): Promise<Metadata> {
+	const { locale } = params
+
+	const metaData = await makeMetaData(locale, {})
+	return metaData
+}
+
+export default function Landing() {
 	const locale = useLocale()
 	const t = useTranslations()
 	const currentExhibition = use(getCurrentExhibition(locale))
@@ -21,7 +29,7 @@ export default function Index() {
 				<h1 className="text-4xl font-bold tracking-tight text-gray-600 sm:text-5xl">
 					Elisabeth Werpers
 				</h1>
-				<p className="mt-6 text-4xl leading-8 text-gray-600">Kunsthandel</p>
+				<p className="mt-6 text-4xl leading-8 text-gray-600">{t('art_trade')}</p>
 			</div>
 			<div className="mt-16 flow-root sm:mt-24">
 				<div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">

@@ -1,4 +1,18 @@
+import { Metadata } from 'next'
 import { useLocale } from 'next-intl'
+
+import { makeMetaData } from '@/lib/utils'
+
+export async function generateMetadata({ params }): Promise<Metadata> {
+	const { locale, slug } = params
+
+	const metaData = await makeMetaData(locale, {
+		optionalTitleKey: 'about',
+		optionalUrl: `https://elisabethwerpers.com/${locale}/about`,
+	})
+
+	return metaData
+}
 
 export default function About() {
 	const locale = useLocale()
