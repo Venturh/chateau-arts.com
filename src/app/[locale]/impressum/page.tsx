@@ -1,6 +1,6 @@
 export default function Disclorure() {
 	return (
-		<div className="prose mx-auto max-w-prose">
+		<div className="prose mx-auto max-w-prose dark:prose-invert">
 			<h4>Verantwortlich nach § 6 Abs.2 MDStV:</h4>
 
 			<div className="list-none">

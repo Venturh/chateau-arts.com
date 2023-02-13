@@ -40,7 +40,7 @@ export function MainLayout({ children }: Props) {
 	}
 
 	return (
-		<div className="flex h-screen flex-col">
+		<div className="flex min-h-screen flex-col text-zinc-900 dark:bg-zinc-900 dark:text-zinc-50">
 			<MainNavigation navigation={navigation} locale={locale} />
 			<main className="mx-auto w-full max-w-7xl grow px-6 pt-6 pb-24 lg:px-8">{children}</main>
 			<Footer languageLocale={t('language')} locale={locale} footer={footer} />

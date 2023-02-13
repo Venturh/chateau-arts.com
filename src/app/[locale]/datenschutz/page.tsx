@@ -1,6 +1,6 @@
 export default function Privacy() {
 	return (
-		<div className="prose mx-auto max-w-prose">
+		<div className="prose mx-auto max-w-prose dark:prose-invert">
 			<h3>Vercel</h3>
 			<p>
 				Diese Webseite ist bei Vercel (Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA)

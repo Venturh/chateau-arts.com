@@ -20,8 +20,10 @@ export function ExhibitionCard({ exhibition, upcoming }: Props) {
 				</div>
 			)}
 			<div className="mt-4">
-				<h2 className="relative z-10 text-xl  tracking-tight text-zinc-800">{title}</h2>
-				<span className="relative z-10 mt-2 block text-sm text-zinc-800">
+				<h2 className="relative z-10 text-xl tracking-tight text-zinc-900 dark:text-zinc-100">
+					{title}
+				</h2>
+				<span className="relative z-10 mt-2 block text-sm text-zinc-800 dark:text-zinc-200">
 					{toDate(exhibition.from)} - {toDate(exhibition.to)}
 				</span>
 			</div>

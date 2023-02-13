@@ -6,9 +6,9 @@ type Props = {
 }
 export default function EmptyState({ text, icon }: Props) {
 	return (
-		<div className="relative block w-full rounded-lg border-2 p-12 text-center focus:outline-none">
+		<div className="relative block w-full rounded-lg border-2 p-12 text-center focus:outline-none dark:border-zinc-800">
 			{icon && React.cloneElement(icon, { className: 'mx-auto h-10 w-10 text-gray-400' })}
-			<span className="mt-2 block text-sm font-medium text-gray-900">{text}</span>
+			<span className="mt-2 block text-sm font-medium text-gray-900 dark:text-zinc-50">{text}</span>
 		</div>
 	)
 }

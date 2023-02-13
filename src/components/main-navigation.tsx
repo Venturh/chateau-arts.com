@@ -30,7 +30,7 @@ export function MainNavigation({ navigation, locale }: Props) {
 	}
 
 	return (
-		<div className="border-b border-gray-900/10 bg-zinc-50">
+		<div className="border-b border-gray-900/10 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900">
 			<nav
 				className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-8"
 				aria-label="Global"
@@ -56,8 +56,8 @@ export function MainNavigation({ navigation, locale }: Props) {
 							className={cn(
 								'inline-flex items-center rounded-md py-2 px-3 text-sm font-medium',
 								isActive(item.href)
-									? 'bg-gray-100 text-gray-900'
-									: 'text-gray-900 hover:bg-gray-50 hover:text-gray-900'
+									? 'bg-gray-100 text-gray-900 dark:bg-zinc-800 dark:text-zinc-50'
+									: 'text-gray-900 hover:bg-gray-50 hover:text-gray-900  dark:text-zinc-50 dark:hover:bg-zinc-800 dark:hover:text-zinc-100'
 							)}
 						>
 							{item.name}
@@ -90,8 +90,8 @@ export function MainNavigation({ navigation, locale }: Props) {
 											className={cn(
 												'block rounded-md py-2 px-3 text-sm font-medium',
 												isActive(item.href)
-													? 'bg-gray-100 text-gray-900'
-													: 'text-gray-900 hover:bg-gray-50 hover:text-gray-900'
+													? 'bg-gray-100 text-gray-900 dark:text-zinc-50'
+													: 'text-gray-900 hover:bg-gray-50 hover:text-gray-900 dark:text-zinc-50'
 											)}
 										>
 											{item.name}

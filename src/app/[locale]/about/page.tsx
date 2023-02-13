@@ -17,7 +17,7 @@ export async function generateMetadata({ params }): Promise<Metadata> {
 export default function About() {
 	const locale = useLocale()
 	return (
-		<div className="prose mx-auto max-w-prose">
+		<div className="prose mx-auto max-w-prose dark:prose-invert">
 			{locale === 'de' && (
 				<div>
 					Als Juristin ausgebildet und einige Jahre als Rechtsanwältin tätig, habe ich mich schon

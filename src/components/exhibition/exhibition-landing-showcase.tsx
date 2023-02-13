@@ -25,9 +25,11 @@ export function ExhibitionLandingShowcase({ exhibition, locale, height, width }:
 	const href = `/${locale}/exhibitions/${slug}`
 	return (
 		<Link href={href} className="relative h-full w-full ">
-			<div className="absolute top-4 left-4 rounded bg-zinc-200 p-2">
-				<h1 className="text-xl font-bold tracking-tight text-gray-900 lg:text-3xl">{title}</h1>
-				<p className="mt-2 max-w-xl text-sm text-gray-700  lg:text-base">
+			<div className="absolute top-4 left-4 rounded bg-zinc-200 p-2 dark:bg-zinc-800">
+				<h1 className="text-xl font-bold tracking-tight text-gray-900 dark:text-zinc-50 lg:text-3xl">
+					{title}
+				</h1>
+				<p className="mt-2 max-w-xl text-sm text-gray-700 dark:text-zinc-200 lg:text-base">
 					{`${toDate(from)} - ${toDate(to)}`}
 				</p>
 			</div>

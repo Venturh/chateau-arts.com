@@ -21,7 +21,9 @@ export function Breadcrumbs({ breadcrumbs }: Props) {
 							<div className="flex items-center">
 								<Tag
 									href={href}
-									className={cn('mr-4 text-sm font-medium text-gray-900', { underline: href })}
+									className={cn('mr-4 text-sm font-medium text-gray-900 dark:text-zinc-50', {
+										underline: href,
+									})}
 								>
 									{name}
 								</Tag>

@@ -54,9 +54,11 @@ export default function Exhibition({ params: { slug } }: Props) {
 		<div>
 			<Breadcrumbs breadcrumbs={breadcrumbs} />
 
-			<div className="mx-auto flex max-w-2xl flex-col-reverse  pt-10 pb-16  lg:grid lg:max-w-7xl lg:grid-cols-3  lg:gap-x-8  lg:pt-16 lg:pb-24">
-				<div className="mt-6 lg:col-span-2 lg:mt-0 lg:border-r lg:border-gray-200  lg:pr-8">
-					<p className="mx-auto max-w-2xl text-base text-gray-900">{exhibition.description}</p>
+			<div className="mx-auto flex max-w-2xl flex-col-reverse pt-10 pb-16 lg:grid lg:max-w-7xl lg:grid-cols-3  lg:gap-x-8 lg:pt-16 lg:pb-24">
+				<div className="mt-6 lg:col-span-2 lg:mt-0 lg:border-r lg:border-gray-200 lg:pr-8 lg:dark:border-zinc-800">
+					<p className="mx-auto max-w-2xl text-base text-gray-900 dark:text-zinc-50">
+						{exhibition.description}
+					</p>
 				</div>
 				<div className="lg:row-span-3">
 					<SectionHeader
@@ -67,7 +69,7 @@ export default function Exhibition({ params: { slug } }: Props) {
 						<ButtonLink href={`/${locale}/exhibitions/${slug}/virtual`} size="lg">
 							{t('to-virtual-exhibition')}
 						</ButtonLink>
-						<ScrollToButton targetId="exhibits" variant="subtle" size="lg">
+						<ScrollToButton targetId="exhibits" variant="ghost" size="lg">
 							{t('exhibits')}
 						</ScrollToButton>
 					</div>

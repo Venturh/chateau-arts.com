@@ -51,7 +51,7 @@ export function ImagesTabs({ images }: Props) {
 				))}
 			</Swiper>
 			<Swiper
-				className="h-full w-full rounded-md border lg:col-span-8"
+				className="h-full w-full rounded-md border dark:border-zinc-800 lg:col-span-8"
 				zoom
 				speed={900}
 				watchSlidesProgress
