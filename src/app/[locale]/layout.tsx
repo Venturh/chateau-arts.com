@@ -4,6 +4,7 @@ import { useLocale } from 'next-intl'
 import { MainLayout } from '@/components/main-layout'
 import { cn } from '@/lib/utils'
 import '@/styles/globals.css'
+import { notFound } from 'next/navigation'
 
 const fontSans = FontSans({
 	subsets: ['latin'],
@@ -11,10 +12,10 @@ const fontSans = FontSans({
 })
 
 export const metadata = {
-	// title: {
-	// 	default: 'Elisabeth Werpers',
-	// 	template: '%s | Elisabeth Werpers',
-	// },
+	title: {
+		default: 'Elisabeth Werpers',
+		template: '%s | Elisabeth Werpers',
+	},
 	robots: {
 		index: true,
 		follow: true,
@@ -35,8 +36,12 @@ export const metadata = {
 	},
 }
 
-export default async function RootLayout({ children }) {
+export default async function RootLayout({ children, params }) {
 	const locale = useLocale()
+
+	if (params.locale !== locale) {
+		notFound()
+	}
 
 	return (
 		<html lang={locale} className={cn('h-full', fontSans.className)}>

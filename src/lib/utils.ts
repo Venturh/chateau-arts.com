@@ -1,4 +1,7 @@
+import { Metadata } from 'next'
+import i18n from '@/i18n'
 import { ClassValue, clsx } from 'clsx'
+import { getTranslations } from 'next-intl/server'
 import { twMerge } from 'tailwind-merge'
 
 import { urlFor } from './sanity.client'
@@ -48,14 +51,15 @@ export async function makeMetaData(
 		optionalUrl?: string
 		optionalImage?: SanityImageType
 	}
-) {
-	const messages = await import(`../../messages/${locale}.json`)
+): Promise<Metadata> {
+	const t = await getTranslations()
+
 	const title = optionalTitle
 		? optionalTitle
 		: optionalTitleKey
-		? messages[optionalTitleKey]
-		: messages.og.title
-	const description = optionalDescription ?? messages.og.description
+		? t(optionalTitleKey as any)
+		: t('og.title')
+	const description = optionalDescription ?? t('og.description')
 	const url = optionalUrl || 'https://elisabethwerpers.com'
 	const ogImage = optionalImage
 		? urlFor(optionalImage).width(1200).height(630).url()
@@ -83,6 +87,6 @@ export async function makeMetaData(
 			images: [ogImage],
 		},
 	}
-	console.log(metadata)
+	//@ts-expect-error .
 	return metadata
 }

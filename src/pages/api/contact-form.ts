@@ -24,7 +24,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 		await transporter.sendMail(msg)
 		return res.status(200).end()
 	} catch (error) {
-		console.log(error)
 		return res.status(500).end()
 	}
 }

@@ -1,13 +1,9 @@
-import { NextIntlConfig } from 'next-intl'
+import { getRequestConfig } from 'next-intl/server'
 
 import { languages } from './sanity/i18n'
 
-const i18n: NextIntlConfig = {
+export default getRequestConfig(async ({ locale }) => ({
 	locales: languages.map(({ id }) => id),
-	defaultLocale: 'en',
-	async getMessages({ locale }) {
-		return (await import(`../messages/${locale}.json`)).default
-	},
-}
-
-export default i18n
+	defaultLocale: 'de',
+	messages: (await import(`../messages/${locale}.json`)).default,
+}))

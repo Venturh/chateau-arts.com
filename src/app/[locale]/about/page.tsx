@@ -4,7 +4,7 @@ import { useLocale } from 'next-intl'
 import { makeMetaData } from '@/lib/utils'
 
 export async function generateMetadata({ params }): Promise<Metadata> {
-	const { locale, slug } = params
+	const { locale } = params
 
 	const metaData = await makeMetaData(locale, {
 		optionalTitleKey: 'about',
