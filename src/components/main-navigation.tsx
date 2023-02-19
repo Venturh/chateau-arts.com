@@ -68,7 +68,7 @@ export function MainNavigation({ navigation, locale }: Props) {
 			</nav>
 			<Dialog.Root open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
 				<Dialog.Content className="absolute inset-x-0 top-0 z-50 origin-top px-2 transition md:hidden">
-					<div className="overflow-hidden rounded-lg bg-white shadow-md ring-1 ring-black/5">
+					<div className="overflow-hidden rounded-lg bg-white shadow-md ring-1 ring-black/5 dark:bg-neutral-800">
 						<div className="flex items-center justify-between border-b  px-4 py-3 ">
 							<Logo />
 							<button
@@ -85,12 +85,13 @@ export function MainNavigation({ navigation, locale }: Props) {
 								<div className="space-y-2 py-6">
 									{navigation.map((item) => (
 										<Link
+											onClick={() => setMobileMenuOpen(false)}
 											key={item.name}
 											href={item.href}
 											className={cn(
 												'block rounded-md py-2 px-3 text-sm font-medium',
 												isActive(item.href)
-													? 'bg-neutral-100 text-neutral-900 dark:text-neutral-100'
+													? 'bg-neutral-100 text-neutral-900 dark:bg-neutral-900 dark:text-neutral-100'
 													: 'text-neutral-900 hover:bg-neutral-50 hover:text-neutral-900 dark:text-neutral-100'
 											)}
 										>

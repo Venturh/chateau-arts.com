@@ -13,7 +13,12 @@ import { makeMetaData } from '@/lib/utils'
 export async function generateMetadata({ params }): Promise<Metadata> {
 	const { locale } = params
 
-	const metaData = await makeMetaData(locale, {})
+	const currentExhibition = await getCurrentExhibition(locale)
+
+	const metaData = await makeMetaData(locale, {
+		optionalTitleKey: 'home',
+		optionalImage: currentExhibition?.images[0] ?? undefined,
+	})
 	return metaData
 }
 

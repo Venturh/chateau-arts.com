@@ -9,7 +9,7 @@ export default async function handler(req: NextRequest) {
 	const { searchParams } = req.nextUrl
 	const locale = searchParams.get('locale')
 	const messages = await import(`../../../messages/${locale}.json`)
-	const { title } = messages.og
+	const { title, description } = messages.og
 
 	return new ImageResponse(
 		(
@@ -32,7 +32,7 @@ export default async function handler(req: NextRequest) {
 						justifyContent: 'center',
 						padding: '20px 50px',
 						margin: '0 42px',
-						fontSize: 40,
+						fontSize: 52,
 						width: 'auto',
 						maxWidth: 550,
 						textAlign: 'center',
@@ -41,6 +41,22 @@ export default async function handler(req: NextRequest) {
 					}}
 				>
 					{title}
+				</div>
+				<div
+					style={{
+						flexWrap: 'wrap',
+						justifyContent: 'center',
+						padding: '20px 50px',
+						margin: '0 42px',
+						fontSize: 28,
+						width: 'auto',
+						maxWidth: 550,
+						textAlign: 'center',
+						color: 'black',
+						lineHeight: 1.4,
+					}}
+				>
+					{description}
 				</div>
 			</div>
 		)

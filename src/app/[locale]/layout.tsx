@@ -13,8 +13,8 @@ const fontSans = FontSans({
 
 export const metadata = {
 	title: {
-		default: 'Elisabeth Werpers',
-		template: '%s | Elisabeth Werpers',
+		default: 'Kunsthandel Elisabeth Werpers',
+		template: '%s | Kunsthandel Elisabeth Werpers',
 	},
 	robots: {
 		index: true,

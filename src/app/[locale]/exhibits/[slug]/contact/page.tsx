@@ -41,19 +41,17 @@ export default function ExhibitContact({ params: { slug } }: Props) {
 	return (
 		<div className="h-full">
 			<Breadcrumbs breadcrumbs={breadcrumbs} />
-			<div className="flex h-full flex-col justify-center">
-				<div className="mx-auto w-full max-w-2xl rounded-lg border border-neutral-200 p-6">
-					<SectionHeader title={t('contact')} />
-					<ExhibitRowCard {...exhibit} />
-					<ContactForm
-						exhibit={exhibit}
-						contactName={t('contact_name')}
-						contactEmail={t('contact_email')}
-						contactMessage={t('contact_message')}
-						contactSend={t('contact_send')}
-						successMessage={t('contact_success')}
-					/>
-				</div>
+			<div className="mx-auto w-full max-w-2xl space-y-6 rounded-lg border border-neutral-200 p-6 dark:border-neutral-700">
+				<SectionHeader title={t('contact')} />
+				<ExhibitRowCard {...exhibit} />
+				<ContactForm
+					exhibit={exhibit}
+					contactName={t('contact_name')}
+					contactEmail={t('contact_email')}
+					contactMessage={t('contact_message')}
+					contactSend={t('contact_send')}
+					successMessage={t('contact_success')}
+				/>
 			</div>
 		</div>
 	)

@@ -69,15 +69,15 @@ export async function makeMetaData(
 		description,
 		url,
 		openGraph: {
-			title,
+			title: `${title} | Elisabeth Werpers`,
 			description,
 			url,
 			siteName: 'Elisabeth Werpers',
 			images: [
 				{
 					url: ogImage,
-					width: 1920,
-					height: 1080,
+					width: 1200,
+					height: 630,
 				},
 			],
 		},

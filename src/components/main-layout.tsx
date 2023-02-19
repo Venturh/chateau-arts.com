@@ -29,7 +29,7 @@ export function MainLayout({ children }: Props) {
 			},
 			{
 				name: 'Email',
-				href: 'mailto:elisabeth.werpers@gmail.com',
+				href: 'mailto:info@elisabethwerpers.com',
 				external: true,
 			},
 		],

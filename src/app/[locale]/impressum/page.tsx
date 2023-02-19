@@ -8,7 +8,6 @@ export default function Disclorure() {
 				<div>Im Siek 21</div>
 				<div>31707 Heeßen</div>
 				<div>Email: info@elisabethwerpers.com</div>
-				<div>Mobil: +49 (0) 177 2896682</div>
 				<div>Steuernummer: 44/144/04346</div>
 			</div>
 

@@ -27,6 +27,7 @@ export function ContactForm({
 }: Props) {
 	const [showSuccess, setShowSuccess] = useState(false)
 	const [showError, setShowError] = useState(false)
+
 	function submitForm(e: React.FormEvent<HTMLFormElement>) {
 		e.preventDefault()
 		const target = e.target as HTMLFormElement
@@ -48,7 +49,7 @@ export function ContactForm({
 		}
 	}
 	return (
-		<form className="mt-6 grid  gap-y-6" onSubmit={(e) => submitForm(e)}>
+		<form className="mt-6 grid gap-y-6" onSubmit={(e) => submitForm(e)}>
 			<Input required name="name" label={contactName} />
 			<Input required name="email" label={contactEmail} type="email" />
 			<TextArea required rows={4} name="message" label={contactMessage} />
