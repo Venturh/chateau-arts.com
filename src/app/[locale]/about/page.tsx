@@ -36,8 +36,11 @@ export default function About() {
 					oder die Bekanntheit des Künstlers kein Hauptkriterium. Vielmehr geht es um die
 					Ausstrahlung, die vom Werk ausgeht. Daher sind einig Kunstwerke signiert, andere weisen
 					eine unleserliche oder keine Signatur auf. <br />
-					Die Werke werden zunächst nur online präsentiert. Darüber hinaus ist eine persönliche
-					Besichtigung nach Vereinbarung immer möglich und willkommen.
+					Die Werke werden online präsentiert. Darüber hinaus ist eine persönliche Besichtigung nach
+					Vereinbarung immer möglich und willkommen. <br />
+					Wenn Sie sich für ein Werk interessieren, freue ich mich über Ihre Kontaktaufnahme. Dann
+					kann ich Ihnen zusätzliche Informationen zum Zustand des Kunstwerks sowie weitere Fotos
+					zukommen lassen.
 				</div>
 			)}
 			{locale === 'en' && (
@@ -57,8 +60,10 @@ export default function About() {
 					works presented here, the signature or fame of the artist is not the main criterion.
 					Rather, it is about the charisma that emanates from the work. Therefore, some works of art
 					are signed, others have an illegible signature or no signature at all. <br />
-					The works will initially only be presented online. In addition, personal viewing by
-					appointment is always possible and welcome.
+					The works are presented online. In addition, personal viewing by appointment is always
+					possible and welcome. <br />
+					If you are interested in a work, I would be pleased to hear from you. Then I can send you
+					additional information on the condition of the artwork as well as further photos.
 				</div>
 			)}
 			{locale === 'fr' && (
@@ -83,9 +88,12 @@ export default function About() {
 					pourquoi certaines œuvres d&apos;art sont signées, d&apos;autres présentent une signature
 					illisible ou aucune signature.
 					<br />
-					Dans un premier temps, les œuvres ne seront présentées qu&apos;en ligne présentées sur le
-					site. En outre, une visite personnelle est toujours possible et bienvenue sur rendez-vous.
-					est la bienvenue.
+					Les œuvres sont présentées en ligne. En outre, une visite personnelle est toujours
+					possible et bienvenue sur rendez-vous. est la bienvenue.
+					<br />
+					Si vous êtes intéressé par une œuvre, je me réjouis de votre prise de contact. Je pourrai
+					alors vous faire parvenir des informations complémentaires sur l&apos; état de l&apos;
+					œuvre ainsi que des photos supplémentaires.
 				</div>
 			)}
 		</div>

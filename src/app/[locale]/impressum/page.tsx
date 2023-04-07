@@ -8,7 +8,7 @@ export default function Disclorure() {
 				<div>Im Siek 21</div>
 				<div>31707 Heeßen</div>
 				<div>Email: info@elisabethwerpers.com</div>
-				<div>Steuernummer: 44/144/04346</div>
+				<div>USt-IdNr: DE358799377</div>
 			</div>
 
 			<h4>Haftung für Inhalte:</h4>

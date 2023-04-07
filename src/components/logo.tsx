@@ -4,7 +4,7 @@ export function Logo() {
 	return (
 		<div className="flex">
 			<Link href={'/'} className="-m-1.5 p-1.5">
-				<span className="font-medium ">elisabeth werpers</span>
+				<span className="font-serif uppercase">elisabeth werpers</span>
 			</Link>
 		</div>
 	)

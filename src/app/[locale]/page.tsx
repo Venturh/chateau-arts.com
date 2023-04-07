@@ -31,10 +31,10 @@ export default function Landing() {
 	return (
 		<div className="space-y-24">
 			<div className="mx-auto max-w-2xl py-12 text-center">
-				<h1 className="text-4xl font-bold tracking-tight text-neutral-700 dark:text-neutral-300 sm:text-5xl">
-					Elisabeth Werpers
+				<h1 className="font-serif text-4xl font-thin uppercase tracking-tight text-neutral-700 underline decoration-1 underline-offset-2  dark:text-neutral-300 sm:text-5xl">
+					elisabeth werpers
 				</h1>
-				<p className="mt-6 text-4xl leading-8 text-neutral-600 dark:text-neutral-400">
+				<p className="mt-1 font-serif text-4xl font-thin  leading-8 text-neutral-600 dark:text-neutral-400">
 					{t('art_trade')}
 				</p>
 			</div>
