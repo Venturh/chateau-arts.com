@@ -50,7 +50,7 @@ export default async function RootLayout({ children, params }) {
 				async
 				defer
 				data-website-id="c73161e2-5632-42ac-a5e6-2b0b8e746b89"
-				src="/stats/script.js"
+				src="/stats/umami.js"
 			/>
 			<head></head>
 			<body className="h-full">
