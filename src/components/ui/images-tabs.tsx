@@ -20,7 +20,7 @@ type Props = {
 }
 
 export function ImagesTabs({ images }: Props) {
-	const [thumbsSwiper, setThumbsSwiper] = useState(null)
+	const [thumbsSwiper, setThumbsSwiper] = useState<any>(null)
 
 	const pagination: PaginationOptions = {
 		clickable: true,

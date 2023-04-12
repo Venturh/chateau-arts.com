@@ -10,6 +10,7 @@ import { ImagesTabs } from '@/components/ui/images-tabs'
 import { ScrollToButton } from '@/components/ui/scroll-to-button'
 import { SectionHeader } from '@/components/ui/section-header'
 import { makeMetaData, toDate } from '@/lib/utils'
+import { notFound } from 'next/navigation'
 
 type Props = {
 	params: {
@@ -22,7 +23,7 @@ export async function generateMetadata({ params }): Promise<Metadata> {
 	const exhibition = await getExhibitionBySlug(locale, slug)
 
 	if (!exhibition) {
-		return
+		return notFound()
 	}
 	const { description, images, from, to } = exhibition
 	const title = `${exhibition.title}, ${toDate(from)} - ${toDate(to)}`

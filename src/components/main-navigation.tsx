@@ -21,12 +21,12 @@ export function MainNavigation({ navigation, locale }: Props) {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
 	function isActive(href: string) {
-		const pathNameWithoutLocale = pathName.replace(`/${locale}`, '')
+		const pathNameWithoutLocale = pathName?.replace(`/${locale}`, '')
 		const hrefWithoutLocale = href.replace(`/${locale}`, '')
 
 		if (pathNameWithoutLocale === '' && hrefWithoutLocale === '') return true
 
-		return pathNameWithoutLocale.startsWith(hrefWithoutLocale) && hrefWithoutLocale !== ''
+		return pathNameWithoutLocale?.startsWith(hrefWithoutLocale) && hrefWithoutLocale !== ''
 	}
 
 	return (

@@ -87,6 +87,5 @@ export async function makeMetaData(
 			images: [ogImage],
 		},
 	}
-	//@ts-expect-error .
 	return metadata
 }

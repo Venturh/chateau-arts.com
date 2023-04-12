@@ -22,7 +22,7 @@ export function SanityImagesSlider({ images }: Props) {
 		clickable: true,
 	}
 
-	const swiperRef = useRef<SwiperRef>()
+	const swiperRef = useRef<any>()
 
 	const [isOpen, setIsOpen] = useState(false)
 	const [initialSlide, setInitialSlide] = useState(0)

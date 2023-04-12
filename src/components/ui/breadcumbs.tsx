@@ -1,4 +1,5 @@
 import { cn } from '@/lib/utils'
+import { Url } from 'next/dist/shared/lib/router/router'
 import { Link } from '../link'
 
 export interface Breadcrumb {
@@ -20,7 +21,7 @@ export function Breadcrumbs({ breadcrumbs }: Props) {
 						<li key={name}>
 							<div className="flex items-center">
 								<Tag
-									href={href}
+									href={href as Url}
 									className={cn('mr-4 text-sm font-medium text-neutral-900 dark:text-neutral-100', {
 										underline: href,
 									})}

@@ -9,8 +9,8 @@ import { deskTool } from 'sanity/desk'
 import { baseLanguage, languages } from './i18n'
 import { schemaTypes } from './schemas'
 
-const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID
-const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET
+const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!
+const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!
 
 const i18nConfig = {
 	languages,

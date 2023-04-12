@@ -9,6 +9,7 @@ import { Breadcrumb, Breadcrumbs } from '@/components/ui/breadcumbs'
 import { ButtonLink } from '@/components/ui/button'
 import { ImagesTabs } from '@/components/ui/images-tabs'
 import { makeMetaData, toCurrency } from '@/lib/utils'
+import { notFound } from 'next/navigation'
 
 type Props = {
 	params: {
@@ -21,7 +22,7 @@ export async function generateMetadata({ params }): Promise<Metadata> {
 	const exhibit = await getExhibitBySlug(locale, slug)
 
 	if (!exhibit) {
-		return
+		return notFound()
 	}
 	const { artist, year, info, images } = exhibit
 	const title = exhibit.title
