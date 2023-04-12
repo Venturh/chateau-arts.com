@@ -1,5 +1,6 @@
 import { use } from 'react'
 import { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 import { getExhibitionBySlug } from 'lib/sanity.client'
 import { useLocale, useTranslations } from 'next-intl'
 
@@ -10,7 +11,6 @@ import { ImagesTabs } from '@/components/ui/images-tabs'
 import { ScrollToButton } from '@/components/ui/scroll-to-button'
 import { SectionHeader } from '@/components/ui/section-header'
 import { makeMetaData, toDate } from '@/lib/utils'
-import { notFound } from 'next/navigation'
 
 type Props = {
 	params: {
@@ -55,7 +55,7 @@ export default function Exhibition({ params: { slug } }: Props) {
 		<div>
 			<Breadcrumbs breadcrumbs={breadcrumbs} />
 
-			<div className="mx-auto flex max-w-2xl flex-col-reverse pt-10 pb-16 lg:grid lg:max-w-7xl lg:grid-cols-3  lg:gap-x-8 lg:pt-16 lg:pb-24">
+			<div className="mx-auto flex max-w-2xl flex-col-reverse pb-16 pt-10 lg:grid lg:max-w-7xl lg:grid-cols-3  lg:gap-x-8 lg:pb-24 lg:pt-16">
 				<div className="mt-6 lg:col-span-2 lg:mt-0 lg:border-r lg:border-neutral-200 lg:pr-8 lg:dark:border-neutral-800">
 					<p className="mx-auto max-w-2xl text-base text-neutral-900 dark:text-neutral-100">
 						{exhibition.description}

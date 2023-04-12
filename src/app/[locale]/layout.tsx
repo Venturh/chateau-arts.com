@@ -1,4 +1,3 @@
-
 import { Inter as FontSans } from 'next/font/google'
 import Script from 'next/script'
 import { useLocale } from 'next-intl'
@@ -47,7 +46,12 @@ export default async function RootLayout({ children, params }) {
 
 	return (
 		<html lang={locale} className={cn('h-full', fontSans.variable)}>
-             <Script async defer data-website-id="c73161e2-5632-42ac-a5e6-2b0b8e746b89" src="umami-analytics-sage.vercel.app/umami.js" />
+			<Script
+				async
+				defer
+				data-website-id="c73161e2-5632-42ac-a5e6-2b0b8e746b89"
+				src="umami-analytics-sage.vercel.app/umami.js"
+			/>
 			<head></head>
 			<body className="h-full">
 				<MainLayout>{children}</MainLayout>

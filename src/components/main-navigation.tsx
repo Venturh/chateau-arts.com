@@ -54,7 +54,7 @@ export function MainNavigation({ navigation, locale }: Props) {
 							key={item.name}
 							href={item.href}
 							className={cn(
-								'inline-flex items-center rounded-md py-2 px-3 text-sm font-medium',
+								'inline-flex items-center rounded-md px-3 py-2 text-sm font-medium',
 								isActive(item.href)
 									? 'bg-neutral-100 text-neutral-900 dark:bg-neutral-800 dark:text-neutral-100'
 									: 'text-neutral-900 hover:bg-neutral-50 hover:text-neutral-900  dark:text-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-100'
@@ -89,7 +89,7 @@ export function MainNavigation({ navigation, locale }: Props) {
 											key={item.name}
 											href={item.href}
 											className={cn(
-												'block rounded-md py-2 px-3 text-sm font-medium',
+												'block rounded-md px-3 py-2 text-sm font-medium',
 												isActive(item.href)
 													? 'bg-neutral-100 text-neutral-900 dark:bg-neutral-900 dark:text-neutral-100'
 													: 'text-neutral-900 hover:bg-neutral-50 hover:text-neutral-900 dark:text-neutral-100'

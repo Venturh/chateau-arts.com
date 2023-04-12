@@ -18,7 +18,7 @@ export function ImageModal({ isOpen, setIsOpen, children }: Props) {
 						<div className="my-auto h-[50vh]">{children}</div>
 						<DialogPrimitive.Close
 							className={cn(
-								'absolute top-3.5 right-3.5 inline-flex items-center justify-center rounded-full p-1',
+								'absolute right-3.5 top-3.5 inline-flex items-center justify-center rounded-full p-1',
 								'focus:outline-none focus-visible:ring'
 							)}
 						>

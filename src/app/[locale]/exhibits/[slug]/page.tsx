@@ -1,5 +1,6 @@
 import { use } from 'react'
 import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 import { getExhibitBySlug, getLatestExceptSlugExhibits } from 'lib/sanity.client'
 import { useLocale, useTranslations } from 'next-intl'
 
@@ -9,7 +10,6 @@ import { Breadcrumb, Breadcrumbs } from '@/components/ui/breadcumbs'
 import { ButtonLink } from '@/components/ui/button'
 import { ImagesTabs } from '@/components/ui/images-tabs'
 import { makeMetaData, toCurrency } from '@/lib/utils'
-import { notFound } from 'next/navigation'
 
 type Props = {
 	params: {
@@ -87,7 +87,7 @@ export default function ExhibitionPage({ params: { slug } }: Props) {
 							<h2 id="details-heading" className="sr-only">
 								Additional details
 							</h2>
-							<ul className="list-disc space-y-2 border-t pt-6 pl-4 dark:border-t-neutral-800">
+							<ul className="list-disc space-y-2 border-t pl-4 pt-6 dark:border-t-neutral-800">
 								{exhibit.info
 									.split('\n')
 									.filter((line: string) => line !== '')

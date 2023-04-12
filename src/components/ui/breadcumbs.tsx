@@ -1,5 +1,6 @@
-import { cn } from '@/lib/utils'
 import { Url } from 'next/dist/shared/lib/router/router'
+
+import { cn } from '@/lib/utils'
 import { Link } from '../link'
 
 export interface Breadcrumb {
