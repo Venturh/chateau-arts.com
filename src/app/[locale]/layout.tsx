@@ -1,4 +1,5 @@
-import { Inter as FontSans } from '@next/font/google'
+
+import { Inter as FontSans } from 'next/font/google'
 import { useLocale } from 'next-intl'
 
 import { MainLayout } from '@/components/main-layout'
@@ -44,7 +45,7 @@ export default async function RootLayout({ children, params }) {
 	}
 
 	return (
-		<html lang={locale} className={cn('h-full', fontSans.className)}>
+		<html lang={locale} className={cn('h-full', fontSans.variable)}>
 			<head></head>
 			<body className="h-full">
 				<MainLayout>{children}</MainLayout>
