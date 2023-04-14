@@ -1,4 +1,4 @@
-import { Inter as FontSans } from 'next/font/google'
+import localFont from 'next/font/local'
 import Script from 'next/script'
 import { useLocale } from 'next-intl'
 
@@ -7,9 +7,10 @@ import { cn } from '@/lib/utils'
 import '@/styles/globals.css'
 import { notFound } from 'next/navigation'
 
-const fontSans = FontSans({
-	subsets: ['latin'],
+const inter = localFont({
+	src: '../../../public/fonts/inter-var.woff2',
 	variable: '--font-sans',
+	display: 'swap',
 })
 
 export const metadata = {
@@ -45,7 +46,7 @@ export default async function RootLayout({ children, params }) {
 	}
 
 	return (
-		<html lang={locale} className={cn('h-full', fontSans.variable)}>
+		<html lang={locale} className={cn('h-full', inter.variable)}>
 			<Script
 				async
 				defer
