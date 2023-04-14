@@ -16,15 +16,17 @@ type Props = {
 }
 
 export function Footer({ footer, locale, languageLocale }: Props) {
+	const className =
+		'text-sm leading-6 text-neutral-600 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-neutral-100 '
 	const footerItems = Object.entries(footer).map(([title, values]) => ({
 		title,
 		content: values.map(({ href, name, external }) =>
 			external ? (
-				<a href={href} key={name} rel="noopener noreferrer" target="_blank">
+				<a className={className} href={href} key={name} rel="noopener noreferrer" target="_blank">
 					{name}
 				</a>
 			) : (
-				<Link href={href} key={name}>
+				<Link className={className} href={href} key={name}>
 					{name}
 				</Link>
 			)
@@ -33,15 +35,13 @@ export function Footer({ footer, locale, languageLocale }: Props) {
 	return (
 		<div className="flex w-full flex-col space-y-6 border-t border-neutral-900/10 bg-neutral-50 pt-6 text-base dark:border-neutral-800 dark:bg-neutral-900">
 			<div className="mx-auto w-full max-w-5xl px-6 py-3 lg:px-8">
-				<div className="hidden pb-4 md:grid md:grid-cols-4 md:gap-4">
+				<div className="grid grid-cols-2 gap-8 pb-4 md:grid-cols-4">
 					{footerItems.map(({ title, content }) => (
 						<div className="space-y-2" key={title}>
 							<span className="text-sm font-semibold leading-6 text-neutral-900 dark:text-neutral-100">
 								{title}
 							</span>
-							<div className="flex w-min flex-col space-y-3 text-sm leading-6 text-neutral-600 hover:text-neutral-900 dark:text-neutral-100 dark:hover:text-neutral-200 ">
-								{content.map((c) => c)}
-							</div>
+							<div className="flex w-min flex-col space-y-3 ">{content.map((c) => c)}</div>
 						</div>
 					))}
 
@@ -52,15 +52,7 @@ export function Footer({ footer, locale, languageLocale }: Props) {
 						<LanguageSelect locale={locale} />
 					</div>
 				</div>
-				<div className="space-y-2 md:hidden">
-					{footerItems.map(({ title, content }, i) => (
-						<Collapsible title={title} content={content} key={i} />
-					))}
-					<div className=" flex items-center justify-between px-4 pb-4 ">
-						<span className="text-sm font-medium">{languageLocale}</span>
-						<LanguageSelect locale={locale} />
-					</div>
-				</div>
+
 				<div className="flex items-center justify-between border-t py-6 text-sm dark:border-neutral-800">
 					<span>© {new Date().getFullYear()}</span>
 					<Logo />

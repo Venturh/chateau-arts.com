@@ -32,6 +32,11 @@ export function MainLayout({ children }: Props) {
 				href: 'mailto:info@elisabethwerpers.com',
 				external: true,
 			},
+			{
+				name: '+49 (0)1772896682',
+				href: 'tel:+49 1772896682',
+				external: true,
+			},
 		],
 		[t('legal')]: [
 			{ name: t('disclosure'), href: `/${locale}/impressum` },
