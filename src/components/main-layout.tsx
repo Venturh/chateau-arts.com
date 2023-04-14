@@ -17,6 +17,7 @@ export function MainLayout({ children }: Props) {
 		{ name: t('exhibitions'), href: `/${locale}/exhibitions` },
 		{ name: t('exhibits'), href: `/${locale}/exhibits` },
 		{ name: t('about'), href: `/${locale}/about` },
+		{ name: t('contact'), href: `/${locale}/contact` },
 	]
 
 	const footer = {
@@ -39,8 +40,8 @@ export function MainLayout({ children }: Props) {
 			},
 		],
 		[t('legal')]: [
-			{ name: t('disclosure'), href: `/${locale}/impressum` },
-			{ name: t('privacy'), href: `/${locale}/datenschutz` },
+			{ name: t('disclosure'), href: `/${locale}/legal-notice` },
+			{ name: t('privacy'), href: `/${locale}/privacy-policy` },
 		],
 	}
 

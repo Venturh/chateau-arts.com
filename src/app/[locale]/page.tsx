@@ -35,7 +35,7 @@ export default function Landing() {
 					elisabeth werpers
 				</h1>
 				<p className="mt-1 font-serif text-4xl font-thin  leading-8 text-neutral-600 dark:text-neutral-400">
-					{t('art_trade')}
+					Kunsthandel
 				</p>
 			</div>
 			<div className="mt-16 flow-root sm:mt-24">
@@ -47,9 +47,7 @@ export default function Landing() {
 							height={1442}
 							locale={locale}
 						/>
-					) : (
-						<div className="h-[75vh] w-full rounded bg-neutral-100 dark:bg-neutral-800"></div>
-					)}
+					) : null}
 				</div>
 			</div>
 			<div className="">

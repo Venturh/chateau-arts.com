@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
-import { BuildingOffice2Icon, EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
 import { useLocale, useTranslations } from 'next-intl'
 
+import { Breadcrumbs } from '@/components/ui/breadcumbs'
 import { makeMetaData } from '@/lib/utils'
 
 export async function generateMetadata({ params }): Promise<Metadata> {
@@ -18,9 +18,13 @@ export async function generateMetadata({ params }): Promise<Metadata> {
 export default function About() {
 	const locale = useLocale()
 	const t = useTranslations()
+
+	const breadcrumbs = [{ name: t('home'), href: '/' }, { name: t('about') }]
+
 	return (
-		<div className=" mx-auto max-w-prose space-y-12">
-			<div className="prose dark:prose-invert">
+		<>
+			<Breadcrumbs breadcrumbs={breadcrumbs} />
+			<div className="prose mx-auto max-w-prose dark:prose-invert">
 				{locale === 'de' && (
 					<div>
 						Als Juristin ausgebildet und einige Jahre als Rechtsanwältin tätig, habe ich mich schon
@@ -101,59 +105,6 @@ export default function About() {
 					</div>
 				)}
 			</div>
-			<div>
-				<h2 className="text-3xl font-bold tracking-tight">{t('contact')}</h2>
-				<dl className="mt-10 space-y-4 text-base leading-7 text-neutral-600 dark:text-neutral-300">
-					<div className="flex gap-x-4">
-						<dt className="flex-none">
-							<span className="sr-only">Telephone</span>
-							<BuildingOffice2Icon
-								className="h-7 w-6 text-neutral-400 dark:text-neutral-300"
-								aria-hidden="true"
-							/>
-						</dt>
-						<dd>
-							Im Siek 21
-							<br />
-							31707 Heeßen
-						</dd>
-					</div>
-					<div className="flex gap-x-4">
-						<dt className="flex-none">
-							<span className="sr-only">Telephone</span>
-							<PhoneIcon
-								className="h-7 w-6 text-neutral-400 dark:text-neutral-300"
-								aria-hidden="true"
-							/>
-						</dt>
-						<dd>
-							<a
-								className="hover:text-neutral-900 dark:hover:text-neutral-100"
-								href="tel:+49 1772896682"
-							>
-								+49 1772896682
-							</a>
-						</dd>
-					</div>
-					<div className="flex gap-x-4">
-						<dt className="flex-none">
-							<span className="sr-only">Telephone</span>
-							<EnvelopeIcon
-								className="h-7 w-6 text-neutral-400 dark:text-neutral-300"
-								aria-hidden="true"
-							/>
-						</dt>
-						<dd>
-							<a
-								className="hover:text-neutral-900 dark:hover:text-neutral-100"
-								href="mailto:hello@example.com"
-							>
-								info@elisabethwerpers.com
-							</a>
-						</dd>
-					</div>
-				</dl>
-			</div>
-		</div>
+		</>
 	)
 }

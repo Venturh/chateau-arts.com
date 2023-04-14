@@ -54,7 +54,9 @@ export function Footer({ footer, locale, languageLocale }: Props) {
 				</div>
 
 				<div className="flex items-center justify-between border-t py-6 text-sm dark:border-neutral-800">
-					<span>© {new Date().getFullYear()}</span>
+					<span className="text-neutral-700 dark:text-neutral-300">
+						© {new Date().getFullYear()}
+					</span>
 					<Logo />
 				</div>
 			</div>
