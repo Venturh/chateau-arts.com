@@ -6,6 +6,7 @@ import { visionTool } from '@sanity/vision'
 import { defineConfig } from 'sanity'
 import { deskTool } from 'sanity/desk'
 
+import { ToolMenu } from '@/components/sanity/toolbar'
 import { baseLanguage, languages } from './i18n'
 import { schemaTypes } from './schemas'
 
@@ -48,6 +49,11 @@ export default defineConfig({
 
 	schema: {
 		types: schemaTypes,
+	},
+	studio: {
+		components: {
+			toolMenu: ToolMenu,
+		},
 	},
 	//   theme: myTheme
 })
