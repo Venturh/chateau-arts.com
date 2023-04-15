@@ -1,4 +1,4 @@
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 
 import { Link } from '@/components/link'
 import { Badge } from '@/components/ui/badge'
@@ -9,16 +9,21 @@ import { toCurrency } from '@/lib/utils'
 export function ExhibitRowCard(exhibit: Exhibit) {
 	const { sold } = exhibit
 	const t = useTranslations()
+	const locale = useLocale()
 	return (
-		<Link className="grid grid-cols-3 gap-x-6" href={`/exhibits/${exhibit.slug}`}>
+		<Link className="grid grid-cols-3 gap-x-6" href={`/exhibits/${exhibit.slug[locale]}`}>
 			<SanityImage className="overflow-hidden rounded-md border" image={exhibit.images[0]} />
 			<div className="col-span-2">
 				<div className="flex items-start justify-between">
-					<h3 className="font-medium leading-none">{exhibit.title}</h3>
+					<h3 className="font-medium leading-none">{exhibit.title[locale]}</h3>
 					{sold && <Badge>{t('sold')}</Badge>}
 				</div>
-				<p className="text-neutral-1000 mt-2 text-sm dark:text-neutral-200">{exhibit.artist}</p>
-				<p className="text-neutral-1000 mt-1 text-sm dark:text-neutral-200">{exhibit.year}</p>
+				<p className="text-neutral-1000 mt-2 text-sm dark:text-neutral-200">
+					{exhibit.artist[locale]}
+				</p>
+				<p className="text-neutral-1000 mt-1 text-sm dark:text-neutral-200">
+					{exhibit.year[locale]}
+				</p>
 				{!sold && (
 					<p className="text-neutral-1000 mt-1 text-sm dark:text-neutral-200">
 						{toCurrency(exhibit.price)}

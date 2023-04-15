@@ -1,24 +1,25 @@
 import { defineField, defineType } from 'sanity'
 
 import { toDate, toShortDate } from '@/lib/utils'
-import { getI18nSubtitle } from '../i18n'
 
 export default defineType({
 	name: 'exhibition',
 	title: 'Austellungen',
 	type: 'document',
-	i18n: true,
+	options: {
+		languageFilter: true,
+	},
 	fields: [
 		defineField({
 			name: 'title',
 			title: 'Titel',
-			type: 'string',
+			type: 'localeString',
 			validation: (Rule) => Rule.required(),
 		}),
 		defineField({
 			name: 'slug',
 			title: 'Slug',
-			type: 'slug',
+			type: 'localeString',
 			options: {
 				source: 'title',
 				maxLength: 96,
@@ -46,7 +47,7 @@ export default defineType({
 		defineField({
 			name: 'description',
 			title: 'Beschreibung',
-			type: 'text',
+			type: 'localeText',
 			validation: (Rule) => Rule.required(),
 		}),
 		defineField({
@@ -65,20 +66,22 @@ export default defineType({
 				{
 					type: 'reference',
 					to: { type: 'exhibit' },
-					options: {
-						filter: ({ document }) => {
-							const locale = document.__i18n_lang
-
-							return {
-								filter: `__i18n_lang == $lang`,
-								params: { lang: locale ?? 'de' },
-							}
-						},
-					},
 				},
 			],
 			validation: (Rule) => Rule.required(),
 		}),
+	],
+	orderings: [
+		{
+			title: 'Title',
+			name: 'title',
+			by: [{ field: 'title.de', direction: 'asc' }],
+		},
+		{
+			title: 'Zeitraum',
+			name: 'from',
+			by: [{ field: 'from', direction: 'asc' }],
+		},
 	],
 
 	preview: {
@@ -87,15 +90,12 @@ export default defineType({
 			images: 'images',
 			from: 'from',
 			to: 'to',
-			lang: '__i18n_lang',
-			refs: '__i18n_refs',
 		},
 		prepare(selection) {
-			const { lang, refs, from, to } = selection
-			const date = from ? `${toShortDate(from)} - ${toShortDate(to)}` : ''
-			const title = selection.title ?? 'Unbenannt'
-			const locales = getI18nSubtitle(lang, refs)
-			const subtitle = `${date} | ${locales}`
+			const { from, to } = selection
+			const title = selection.title.de ?? 'Kein Titel angegben'
+			const subtitle = from ? `${toShortDate(from)} - ${toShortDate(to)}` : ''
+
 			return {
 				...selection,
 				title,

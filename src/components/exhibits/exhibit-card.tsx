@@ -1,4 +1,4 @@
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 
 import { Link } from '@/components/link'
 import { Badge } from '@/components/ui/badge'
@@ -9,8 +9,10 @@ import { toCurrency } from '@/lib/utils'
 export function ExhibitCard(exhibit: Exhibit) {
 	const { sold } = exhibit
 	const t = useTranslations()
+	const locale = useLocale()
+	console.log(exhibit)
 	return (
-		<Link className="group relative space-y-3" href={`/exhibits/${exhibit.slug}`}>
+		<Link className="group relative space-y-3" href={`/exhibits/${exhibit.slug[locale]}`}>
 			<div className="relative h-[250px] w-full">
 				<SanityImage
 					fill
@@ -21,12 +23,12 @@ export function ExhibitCard(exhibit: Exhibit) {
 
 			<div>
 				<div className="flex items-start justify-between">
-					<h3 className="font-medium leading-none">{exhibit.title}</h3>
+					<h3 className="font-medium leading-none">{exhibit.title[locale]}</h3>
 					{sold && <Badge>{t('sold')}</Badge>}
 				</div>
 				<div className="text-neutral-1000 text-sm dark:text-neutral-200">
-					<p className="mt-2 ">{exhibit.artist}</p>
-					<p className="mt-1 ">{exhibit.year}</p>
+					<p className="mt-2 ">{exhibit.artist[locale]}</p>
+					<p className="mt-1 ">{exhibit.year[locale]}</p>
 					<p className="mt-1 ">{toCurrency(exhibit.price)}</p>
 				</div>
 			</div>

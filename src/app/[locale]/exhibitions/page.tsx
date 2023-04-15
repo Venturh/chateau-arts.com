@@ -44,7 +44,7 @@ export default function Exhibitions() {
 					<Divider>{t('upcoming')}</Divider>
 					<div className="grid gap-x-6 md:grid-cols-3  md:gap-y-6">
 						{upcomingExhibtions.map((exhibition) => (
-							<div key={exhibition.slug}>
+							<div key={exhibition.slug[locale]}>
 								<ExhibitionCard exhibition={exhibition} upcoming />
 								<div className="z-10 my-6 h-[1px] w-full bg-neutral-200 md:hidden " />
 							</div>
@@ -52,21 +52,19 @@ export default function Exhibitions() {
 					</div>
 				</div>
 			) : null}
-			<div className="mt-12">
-				<Divider>{t('past')}</Divider>
-				<div className="grid gap-x-6 md:grid-cols-3  md:gap-y-6">
-					{pastExhibitions.length > 0 ? (
-						pastExhibitions.map((exhibition) => (
-							<div key={exhibition.slug}>
+			{pastExhibitions.length > 0 ? (
+				<div className="mt-12">
+					<Divider>{t('past')}</Divider>
+					<div className="grid gap-x-6 md:grid-cols-3  md:gap-y-6">
+						{pastExhibitions.map((exhibition) => (
+							<div key={exhibition.slug[locale]}>
 								<ExhibitionCard exhibition={exhibition} />
 								<div className="z-10 my-6 h-[1px] w-full bg-neutral-200 md:hidden " />
 							</div>
-						))
-					) : (
-						<EmptyState text={t('no-past-exhibitions')} icon={<PhotoIcon />} />
-					)}
+						))}
+					</div>
 				</div>
-			</div>
+			) : null}
 		</div>
 	)
 }

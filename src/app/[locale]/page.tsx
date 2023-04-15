@@ -55,7 +55,7 @@ export default function Landing() {
 				<div className="grid gap-x-6 md:grid-cols-2  md:gap-y-6">
 					{upcomingExhibtions.length > 0 ? (
 						upcomingExhibtions.map((exhibition) => (
-							<div key={exhibition.slug}>
+							<div key={exhibition.slug[locale]}>
 								<ExhibitionCard exhibition={exhibition} upcoming />
 								<div className="z-10 my-6 h-[1px] w-full bg-neutral-200 md:hidden " />
 							</div>

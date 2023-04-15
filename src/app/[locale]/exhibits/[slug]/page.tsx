@@ -19,6 +19,7 @@ type Props = {
 
 export async function generateMetadata({ params }): Promise<Metadata> {
 	const { locale, slug } = params
+	console.log(locale, slug)
 	const exhibit = await getExhibitBySlug(locale, slug)
 
 	if (!exhibit) {
@@ -30,7 +31,7 @@ export async function generateMetadata({ params }): Promise<Metadata> {
 	const url = `https://elisabethwerpers.com/exhibits/${slug}`
 
 	const metaData = await makeMetaData(locale, {
-		optionalTitle: title,
+		optionalTitle: title[locale],
 		optionalDescription: description,
 		optionalUrl: url,
 		optionalImage: images[0],
@@ -49,7 +50,7 @@ export default function ExhibitionPage({ params: { slug } }: Props) {
 	const breadcrumbs: Breadcrumb[] = [
 		{ name: t('home'), href: '/' },
 		{ name: t('exhibits'), href: '/exhibits' },
-		{ name: exhibit.title, href: `/exhibits/${exhibit.slug}` },
+		{ name: exhibit.title[locale], href: `/exhibits/${exhibit.slug[locale]}` },
 	]
 
 	return (
@@ -63,7 +64,7 @@ export default function ExhibitionPage({ params: { slug } }: Props) {
 					<div className="mt-10 space-y-6 px-4 sm:mt-16 sm:px-0 lg:mt-0">
 						<h1 className="sr-only">Title</h1>
 						<h1 className="text-3xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100">
-							{exhibit.title}
+							{exhibit.title[locale]}
 						</h1>
 						<div className="mt-3">
 							<h2 className="sr-only">Price</h2>
@@ -77,10 +78,10 @@ export default function ExhibitionPage({ params: { slug } }: Props) {
 						</div>
 						<div>
 							<h3 className="sr-only">Information</h3>
-							<div className="text-neutral-800 dark:text-neutral-200">{exhibit.artist}</div>
-							<div className="text-neutral-800 dark:text-neutral-200">{exhibit.year}</div>
+							<div className="text-neutral-800 dark:text-neutral-200">{exhibit.artist[locale]}</div>
+							<div className="text-neutral-800 dark:text-neutral-200">{exhibit.year[locale]}</div>
 						</div>
-						<ButtonLink href={`/${locale}/exhibits/${exhibit.slug}/contact`}>
+						<ButtonLink href={`/${locale}/exhibits/${exhibit.slug[locale]}/contact`}>
 							{t('request-exhibit')}
 						</ButtonLink>
 						<section aria-labelledby="details">
@@ -88,7 +89,7 @@ export default function ExhibitionPage({ params: { slug } }: Props) {
 								Additional details
 							</h2>
 							<ul className="list-disc space-y-2 border-t pl-4 pt-6 dark:border-t-neutral-800">
-								{exhibit.info
+								{exhibit.info[locale]
 									.split('\n')
 									.filter((line: string) => line !== '')
 									.map((line: string) => (
@@ -102,7 +103,7 @@ export default function ExhibitionPage({ params: { slug } }: Props) {
 						</section>
 					</div>
 				</div>
-				<ExhibitGrid title={t('exhibits')} exhibits={latestExhibits} />
+				<ExhibitGrid title={t('latest-exhibits')} exhibits={latestExhibits} />
 			</div>
 		</div>
 	)

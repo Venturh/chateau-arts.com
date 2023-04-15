@@ -35,3 +35,7 @@ yarn-error.log*
 .contentlayer
 .env
 tsconfig.tsbuildinfo
+
+sanity.json
+development.tar.gz
+production.tar.gz

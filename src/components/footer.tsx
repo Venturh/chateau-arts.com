@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 
-import { Collapsible } from '@/components/ui/collapsible'
 import { NavItem } from '@/types/nav'
 import { LanguageSelect } from './language-select'
 import { Logo } from './logo'

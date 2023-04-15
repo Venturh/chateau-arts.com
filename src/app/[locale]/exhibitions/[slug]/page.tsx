@@ -31,7 +31,7 @@ export async function generateMetadata({ params }): Promise<Metadata> {
 
 	const metaData = await makeMetaData(locale, {
 		optionalTitle: title,
-		optionalDescription: description,
+		optionalDescription: description[locale],
 		optionalUrl: url,
 		optionalImage: images[0],
 	})
@@ -48,7 +48,7 @@ export default function Exhibition({ params: { slug } }: Props) {
 	const breadcrumbs: Breadcrumb[] = [
 		{ name: t('home'), href: '/' },
 		{ name: t('exhibitions'), href: '/exhibitions' },
-		{ name: exhibition.title },
+		{ name: exhibition.title[locale] },
 	]
 
 	return (
@@ -58,12 +58,12 @@ export default function Exhibition({ params: { slug } }: Props) {
 			<div className="mx-auto flex max-w-2xl flex-col-reverse pb-16 pt-10 lg:grid lg:max-w-7xl lg:grid-cols-3  lg:gap-x-8 lg:pb-24 lg:pt-16">
 				<div className="mt-6 lg:col-span-2 lg:mt-0 lg:border-r lg:border-neutral-200 lg:pr-8 lg:dark:border-neutral-800">
 					<p className="mx-auto max-w-2xl text-base text-neutral-900 dark:text-neutral-100">
-						{exhibition.description}
+						{exhibition.description[locale]}
 					</p>
 				</div>
 				<div className="lg:row-span-3">
 					<SectionHeader
-						title={exhibition.title}
+						title={exhibition.title[locale]}
 						description={`${toDate(exhibition.from)} - ${toDate(exhibition.to)}`}
 					/>
 					<div className="mt-6 flex items-center space-x-2">

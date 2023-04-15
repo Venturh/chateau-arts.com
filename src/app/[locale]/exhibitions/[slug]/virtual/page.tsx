@@ -18,14 +18,14 @@ export default function VirtualExhibition({ params: { slug } }: Props) {
 	const breadcrumbs: Breadcrumb[] = [
 		{ name: t('home'), href: '/' },
 		{ name: t('exhibitions'), href: '/exhibitions' },
-		{ name: exhibition.title, href: `/exhibitions/${exhibition.slug}` },
+		{ name: exhibition.title[locale], href: `/exhibitions/${exhibition.slug[locale]}` },
 		{ name: 'Virtual Exhibition' },
 	]
 
 	return (
 		<div>
 			<Breadcrumbs breadcrumbs={breadcrumbs} />
-			<h1>Virtual Exhibition for {exhibition.title} </h1>
+			<h1>Virtual Exhibition for {exhibition.title[locale]} </h1>
 		</div>
 	)
 }

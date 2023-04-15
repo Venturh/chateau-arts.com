@@ -1,23 +1,23 @@
 import { defineField, defineType } from 'sanity'
 
-import { getI18nSubtitle } from '../i18n'
-
 export default defineType({
 	name: 'exhibit',
 	title: 'Werke',
 	type: 'document',
-	i18n: true,
+	options: {
+		languageFilter: true,
+	},
 	fields: [
 		defineField({
 			name: 'title',
 			title: 'Titel',
-			type: 'string',
+			type: 'localeString',
 			validation: (Rule) => Rule.required(),
 		}),
 		defineField({
 			name: 'slug',
-			title: 'Slug',
-			type: 'slug',
+			title: 'Link (slug)',
+			type: 'localeString',
 			options: {
 				source: 'title',
 				maxLength: 96,
@@ -27,13 +27,13 @@ export default defineType({
 		defineField({
 			name: 'artist',
 			title: 'Künstlername',
-			type: 'string',
+			type: 'localeString',
 			validation: (Rule) => Rule.required(),
 		}),
 		defineField({
 			name: 'year',
 			title: 'Jahr',
-			type: 'string',
+			type: 'localeString',
 			validation: (Rule) => Rule.required(),
 		}),
 		defineField({
@@ -51,7 +51,7 @@ export default defineType({
 		defineField({
 			name: 'info',
 			title: 'Infos',
-			type: 'text',
+			type: 'localeText',
 			validation: (Rule) => Rule.required(),
 		}),
 		defineField({
@@ -61,18 +61,24 @@ export default defineType({
 			of: [{ type: 'image' }],
 		}),
 	],
+	orderings: [
+		{
+			title: 'Title',
+			name: 'title',
+			by: [{ field: 'title.de', direction: 'asc' }],
+		},
+	],
 	preview: {
 		select: {
 			title: 'title',
 			artist: 'artist',
 			images: 'images',
-			lang: '__i18n_lang',
-			refs: '__i18n_refs',
 		},
 		prepare(selection) {
-			const { title, refs, lang } = selection
-			const subtitle = getI18nSubtitle(lang, refs)
-			return { title, subtitle: subtitle, media: selection.images[0] }
+			const title = selection.title.de ?? 'Kein Titel angegben'
+			const subtitle = selection.artist.de ?? 'Kein Künstler angegeben'
+
+			return { title, subtitle, media: selection.images[0] }
 		},
 	},
 })

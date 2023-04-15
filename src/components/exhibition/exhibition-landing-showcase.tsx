@@ -27,7 +27,7 @@ export function ExhibitionLandingShowcase({ exhibition, locale, height, width }:
 		<Link href={href} className="relative h-full w-full ">
 			<div className="absolute left-4 top-4 rounded bg-neutral-200 p-2 dark:bg-neutral-800">
 				<h1 className="text-xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 lg:text-3xl">
-					{title}
+					{title[locale]}
 				</h1>
 				<p className="mt-2 max-w-xl text-sm text-neutral-700 dark:text-neutral-200 lg:text-base">
 					{`${toDate(from)} - ${toDate(to)}`}

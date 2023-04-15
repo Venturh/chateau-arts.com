@@ -8,12 +8,9 @@ export function ToolMenu(props: ToolMenuProps) {
 
 	const direction = isSidebar ? 'column' : 'row'
 
-	//remove default desk tool
-	const enabledTools = [tools[2], tools[1]]
-
 	return (
 		<Flex gap={3} direction={direction}>
-			{enabledTools.map((tool) => (
+			{tools.map((tool) => (
 				<Button
 					as={ToolLink}
 					key={tool.name}

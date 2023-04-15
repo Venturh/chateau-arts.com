@@ -9,7 +9,7 @@ interface Props {
 }
 
 export function ExhibitGrid({ title, exhibits }: Props) {
-	return (
+	return exhibits.length > 0 ? (
 		<div>
 			{title && <SectionHeader title={title} />}
 			<div
@@ -20,5 +20,5 @@ export function ExhibitGrid({ title, exhibits }: Props) {
 				))}
 			</div>
 		</div>
-	)
+	) : null
 }

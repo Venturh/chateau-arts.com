@@ -1,11 +1,7 @@
+import { languageIds } from '@/sanity/i18n'
 import { groq } from 'next-sanity'
 
 const today = new Date().toISOString().slice(0, 10)
-const from = '2023-02-01'
-const to = '2023-02-12'
-
-const isBetweenFromAndTo = `from <= "${today}" && "${today}" <= to`
-const isPastFrom = `from <= "${today}" && to < "${today}"`
 
 const exhibitFields = groq`
   _id,
@@ -16,7 +12,7 @@ const exhibitFields = groq`
   price,
   sold,
   images,
-  "slug": slug.current,
+  slug,
 `
 
 const exhibitionFields = groq`
@@ -27,36 +23,36 @@ const exhibitionFields = groq`
   to,
   mainImage,
   images,
-  "slug": slug.current,
+  "slug": slug[$lang],
 `
 
 export const exhibitionIndexQuery = groq`
-*[_type == "exhibition" && __i18n_lang == $lang] | order(from desc) | order(to desc){
+*[_type == "exhibition"] | order(from desc) | order(to desc){
   ${exhibitionFields}
 }`
 
 export const exhibitionLatestQuery = groq`
-*[_type == "exhibition" && __i18n_lang == $lang] | order(from desc) | order(to desc) [0...3] {
+*[_type == "exhibition"] | order(from desc) | order(to desc) [0...3] {
     ${exhibitionFields}
   }`
 
 export const exhibitionCurrentQuery = groq`
-*[_type == "exhibition" && __i18n_lang == $lang && from <= "${today}" && "${today}" <= to ] | order(from desc) | order(to desc) [0] {
+*[_type == "exhibition" && from <= "${today}" && "${today}" <= to ] | order(from desc) | order(to desc) [0] {
     ${exhibitionFields}
   }`
 
 export const exhibitionPastQuery = groq`
-*[_type == "exhibition" && __i18n_lang == $lang && from <= "${today}" && to < "${today}" ] | order(from desc) | order(to desc) [0...3] {
+*[_type == "exhibition" && from <= "${today}" && to < "${today}" ] | order(from desc) | order(to desc) [0...3] {
     ${exhibitionFields}
   }`
 
 export const exhibitionUpcomingQuery = groq`
-*[_type == "exhibition" && __i18n_lang == $lang && from > "${today}"] | order(from desc) | order(to desc) [0...3] {
+*[_type == "exhibition" && from > "${today}"] | order(from desc) | order(to desc) [0...3] {
     ${exhibitionFields}
   }`
 
 export const exhibitionSlugQuery = groq`
-*[_type=='exhibition' && __i18n_lang == $lang && slug.current == $slug][0]{
+*[_type=='exhibition' && slug[$lang] == $slug][0]{
     ${exhibitionFields}
     ${groq`
     exhibits[]->{
@@ -66,24 +62,38 @@ export const exhibitionSlugQuery = groq`
 }`
 
 export const exhibitIndexQuery = groq`
-*[_type == "exhibit" && __i18n_lang == $lang] | order(date desc, _updatedAt desc) {
+*[_type == "exhibit"] | order(date desc, _updatedAt desc) {
   ${exhibitFields}
 }`
 
 export const exhibitLatestQuery = groq`
-*[_type == "exhibit" && __i18n_lang == $lang] | order(date desc, _updatedAt desc)[0...6] {
+*[_type == "exhibit"] | order(date desc, _updatedAt desc)[0...6] {
   ${exhibitFields}
 }`
 
 export const exhibitLatestExceptSlugQuery = groq`
-*[_type == "exhibit" && __i18n_lang == $lang && slug.current != $slug] | order(date desc, _updatedAt desc)[0...6] {
+*[_type == "exhibit" && slug[$lang] != $slug] | order(date desc, _updatedAt desc)[0...6] {
   ${exhibitFields}
 }`
 
 export const exhibitSlugQuery = groq`
-*[_type=='exhibit' && __i18n_lang == $lang && slug.current == $slug][0] {
+*[_type=='exhibit' && slug[$lang] == $slug][0] {
   ${exhibitFields}
 }`
+
+interface LocaleText {
+	_type: string
+	de: string
+	en: string
+	fr: string
+}
+
+interface LocaleString {
+	_type: string
+	de: string
+	en: string
+	fr: string
+}
 
 export interface SanityImageType {
 	_key: string
@@ -102,12 +112,11 @@ export interface SanityImageType {
 
 export interface Exhibit {
 	_id: string
-	title: string
-	slug: string
-	artist: string
-	year: string
-	info: any
-	other: string
+	title: LocaleString
+	slug: LocaleString
+	artist: LocaleString
+	year: LocaleString
+	info: LocaleString
 	price: number
 	sold: boolean
 	images: SanityImageType[]
@@ -115,11 +124,11 @@ export interface Exhibit {
 
 export interface Exhibition {
 	_id: string
-	title: string
-	slug: string
+	title: LocaleString
+	slug: LocaleString
 	from: string
 	to: string
-	description?: any
+	description: LocaleString
 	images: SanityImageType[]
 	exhibits: Exhibit[]
 }
