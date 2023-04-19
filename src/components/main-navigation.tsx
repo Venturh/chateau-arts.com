@@ -51,6 +51,7 @@ export function MainNavigation({ navigation, locale }: Props) {
 				<div className="hidden lg:flex lg:gap-x-4">
 					{navigation.map((item) => (
 						<Link
+							locale={locale}
 							key={item.name}
 							href={item.href}
 							className={cn(
