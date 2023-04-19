@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { VariantProps, cva } from 'class-variance-authority'
-import { Link } from 'next-intl'
+import { Link, useLocale } from 'next-intl'
 
 import { cn } from '@/lib/utils'
 
@@ -48,8 +48,10 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 )
 const ButtonLink = React.forwardRef<HTMLAnchorElement, LinkProps>(
 	({ className, variant, size, ...props }, ref) => {
+		const locale = useLocale()
 		return (
 			<Link
+				locale={locale}
 				href={''}
 				className={cn(buttonVariants({ variant, size, className }))}
 				ref={ref}
