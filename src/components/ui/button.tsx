@@ -1,6 +1,6 @@
 import * as React from 'react'
-import Link from 'next/link'
 import { VariantProps, cva } from 'class-variance-authority'
+import { Link } from 'next-intl'
 
 import { cn } from '@/lib/utils'
 

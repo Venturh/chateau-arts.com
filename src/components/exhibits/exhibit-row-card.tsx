@@ -1,6 +1,5 @@
-import { useLocale, useTranslations } from 'next-intl'
+import { Link, useLocale, useTranslations } from 'next-intl'
 
-import { Link } from '@/components/link'
 import { Badge } from '@/components/ui/badge'
 import { SanityImage } from '@/components/ui/sanity-image'
 import { Exhibit } from '@/lib/sanity.queries'
@@ -11,7 +10,11 @@ export function ExhibitRowCard(exhibit: Exhibit) {
 	const t = useTranslations()
 	const locale = useLocale()
 	return (
-		<Link className="grid grid-cols-3 gap-x-6" href={`/exhibits/${exhibit.slug[locale]}`}>
+		<Link
+			className="grid grid-cols-3 gap-x-6"
+			locale={locale}
+			href={`/exhibits/${exhibit.slug[locale]}`}
+		>
 			<SanityImage className="overflow-hidden rounded-md border" image={exhibit.images[0]} />
 			<div className="col-span-2">
 				<div className="flex items-start justify-between">

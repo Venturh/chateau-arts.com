@@ -1,6 +1,5 @@
-import { useLocale, useTranslations } from 'next-intl'
+import { Link, useLocale, useTranslations } from 'next-intl'
 
-import { Link } from '@/components/link'
 import { SanityImage } from '@/components/ui/sanity-image'
 import { Exhibition } from '@/lib/sanity.queries'
 import { toDate } from '@/lib/utils'
@@ -14,6 +13,7 @@ export function ExhibitionRowCard({ exhibition }: Props) {
 	const { slug, title } = exhibition
 	return (
 		<Link
+			locale={locale}
 			href={`/exhibitions/${slug}`}
 			className="group items-start overflow-hidden rounded md:flex"
 			key={slug[locale]}

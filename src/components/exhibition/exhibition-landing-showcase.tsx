@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 
 import 'swiper/swiper.min.css'
 import 'swiper/css/pagination'
-import Link from 'next/link'
+import { Link } from 'next-intl'
 
 import { ButtonLink } from '@/components/ui/button'
 import { SanityImage } from '@/components/ui/sanity-image'
@@ -22,7 +22,7 @@ type Props = {
 
 export function ExhibitionLandingShowcase({ exhibition, locale, height, width }: Props) {
 	const { title, from, to, slug, images } = exhibition
-	const href = `/${locale}/exhibitions/${slug}`
+	const href = `/exhibitions/${slug}`
 	return (
 		<Link href={href} className="relative h-full w-full ">
 			<div className="absolute left-4 top-4 rounded bg-neutral-200 p-2 dark:bg-neutral-800">

@@ -1,7 +1,7 @@
 import { Url } from 'next/dist/shared/lib/router/router'
+import { Link, useLocale } from 'next-intl'
 
 import { cn } from '@/lib/utils'
-import { Link } from '../link'
 
 export interface Breadcrumb {
 	name: string
@@ -13,6 +13,7 @@ interface Props {
 }
 
 export function Breadcrumbs({ breadcrumbs }: Props) {
+	const locale = useLocale()
 	return (
 		<nav aria-label="breadcrumbs" className="pb-4">
 			<ol role="list" className="flex items-center space-x-2">
@@ -22,6 +23,7 @@ export function Breadcrumbs({ breadcrumbs }: Props) {
 						<li key={name}>
 							<div className="flex items-center">
 								<Tag
+									locale={locale}
 									href={href as Url}
 									className={cn('mr-4 text-sm font-medium text-neutral-900 dark:text-neutral-100', {
 										underline: href,
