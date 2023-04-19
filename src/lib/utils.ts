@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import i18n from '@/i18n'
 import { ClassValue, clsx } from 'clsx'
 import { getTranslations } from 'next-intl/server'
 import { twMerge } from 'tailwind-merge'
