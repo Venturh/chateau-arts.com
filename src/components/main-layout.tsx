@@ -13,11 +13,11 @@ export function MainLayout({ children }: Props) {
 	const t = useTranslations()
 
 	const navigation = [
-		{ name: t('home'), href: `/${locale}` },
-		{ name: t('exhibitions'), href: `/${locale}/exhibitions` },
-		{ name: t('exhibits'), href: `/${locale}/exhibits` },
-		{ name: t('about'), href: `/${locale}/about` },
-		{ name: t('contact'), href: `/${locale}/contact` },
+		{ name: t('home'), href: `/` },
+		{ name: t('exhibitions'), href: `/exhibitions` },
+		{ name: t('exhibits'), href: `/exhibits` },
+		{ name: t('about'), href: `/about` },
+		{ name: t('contact'), href: `/contact` },
 	]
 
 	const footer = {
@@ -40,8 +40,8 @@ export function MainLayout({ children }: Props) {
 			},
 		],
 		[t('legal')]: [
-			{ name: t('disclosure'), href: `/${locale}/legal-notice` },
-			{ name: t('privacy'), href: `/${locale}/privacy-policy` },
+			{ name: t('disclosure'), href: `/legal-notice` },
+			{ name: t('privacy'), href: `/privacy-policy` },
 		],
 	}
 

@@ -1,10 +1,10 @@
 'use client'
 
 import { useState } from 'react'
-import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import * as Dialog from '@radix-ui/react-dialog'
+import { Link } from 'next-intl'
 
 import { Logo } from '@/components/logo'
 import { cn } from '@/lib/utils'
@@ -51,7 +51,6 @@ export function MainNavigation({ navigation, locale }: Props) {
 				<div className="hidden lg:flex lg:gap-x-4">
 					{navigation.map((item) => (
 						<Link
-							locale={locale}
 							key={item.name}
 							href={item.href}
 							className={cn(
