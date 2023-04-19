@@ -1,6 +1,5 @@
-import { useLocale, useTranslations } from 'next-intl'
+import { Link, useLocale, useTranslations } from 'next-intl'
 
-import { Link } from '@/components/link'
 import { Badge } from '@/components/ui/badge'
 import { SanityImage } from '@/components/ui/sanity-image'
 import { Exhibit } from '@/lib/sanity.queries'
@@ -12,7 +11,11 @@ export function ExhibitCard(exhibit: Exhibit) {
 	const locale = useLocale()
 
 	return (
-		<Link className="group relative space-y-3" href={`/exhibits/${exhibit.slug[locale]}`}>
+		<Link
+			locale={locale}
+			className="group relative space-y-3"
+			href={`/exhibits/${exhibit.slug[locale]}`}
+		>
 			<div className="relative h-[250px] w-full">
 				<SanityImage
 					fill

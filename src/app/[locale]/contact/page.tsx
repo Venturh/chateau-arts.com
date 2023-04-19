@@ -4,21 +4,21 @@ import { useTranslations } from 'next-intl'
 import { Breadcrumbs } from '@/components/ui/breadcumbs'
 import { makeMetaData } from '@/lib/utils'
 
-// export async function generateMetadata({ params }) {
-// 	const { locale } = params
+export async function generateMetadata({ params }) {
+	const { locale } = params
 
-// 	const metaData = await makeMetaData(locale, {
-// 		optionalTitleKey: 'contact',
-// 		optionalUrl: `https://elisabethwerpers.com/${locale}/contact`,
-// 	})
+	const metaData = await makeMetaData(locale, {
+		optionalTitleKey: 'contact',
+		optionalUrl: `https://elisabethwerpers.com/${locale}/contact`,
+	})
 
-// 	return metaData
-// }
+	return metaData
+}
 
 export default function Disclorure() {
-	// const t = useTranslations()
+	const t = useTranslations()
 
-	// const breadcrumbs = [{ name: t('home'), href: '/' }, { name: t('contact') }]
+	const breadcrumbs = [{ name: t('home'), href: '/' }, { name: t('contact') }]
 
 	return (
 		<>

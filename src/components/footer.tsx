@@ -25,7 +25,7 @@ export function Footer({ footer, locale, languageLocale }: Props) {
 					{name}
 				</a>
 			) : (
-				<Link className={className} href={href} key={name}>
+				<Link locale={locale} className={className} href={href} key={name}>
 					{name}
 				</Link>
 			)
