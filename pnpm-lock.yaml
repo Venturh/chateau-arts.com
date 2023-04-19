@@ -44,8 +44,8 @@ dependencies:
     specifier: ^13.1.7-canary.9
     version: 13.3.0(@babel/core@7.21.4)(react-dom@18.2.0)(react@18.2.0)
   next-intl:
-    specifier: 2.14.0-beta.2
-    version: 2.14.0-beta.2(next@13.3.0)(react@18.2.0)
+    specifier: 2.11.0-beta.8
+    version: 2.11.0-beta.8(next@13.3.0)(react@18.2.0)
   next-sanity:
     specifier: ^4.1.7
     version: 4.1.7(@sanity/icons@2.3.1)(@sanity/types@3.8.3)(@sanity/ui@1.3.2)(next@13.3.0)(react@18.2.0)(sanity@3.8.3)(styled-components@5.3.9)
@@ -6566,8 +6566,8 @@ packages:
     engines: {node: '>= 0.6'}
     dev: false
 
-  /next-intl@2.14.0-beta.2(next@13.3.0)(react@18.2.0):
-    resolution: {integrity: sha512-FDZlTXL6zetJOXETRvZ6g9nlJnZ2K9g7Yza3qbpcSkL5ATO7NnOVpJfcX2EaU0sfKqrC21Lcq1b9MM379vcwCw==}
+  /next-intl@2.11.0-beta.8(next@13.3.0)(react@18.2.0):
+    resolution: {integrity: sha512-1mvHvhi4BGnvmv4cU3YeBF4bS0rfkJtZ0daYSb0PHXE7AijpL6lbR2X4pQS1zwb5/bpwonZ2JlojawFODpdFKQ==}
     engines: {node: '>=10'}
     peerDependencies:
       next: ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0
@@ -6578,7 +6578,7 @@ packages:
       next: 13.3.0(@babel/core@7.21.4)(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
       server-only: 0.0.1
-      use-intl: 2.13.1(react@18.2.0)
+      use-intl: 2.11.0-alpha.2(react@18.2.0)
     dev: false
 
   /next-sanity-image@6.0.0(@sanity/client@5.4.2)(next@13.3.0)(react@18.2.0):
@@ -8558,8 +8558,8 @@ packages:
       react: 18.2.0
     dev: false
 
-  /use-intl@2.13.1(react@18.2.0):
-    resolution: {integrity: sha512-za8vb9UtKyFuDWbc+Iceqnz1KOAGwm9cTaBjW5af6e7ZcAdwADUwsz9M/8M9VDl5gKKQ/o+3TJcKdi+ieOKhfQ==}
+  /use-intl@2.11.0-alpha.2(react@18.2.0):
+    resolution: {integrity: sha512-8fIbXplg+1CG1g/cAo/TiayH7lGxDE2DFpLixkX9AUtOOXEIsQ5OzwaQynJgz12qul7D54f9/ywiwfrKl6E8wA==}
     engines: {node: '>=10'}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
