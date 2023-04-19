@@ -19,7 +19,6 @@ type Props = {
 
 export async function generateMetadata({ params }): Promise<Metadata> {
 	const { locale, slug } = params
-	console.log(locale, slug)
 	const exhibit = await getExhibitBySlug(locale, slug)
 
 	if (!exhibit) {

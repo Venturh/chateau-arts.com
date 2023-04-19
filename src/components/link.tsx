@@ -1,14 +1,25 @@
-import type { LinkProps } from 'next/link'
-import { LocalizedLink } from 'next-intl'
+import { ComponentProps, forwardRef } from 'react'
+import NextLink from 'next/link'
+import { useLocale } from 'next-intl'
 
-type Props = {
-	children: React.ReactNode
-	className?: string
-} & LinkProps
+type Props = ComponentProps<typeof NextLink>
 
-export function Link({ children, ...props }: Props) {
-	return (
-		//@ts-expect-error - next-intl
-		<LocalizedLink {...props}>{children}</LocalizedLink>
-	)
+export function Link({ href, ...rest }: Props, ref: Props['ref']) {
+	const locale = useLocale()
+
+	// Turn this off, to avoid updating the locale cookie for prefetch requests
+	const prefetch = false
+
+	function getLocalizedHref(originalHref: string) {
+		return originalHref.replace(/^\//, '/' + locale + '/')
+	}
+
+	const localizedHref =
+		typeof href === 'string'
+			? getLocalizedHref(href)
+			: href.pathname != null
+			? { ...href, pathname: getLocalizedHref(href.pathname) }
+			: href
+
+	return <NextLink ref={ref} href={localizedHref} prefetch={prefetch} {...rest} />
 }

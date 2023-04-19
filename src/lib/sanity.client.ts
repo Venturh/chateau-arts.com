@@ -74,6 +74,5 @@ export async function getLatestExceptSlugExhibits(lang: string, slug: string): P
 }
 
 export async function getExhibitBySlug(lang: string, slug: string): Promise<Exhibit> {
-	console.log('getExhibitBySlug', lang, slug)
 	return await fetchAPI(exhibitSlugQuery, { lang, slug })
 }

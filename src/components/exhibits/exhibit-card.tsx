@@ -10,7 +10,7 @@ export function ExhibitCard(exhibit: Exhibit) {
 	const { sold } = exhibit
 	const t = useTranslations()
 	const locale = useLocale()
-	console.log(exhibit)
+
 	return (
 		<Link className="group relative space-y-3" href={`/exhibits/${exhibit.slug[locale]}`}>
 			<div className="relative h-[250px] w-full">
