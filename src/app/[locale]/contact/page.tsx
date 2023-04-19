@@ -15,7 +15,7 @@ import { makeMetaData } from '@/lib/utils'
 // 	return metaData
 // }
 
-export default function Disclorure() {
+export default async function Disclorure() {
 	// const t = useTranslations()
 
 	// const breadcrumbs = [{ name: t('home'), href: '/' }, { name: t('contact') }]
