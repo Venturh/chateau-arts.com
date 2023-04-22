@@ -56,20 +56,22 @@ export default function Landing() {
 					) : null}
 				</div>
 			</div>
-			<div className="mt-6 sm:mt-24">
-				<Divider>{t('all-exhibitions')}</Divider>
-				<div className="grid gap-6 md:grid-cols-2">
-					{pastExhibitions.map((exhibition) => (
-						<ExhibitionLandingShowcase
-							key={exhibition.slug[locale]}
-							exhibition={exhibition}
-							width={500}
-							height={500}
-							locale={locale}
-						/>
-					))}
+			{pastExhibitions.length > 0 && (
+				<div className="mt-6 sm:mt-24">
+					<Divider>{t('all-exhibitions')}</Divider>
+					<div className="grid gap-6 md:grid-cols-2">
+						{pastExhibitions.map((exhibition) => (
+							<ExhibitionLandingShowcase
+								key={exhibition.slug[locale]}
+								exhibition={exhibition}
+								width={500}
+								height={500}
+								locale={locale}
+							/>
+						))}
+					</div>
 				</div>
-			</div>
+			)}
 		</div>
 	)
 }
