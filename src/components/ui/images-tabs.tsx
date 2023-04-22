@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import 'swiper/swiper.min.css'
+import 'swiper/swiper.min.css'
 import 'swiper/css/free-mode'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
@@ -26,26 +27,18 @@ export function ImagesTabs({ images }: Props) {
 		clickable: true,
 	}
 
-	const heightMap = {
-		1: 'h-[100px]',
-		2: 'h-[300px]',
-		3: 'h-[300px]',
-		4: 'h-[300px]',
-		5: 'h-[700px]',
-	}
-
 	return (
 		<div className="h-96 lg:grid lg:h-[650px] lg:grid-cols-12 lg:gap-x-8">
 			<Swiper
 				onSwiper={setThumbsSwiper}
+				spaceBetween={10}
 				slidesPerView={images.length}
-				spaceBetween={0}
 				watchSlidesProgress
-				className={cn('tabs-swiper col-span-2 hidden  w-full lg:block', heightMap[images.length])}
+				className={cn('tabs-swiper col-span-2 !hidden w-full   overscroll-auto lg:!flex')}
 				direction="vertical"
 			>
 				{images.map((image) => (
-					<SwiperSlide key={image._key}>
+					<SwiperSlide className="!h-20 rounded-md border dark:border-neutral-800" key={image._key}>
 						<SanityImage fill image={image} />
 					</SwiperSlide>
 				))}

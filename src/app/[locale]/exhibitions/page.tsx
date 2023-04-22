@@ -1,18 +1,12 @@
 import { use } from 'react'
 import { Metadata } from 'next'
-import { PhotoIcon } from '@heroicons/react/24/outline'
 import { useLocale, useTranslations } from 'next-intl'
 
 import { ExhibitionCard } from '@/components/exhibition/exhibition-card'
 import { ExhibitionRowCard } from '@/components/exhibition/exhibition-row-card'
 import { Breadcrumb, Breadcrumbs } from '@/components/ui/breadcumbs'
 import { Divider } from '@/components/ui/divider'
-import EmptyState from '@/components/ui/empty-state'
-import {
-	getCurrentExhibition,
-	getPastExhibitions,
-	getUpcommingExhibitions,
-} from '@/lib/sanity.client'
+import { getAllExhibitions } from '@/lib/sanity.client'
 import { makeMetaData } from '@/lib/utils'
 
 export async function generateMetadata({ params }): Promise<Metadata> {
@@ -29,9 +23,12 @@ export async function generateMetadata({ params }): Promise<Metadata> {
 export default function Exhibitions() {
 	const t = useTranslations()
 	const locale = useLocale()
-	const currentExhibition = use(getCurrentExhibition(locale))
-	const pastExhibitions = use(getPastExhibitions(locale))
-	const upcomingExhibtions = use(getUpcommingExhibitions(locale))
+	const allExhibitions = use(getAllExhibitions(locale))
+
+	const currentExhibition = allExhibitions[allExhibitions.length - 1]
+	const pastExhibitions = allExhibitions
+		.slice(0, allExhibitions.length - 1)
+		.filter((exhibition) => new Date(exhibition.from) < new Date())
 
 	const breadcrumbs: Breadcrumb[] = [{ name: t('home'), href: '/' }, { name: t('exhibitions') }]
 
@@ -39,32 +36,19 @@ export default function Exhibitions() {
 		<div>
 			<Breadcrumbs breadcrumbs={breadcrumbs} />
 			{currentExhibition && <ExhibitionRowCard exhibition={currentExhibition} />}
-			{upcomingExhibtions.length > 0 ? (
+			{pastExhibitions.length > 0 && (
 				<div className="mt-12">
-					<Divider>{t('upcoming')}</Divider>
-					<div className="grid gap-x-6 md:grid-cols-3  md:gap-y-6">
-						{upcomingExhibtions.map((exhibition) => (
-							<div key={exhibition.slug[locale]}>
-								<ExhibitionCard exhibition={exhibition} upcoming />
-								<div className="z-10 my-6 h-[1px] w-full bg-neutral-200 md:hidden " />
-							</div>
-						))}
-					</div>
-				</div>
-			) : null}
-			{pastExhibitions.length > 0 ? (
-				<div className="mt-12">
-					<Divider>{t('past')}</Divider>
-					<div className="grid gap-x-6 md:grid-cols-3  md:gap-y-6">
+					<Divider>{t('all-exhibitions')}</Divider>
+					<div className="grid gap-x-6 md:grid-cols-3 md:gap-y-6">
 						{pastExhibitions.map((exhibition) => (
 							<div key={exhibition.slug[locale]}>
 								<ExhibitionCard exhibition={exhibition} />
-								<div className="z-10 my-6 h-[1px] w-full bg-neutral-200 md:hidden " />
+								<div className="z-10 my-6 h-[1px] w-full bg-neutral-200 dark:bg-neutral-700 md:hidden " />
 							</div>
 						))}
 					</div>
 				</div>
-			) : null}
+			)}
 		</div>
 	)
 }

@@ -7,13 +7,15 @@ import { ExhibitionCard } from '@/components/exhibition/exhibition-card'
 import { ExhibitionLandingShowcase } from '@/components/exhibition/exhibition-landing-showcase'
 import { Divider } from '@/components/ui/divider'
 import EmptyState from '@/components/ui/empty-state'
-import { getCurrentExhibition, getUpcommingExhibitions } from '@/lib/sanity.client'
+import { getAllExhibitions } from '@/lib/sanity.client'
 import { makeMetaData } from '@/lib/utils'
 
 export async function generateMetadata({ params }): Promise<Metadata> {
 	const { locale } = params
 
-	const currentExhibition = await getCurrentExhibition(locale)
+	const allExhibitions = await getAllExhibitions(locale)
+
+	const currentExhibition = allExhibitions[allExhibitions.length - 1]
 
 	const metaData = await makeMetaData(locale, {
 		optionalTitleKey: 'home',
@@ -25,11 +27,15 @@ export async function generateMetadata({ params }): Promise<Metadata> {
 export default function Landing() {
 	const locale = useLocale()
 	const t = useTranslations()
-	const currentExhibition = use(getCurrentExhibition(locale))
-	const upcomingExhibtions = use(getUpcommingExhibitions(locale))
+	const allExhibitions = use(getAllExhibitions(locale))
+
+	const currentExhibition = allExhibitions[allExhibitions.length - 1]
+	const pastExhibitions = allExhibitions
+		.slice(0, allExhibitions.length - 1)
+		.filter((exhibition) => new Date(exhibition.from) < new Date())
 
 	return (
-		<div className="space-y-24">
+		<div>
 			<div className="mx-auto max-w-2xl py-12 text-center">
 				<h1 className="font-serif text-4xl font-thin uppercase tracking-tight text-neutral-700 underline decoration-1 underline-offset-2  dark:text-neutral-300 sm:text-5xl">
 					elisabeth werpers
@@ -50,19 +56,18 @@ export default function Landing() {
 					) : null}
 				</div>
 			</div>
-			<div className="">
-				<Divider>{t('upcoming-exhibitions')}</Divider>
-				<div className="grid gap-x-6 md:grid-cols-2  md:gap-y-6">
-					{upcomingExhibtions.length > 0 ? (
-						upcomingExhibtions.map((exhibition) => (
-							<div key={exhibition.slug[locale]}>
-								<ExhibitionCard exhibition={exhibition} upcoming />
-								<div className="z-10 my-6 h-[1px] w-full bg-neutral-200 md:hidden " />
-							</div>
-						))
-					) : (
-						<EmptyState text={t('no-upcoming-exhibitions')} icon={<PhotoIcon />} />
-					)}
+			<div className="mt-6 sm:mt-24">
+				<Divider>{t('all-exhibitions')}</Divider>
+				<div className="grid gap-6 md:grid-cols-2">
+					{pastExhibitions.map((exhibition) => (
+						<ExhibitionLandingShowcase
+							key={exhibition.slug[locale]}
+							exhibition={exhibition}
+							width={500}
+							height={500}
+							locale={locale}
+						/>
+					))}
 				</div>
 			</div>
 		</div>

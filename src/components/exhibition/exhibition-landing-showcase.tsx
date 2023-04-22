@@ -16,12 +16,12 @@ import { toDate } from '@/lib/utils'
 type Props = {
 	locale: string
 	exhibition: Exhibition
-	height?: number
-	width?: number
+	height: number
+	width: number
 }
 
 export function ExhibitionLandingShowcase({ exhibition, locale, height, width }: Props) {
-	const { title, from, to, slug, images } = exhibition
+	const { title, from, slug, images } = exhibition
 	const href = `/exhibitions/${slug}`
 	return (
 		<Link href={href} className="relative h-full w-full ">
@@ -30,7 +30,7 @@ export function ExhibitionLandingShowcase({ exhibition, locale, height, width }:
 					{title[locale]}
 				</h1>
 				<p className="mt-2 max-w-xl text-sm text-neutral-700 dark:text-neutral-200 lg:text-base">
-					{`${toDate(from)} - ${toDate(to)}`}
+					{toDate(from)}
 				</p>
 			</div>
 

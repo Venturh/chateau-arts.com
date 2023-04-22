@@ -35,15 +35,15 @@ export default defineType({
 			},
 			validation: (Rule) => Rule.required(),
 		}),
-		defineField({
-			name: 'to',
-			title: 'Bis',
-			type: 'date',
-			options: {
-				dateFormat: 'DD.MM.YYYY',
-			},
-			validation: (Rule) => Rule.required(),
-		}),
+		// defineField({
+		// 	name: 'to',
+		// 	title: 'Bis',
+		// 	type: 'date',
+		// 	options: {
+		// 		dateFormat: 'DD.MM.YYYY',
+		// 	},
+		// 	validation: (Rule) => Rule.required(),
+		// }),
 		defineField({
 			name: 'description',
 			title: 'Beschreibung',
@@ -89,12 +89,10 @@ export default defineType({
 			title: 'title',
 			images: 'images',
 			from: 'from',
-			to: 'to',
 		},
 		prepare(selection) {
-			const { from, to } = selection
 			const title = selection.title.de ?? 'Kein Titel angegben'
-			const subtitle = from ? `${toShortDate(from)} - ${toShortDate(to)}` : ''
+			const subtitle = selection.from ? toShortDate(selection.from) : ''
 
 			return {
 				...selection,

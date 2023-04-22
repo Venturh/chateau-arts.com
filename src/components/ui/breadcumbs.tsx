@@ -16,18 +16,21 @@ export function Breadcrumbs({ breadcrumbs }: Props) {
 	const locale = useLocale()
 	return (
 		<nav aria-label="breadcrumbs" className="pb-4">
-			<ol role="list" className="flex items-center space-x-2">
+			<ol role="list" className="flex items-center space-x-2 overflow-hidden">
 				{breadcrumbs.map(({ name, href }, idx) => {
-					const Tag = idx === breadcrumbs.length - 1 ? 'span' : Link
+					const Tag = idx === breadcrumbs.length - 1 ? 'p' : Link
 					return (
 						<li key={name}>
 							<div className="flex items-center">
 								<Tag
 									locale={locale}
 									href={href as Url}
-									className={cn('mr-4 text-sm font-medium text-neutral-900 dark:text-neutral-100', {
-										underline: href,
-									})}
+									className={cn(
+										'mr-3 truncate text-sm font-medium text-neutral-900 dark:text-neutral-100',
+										{
+											underline: href,
+										}
+									)}
 								>
 									{name}
 								</Tag>

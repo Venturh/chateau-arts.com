@@ -25,8 +25,8 @@ export async function generateMetadata({ params }): Promise<Metadata> {
 	if (!exhibition) {
 		return notFound()
 	}
-	const { description, images, from, to } = exhibition
-	const title = `${exhibition.title}, ${toDate(from)} - ${toDate(to)}`
+	const { description, images, from } = exhibition
+	const title = `${exhibition.title}, ${toDate(from)}}`
 	const url = `https://elisabethwerpers.com/exhibits/${slug}`
 
 	const metaData = await makeMetaData(locale, {
@@ -62,10 +62,7 @@ export default function Exhibition({ params: { slug } }: Props) {
 					</p>
 				</div>
 				<div className="lg:row-span-3">
-					<SectionHeader
-						title={exhibition.title[locale]}
-						description={`${toDate(exhibition.from)} - ${toDate(exhibition.to)}`}
-					/>
+					<SectionHeader title={exhibition.title[locale]} description={toDate(exhibition.from)} />
 					<div className="mt-6 flex items-center space-x-2">
 						{/* <ButtonLink href={`/${locale}/exhibitions/${slug}/virtual`} size="lg">
 							{t('to-virtual-exhibition')}
