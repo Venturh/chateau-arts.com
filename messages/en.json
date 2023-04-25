@@ -1,9 +1,8 @@
 {
 	"home": "Home",
-	"exhibitions": "Exhibitions",
+	"exhibitions": "Themes",
 	"exhibits": "Artwork",
-	"exhibition-exhibits": "Artwork of the exhibition",
-    "art_trade": "Art trade",
+	"exhibition-exhibits": "Artwork of the theme",
 
 	"pages": "Pages",
 	"social": "Social",
@@ -14,19 +13,9 @@
 	"about": "About",
     "contact": "Contact",
 
-	"to-exhibition": "To the exhibition",
-	"to-current-exhibition": "Current exhibition",
-	"to-virtual-exhibition": "Virtual exhibition",
-	"all-exhibitions": "All exhibitions",
-    "no-current-exhibitions": "Currently there is no current exhibition",
-    "no-upcoming-exhibitions": "Currently there are no upcoming exhibitions",
-    "no-past-exhibitions": "Currently there are no past exhibitions",
+	"to-virtual-exhibition": "Virtual theme",
+	"all-exhibitions": "All themes",
 
-
-	"current": "Current",
-	"past": "Past",
-	"upcoming": "Upcoming",
-	"upcoming-exhibitions": "Upcoming Exhibitions",
 	"latest-exhibits": "Latest artwork",
 
 	"filters": "Filters",

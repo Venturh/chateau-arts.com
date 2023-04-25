@@ -1,11 +1,10 @@
 {
 	"home": "Start",
-	"exhibitions": "Austellungen",
+	"exhibitions": "Themen",
 	"exhibition": "Austellung",
 	"exhibits": "Werke",
 	"exhibit": "Werk",
-	"exhibition-exhibits": "Werke der Austellung",
-    "art_trade": "Kunsthandel",
+	"exhibition-exhibits": "Werke ders Themas",
 
 	"pages": "Seiten",
 	"social": "Kontakt",
@@ -16,24 +15,14 @@
 	"about": "Über",
 	"contact": "Kontakt",
 
-	"to-exhibition": "Zur Austellung",
-	"to-current-exhibition": "Aktuelle Austellung",
-	"to-virtual-exhibition": "Zur virtuellen Austellung",
-	"all-exhibitions": "Alle Austellungen",
-    "no-current-exhibitions": "Derzeit gibt es keine aktuelle Austellung",
-    "no-upcoming-exhibitions": "Derzeit gibt es keine kommenden Austellungen",
-    "no-past-exhibitions": "Derzeit gibt es keine vergangenen Austellungen",
+	"to-virtual-exhibition": "Zum virtuellen Thema",
+	"all-exhibitions": "Alle Themen",
 
 
-	"current": "Aktuelle",
-	"past": "Vergangene",
-	"upcoming": "Kommende",
-	"upcoming-exhibitions": "Kommende Austellungen",
 	"latest-exhibits": "Weitere Werke",
 	"filters": "Filter",
 	"details": "Details",
 	"read-more": "Weiterlesen",
-	"show-all": "Alle ansehen ",
 
 	"not-specified": "Keine Angabe",
 	"date": "Datum",
@@ -41,7 +30,6 @@
 	"dimension": "Maße",
 	"time": "Zeit",
     "sold": "Verkauft",
-
 
     "request-exhibit": "Werk anfragen",
     "contact_name": "Name",

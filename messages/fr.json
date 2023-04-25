@@ -1,9 +1,8 @@
 {
 	"home": "Page d'accueil",
-	"exhibitions": "Expositions",
+	"exhibitions": "Thèmes",
 	"exhibits": "Catalogue",
-	"exhibition-exhibits": "Toutes les modèles d'exposition de l'exposition",
-    "art_trade": "Commerce d'art",
+	"exhibition-exhibits": "Toutes les modèles d'exposition de l'thème",
 
 
 	"pages": "Pages",
@@ -15,17 +14,10 @@
 	"about": "À propos",
     "contact": "Contact",
 
-	"to-exhibition": "Voir l'exposition",
-	"to-virtual-exhibition": "Voir l'exposition virtuelle",
-	"all-exhibitions": "Toutes les expositions",
-    "no-current-exhibitions": "Actuellement, il n'y a pas d'exposition en cours",
-    "no-upcoming-exhibitions": "Il n'y a pas d'expositions à venir",
-    "no-past-exhibitions": "Il n'y a pas d'expositions passées",
+	"to-virtual-exhibition": "Voir l'thème virtuelle",
+	"all-exhibitions": "Toutes les thèmes",
 
-	"current": "En cours",
-	"past": "Passées",
-	"upcoming": "À venir",
-	"upcoming-exhibitions": "Expositions à venir",
+
 	"latest-exhibits": "Dernières modèles d'exposition",
 
 	"filters": "Filtres",
