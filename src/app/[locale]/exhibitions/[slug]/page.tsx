@@ -77,7 +77,7 @@ export default function Exhibition({ params: { slug } }: Props) {
 				<ImagesTabs images={exhibition.images} />
 			</div>
 			<div id="exhibits">
-				<ExhibitGrid title={t('exhibition-exhibits')} exhibits={exhibition.exhibits} />
+				<ExhibitGrid title={t('exhibits')} exhibits={exhibition.exhibits} />
 			</div>
 		</div>
 	)
