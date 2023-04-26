@@ -19,7 +19,7 @@ export function toCurrency(value: number) {
 
 export function toDate(value: string) {
 	return new Date(value).toLocaleDateString('de', {
-		year: '2-digit',
+		year: 'numeric',
 		month: 'long',
 		day: '2-digit',
 	})
