@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --swiper-navigation-size: 32px;
+}
+
 .swiper-pagination-bullet {
     display: none!important;
     background-color: #fff!important;
@@ -31,4 +35,9 @@
 
 .tabs-swiper .swiper-slide-thumb-active {
     opacity: 1;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: black !important;
 }

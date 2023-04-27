@@ -4,12 +4,10 @@ import React, { useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import 'swiper/swiper.min.css'
-import 'swiper/swiper.min.css'
 import 'swiper/css/free-mode'
 import 'swiper/css/navigation'
-import 'swiper/css/pagination'
 import 'swiper/css/thumbs'
-import { Pagination, Thumbs } from 'swiper'
+import { Navigation, Thumbs } from 'swiper'
 import { PaginationOptions } from 'swiper/types'
 
 import type { SanityImageType } from '@/lib/sanity.queries'
@@ -49,8 +47,8 @@ export function ImagesTabs({ images }: Props) {
 				speed={900}
 				watchSlidesProgress
 				thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
-				pagination={pagination}
-				modules={[Pagination, Thumbs]}
+				navigation
+				modules={[Thumbs, Navigation]}
 			>
 				{images.map((image) => (
 					<SwiperSlide key={image._key}>
