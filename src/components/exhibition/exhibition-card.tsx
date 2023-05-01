@@ -15,7 +15,7 @@ export function ExhibitionCard({ exhibition }: Props) {
 			locale={locale}
 			href={`/exhibitions/${slug}`}
 			className="group  overflow-hidden rounded"
-			key={slug[locale]}
+			key={slug}
 		>
 			<div className="relative min-h-[300px] w-full">
 				<SanityImage fill image={exhibition.images[0]} />

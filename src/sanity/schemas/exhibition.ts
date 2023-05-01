@@ -19,9 +19,9 @@ export default defineType({
 		defineField({
 			name: 'slug',
 			title: 'Slug',
-			type: 'localeString',
+			type: 'slug',
 			options: {
-				source: 'title',
+				source: 'title.en',
 				maxLength: 96,
 			},
 			validation: (Rule) => Rule.required(),
@@ -35,15 +35,6 @@ export default defineType({
 			},
 			validation: (Rule) => Rule.required(),
 		}),
-		// defineField({
-		// 	name: 'to',
-		// 	title: 'Bis',
-		// 	type: 'date',
-		// 	options: {
-		// 		dateFormat: 'DD.MM.YYYY',
-		// 	},
-		// 	validation: (Rule) => Rule.required(),
-		// }),
 		defineField({
 			name: 'description',
 			title: 'Beschreibung',

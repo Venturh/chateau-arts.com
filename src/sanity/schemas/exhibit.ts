@@ -17,9 +17,9 @@ export default defineType({
 		defineField({
 			name: 'slug',
 			title: 'Link (slug)',
-			type: 'localeString',
+			type: 'slug',
 			options: {
-				source: 'title',
+				source: 'title.en',
 				maxLength: 96,
 			},
 			validation: (Rule) => Rule.required(),

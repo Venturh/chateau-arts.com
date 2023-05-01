@@ -13,7 +13,7 @@ export function ExhibitRowCard(exhibit: Exhibit) {
 		<Link
 			className="grid grid-cols-3 gap-x-6"
 			locale={locale}
-			href={`/exhibits/${exhibit.slug[locale]}`}
+			href={`/exhibits/${exhibit.slug}`}
 		>
 			<SanityImage className="overflow-hidden rounded-md border" image={exhibit.images[0]} />
 			<div className="col-span-2">

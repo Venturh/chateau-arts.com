@@ -16,7 +16,7 @@ export function ExhibitionRowCard({ exhibition }: Props) {
 			locale={locale}
 			href={`/exhibitions/${slug}`}
 			className="group items-start overflow-hidden rounded md:flex"
-			key={slug[locale]}
+			key={slug}
 		>
 			<div className="md:w-[50%]">
 				<SanityImage className="mt-1 rounded" image={exhibition.images[0]} />

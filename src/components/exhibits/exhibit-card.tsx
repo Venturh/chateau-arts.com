@@ -14,7 +14,7 @@ export function ExhibitCard(exhibit: Exhibit) {
 		<Link
 			locale={locale}
 			className="group relative space-y-3"
-			href={`/exhibits/${exhibit.slug[locale]}`}
+			href={`/exhibits/${exhibit.slug}`}
 		>
 			<div className="relative h-[250px] w-full">
 				<SanityImage

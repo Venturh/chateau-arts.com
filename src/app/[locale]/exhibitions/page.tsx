@@ -41,7 +41,7 @@ export default function Exhibitions() {
 					<Divider>{t('all-exhibitions')}</Divider>
 					<div className="grid gap-x-6 md:grid-cols-3 md:gap-y-6">
 						{pastExhibitions.map((exhibition) => (
-							<div key={exhibition.slug[locale]}>
+							<div key={exhibition.slug}>
 								<ExhibitionCard exhibition={exhibition} />
 								<div className="z-10 my-6 h-[1px] w-full bg-neutral-200 dark:bg-neutral-700 md:hidden " />
 							</div>

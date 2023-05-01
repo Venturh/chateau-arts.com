@@ -9,7 +9,7 @@ const exhibitFields = groq`
   price,
   sold,
   images,
-  slug,
+  "slug": slug.current,
 `
 
 const exhibitionFields = groq`
@@ -19,7 +19,7 @@ const exhibitionFields = groq`
   from,
   mainImage,
   images,
-  "slug": slug[$lang],
+  "slug": slug.current,
 `
 
 export const exhibitionIndexQuery = groq`
@@ -28,7 +28,7 @@ export const exhibitionIndexQuery = groq`
 }`
 
 export const exhibitionSlugQuery = groq`
-*[_type=='exhibition' && slug[$lang] == $slug][0]{
+*[_type=='exhibition' && slug.current == $slug][0]{
     ${exhibitionFields}
     ${groq`
     exhibits[]->{
@@ -43,12 +43,12 @@ export const exhibitIndexQuery = groq`
 }`
 
 export const exhibitLatestExceptSlugQuery = groq`
-*[_type == "exhibit" && slug[$lang] != $slug] | order(date desc, _updatedAt desc)[0...6] {
+*[_type == "exhibit" && slug != $slug] | order(date desc, _updatedAt desc)[0...6] {
   ${exhibitFields}
 }`
 
 export const exhibitSlugQuery = groq`
-*[_type=='exhibit' && slug[$lang] == $slug][0] {
+*[_type=='exhibit' && slug.current == $slug][0] {
   ${exhibitFields}
 }`
 
@@ -77,7 +77,7 @@ export interface SanityImageType {
 export interface Exhibit {
 	_id: string
 	title: LocaleString
-	slug: LocaleString
+	slug: string
 	artist: LocaleString
 	year: LocaleString
 	info: LocaleString
@@ -89,7 +89,7 @@ export interface Exhibit {
 export interface Exhibition {
 	_id: string
 	title: LocaleString
-	slug: LocaleString
+	slug: string
 	from: string
 	description: LocaleString
 	images: SanityImageType[]

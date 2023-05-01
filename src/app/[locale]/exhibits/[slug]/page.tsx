@@ -80,7 +80,7 @@ export default function ExhibitionPage({ params: { slug } }: Props) {
 							<div className="text-neutral-800 dark:text-neutral-200">{exhibit.artist[locale]}</div>
 							<div className="text-neutral-800 dark:text-neutral-200">{exhibit.year[locale]}</div>
 						</div>
-						<ButtonLink href={`/exhibits/${exhibit.slug[locale]}/contact`}>
+						<ButtonLink href={`/exhibits/${exhibit.slug}/contact`}>
 							{t('request-exhibit')}
 						</ButtonLink>
 						<section aria-labelledby="details">
