@@ -14,8 +14,8 @@ export function MainLayout({ children }: Props) {
 
 	const navigation = [
 		{ name: t('home'), href: `/` },
-		{ name: t('exhibitions'), href: `/exhibitions` },
-		{ name: t('exhibits'), href: `/exhibits` },
+		{ name: t('exhibitions'), href: '/themes' },
+		{ name: t('exhibits'), href: '/artworks' },
 		{ name: t('about'), href: `/about` },
 		{ name: t('contact'), href: `/contact` },
 	]

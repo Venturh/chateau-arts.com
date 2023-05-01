@@ -13,7 +13,7 @@ export function ExhibitionCard({ exhibition }: Props) {
 	return (
 		<Link
 			locale={locale}
-			href={`/exhibitions/${slug}`}
+			href={`/themes/${slug}`}
 			className="group  overflow-hidden rounded"
 			key={slug}
 		>

@@ -22,7 +22,7 @@ type Props = {
 
 export function ExhibitionLandingShowcase({ exhibition, locale, height, width }: Props) {
 	const { title, from, slug, images } = exhibition
-	const href = `/exhibitions/${slug}`
+	const href = `/themes/${slug}`
 	return (
 		<Link href={href} className="relative h-full w-full ">
 			<div className="absolute left-4 top-4 rounded bg-neutral-200 p-2 dark:bg-neutral-800">

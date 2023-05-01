@@ -11,7 +11,7 @@ export function ExhibitCard(exhibit: Exhibit) {
 	const locale = useLocale()
 
 	return (
-		<Link locale={locale} className="group relative space-y-3" href={`/exhibits/${exhibit.slug}`}>
+		<Link locale={locale} className="group relative space-y-3" href={`/artworks/${exhibit.slug}`}>
 			<div className="relative h-[250px] w-full">
 				<SanityImage
 					fill

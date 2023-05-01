@@ -14,7 +14,7 @@ export function ExhibitionRowCard({ exhibition }: Props) {
 	return (
 		<Link
 			locale={locale}
-			href={`/exhibitions/${slug}`}
+			href={`/themes/${slug}`}
 			className="group items-start overflow-hidden rounded md:flex"
 			key={slug}
 		>
