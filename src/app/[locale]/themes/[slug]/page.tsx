@@ -27,7 +27,7 @@ export async function generateMetadata({ params }): Promise<Metadata> {
 	}
 	const { description, images, from } = exhibition
 	const title = `${exhibition.title[locale]}, ${toDate(from)}}`
-	const url = `https://elisabethwerpers.com/exhibits/${slug}`
+	const url = `https://elisabethwerpers.com/${locale}/artworks/${slug}`
 
 	const metaData = await makeMetaData(locale, {
 		optionalTitle: title,
@@ -47,7 +47,7 @@ export default function Exhibition({ params: { slug } }: Props) {
 
 	const breadcrumbs: Breadcrumb[] = [
 		{ name: t('home'), href: '/' },
-		{ name: t('exhibitions'), href: '/exhibitions' },
+		{ name: t('exhibitions'), href: '/themes' },
 		{ name: exhibition.title[locale] },
 	]
 

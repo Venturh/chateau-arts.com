@@ -48,7 +48,7 @@ export default function ExhibitionPage({ params: { slug } }: Props) {
 
 	const breadcrumbs: Breadcrumb[] = [
 		{ name: t('home'), href: '/' },
-		{ name: t('exhibits'), href: '/exhibits' },
+		{ name: t('exhibits'), href: '/artworks' },
 		{ name: exhibit.title[locale] },
 	]
 

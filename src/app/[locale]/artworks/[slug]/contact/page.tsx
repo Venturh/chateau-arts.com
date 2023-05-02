@@ -33,7 +33,7 @@ export default function ExhibitContact({ params: { slug } }: Props) {
 
 	const breadcrumbs: Breadcrumb[] = [
 		{ name: t('home'), href: '/' },
-		{ name: t('exhibits'), href: '/exhibits' },
+		{ name: t('exhibits'), href: '/artworks' },
 		{ name: exhibit.title[locale], href: `/artworks/${exhibit.slug}` },
 		{ name: t('contact') },
 	]
