@@ -25,9 +25,6 @@ export function ExhibitionCard({ exhibition }: Props) {
 				<h2 className="relative z-10 text-xl tracking-tight text-neutral-900 dark:text-neutral-100">
 					{title[locale]}
 				</h2>
-				<span className="relative z-10 mt-2 block text-sm text-neutral-800 dark:text-neutral-200">
-					{toDate(exhibition.from)}
-				</span>
 			</div>
 		</Link>
 	)

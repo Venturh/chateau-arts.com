@@ -62,7 +62,7 @@ export default function Exhibition({ params: { slug } }: Props) {
 					</p>
 				</div>
 				<div className="lg:row-span-3">
-					<SectionHeader title={exhibition.title[locale]} description={toDate(exhibition.from)} />
+					<SectionHeader title={exhibition.title[locale]} />
 					<div className="mt-6 flex items-center space-x-2">
 						{/* <ButtonLink href={`/${locale}/exhibitions/${slug}/virtual`} size="lg">
 							{t('to-virtual-exhibition')}

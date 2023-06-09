@@ -29,9 +29,6 @@ export function ExhibitionLandingShowcase({ exhibition, locale, height, width }:
 				<h1 className="text-xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 lg:text-3xl">
 					{title[locale]}
 				</h1>
-				<p className="mt-2 max-w-xl text-sm text-neutral-700 dark:text-neutral-200 lg:text-base">
-					{toDate(from)}
-				</p>
 			</div>
 
 			<div>
