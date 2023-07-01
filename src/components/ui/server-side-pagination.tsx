@@ -1,6 +1,6 @@
 import { ArrowLongLeftIcon, ArrowLongRightIcon } from '@heroicons/react/20/solid'
 import clsx from 'clsx'
-import { Link } from 'next-intl'
+import { Link, useTranslations } from 'next-intl'
 
 interface Props {
 	total: number
@@ -10,6 +10,7 @@ interface Props {
 }
 
 export default function ServerSidePagination({ total, perPage, page, path }: Props) {
+	const t = useTranslations()
 	return (
 		<nav className="flex items-center justify-between border-t border-neutral-300 px-4 dark:border-neutral-700 sm:px-0">
 			<div className="-mt-px flex w-0 flex-1">
@@ -19,7 +20,7 @@ export default function ServerSidePagination({ total, perPage, page, path }: Pro
 						href={`/${path}?page=${page - 1}`}
 					>
 						<ArrowLongLeftIcon className="mr-3 h-5 w-5 text-neutral-400" aria-hidden="true" />
-						Previous
+						{t('previous')}
 					</Link>
 				)}
 			</div>
@@ -46,7 +47,7 @@ export default function ServerSidePagination({ total, perPage, page, path }: Pro
 						className="inline-flex items-center border-t-2 border-transparent pr-1 pt-4 text-sm font-medium text-neutral-500 hover:border-neutral-300 hover:text-neutral-700 dark:hover:border-neutral-700 dark:hover:text-neutral-400"
 						href={`/${path}?page=${page + 1}`}
 					>
-						Next
+						{t('next')}
 						<ArrowLongRightIcon className="ml-3 h-5 w-5 text-neutral-400" aria-hidden="true" />
 					</Link>
 				)}
