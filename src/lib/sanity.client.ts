@@ -5,7 +5,8 @@ import { createClient } from 'next-sanity'
 import {
 	Exhibit,
 	Exhibition,
-	exhibitIndexQuery,
+	exhibitIndexCountQuery,
+	exhibitIndexPaginationQuery,
 	exhibitLatestExceptSlugQuery,
 	exhibitSlugQuery,
 	exhibitionIndexQuery,
@@ -42,8 +43,14 @@ export async function getExhibitionBySlug(lang: string, slug: string): Promise<E
 	return await fetchAPI(exhibitionSlugQuery, { lang, slug })
 }
 
-export async function getAllExhibits(lang: string): Promise<Exhibit[]> {
-	return await fetchAPI(exhibitIndexQuery, { lang })
+export async function getPaginatedExhibits(perPage: number, start?: number): Promise<Exhibit[]> {
+	const from = start ? (start - 1) * perPage : 0
+	const to = start ? from + perPage : perPage
+
+	return await fetchAPI(exhibitIndexPaginationQuery, { perPage, from, to })
+}
+export async function getExhibitsCount(): Promise<number> {
+	return await fetchAPI(exhibitIndexCountQuery, {})
 }
 
 export async function getLatestExceptSlugExhibits(lang: string, slug: string): Promise<Exhibit[]> {

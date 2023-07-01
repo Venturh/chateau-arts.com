@@ -10,6 +10,7 @@ const exhibitFields = groq`
   sold,
   images,
   "slug": slug.current,
+  _updatedAt
 `
 
 const exhibitionFields = groq`
@@ -37,10 +38,12 @@ export const exhibitionSlugQuery = groq`
     `}
 }`
 
-export const exhibitIndexQuery = groq`
-*[_type == "exhibit"] | order(date desc, _updatedAt desc) {
+export const exhibitIndexPaginationQuery = groq`
+*[_type == "exhibit"] | order(date desc, _updatedAt desc)  [$from...$to] {
   ${exhibitFields}
 }`
+
+export const exhibitIndexCountQuery = groq`count(*[_type == "exhibit"])`
 
 export const exhibitLatestExceptSlugQuery = groq`
 *[_type == "exhibit" && slug != $slug] | order(date desc, _updatedAt desc)[0...6] {
@@ -84,6 +87,7 @@ export interface Exhibit {
 	price: number
 	sold: boolean
 	images: SanityImageType[]
+	_updatedAt: string
 }
 
 export interface Exhibition {
