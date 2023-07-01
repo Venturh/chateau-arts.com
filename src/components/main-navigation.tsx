@@ -26,10 +26,7 @@ export function MainNavigation({ navigation, locale }: Props) {
 
 	return (
 		<div className="border-b border-neutral-900/10 dark:border-neutral-700">
-			<nav
-				className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-8"
-				aria-label="Global"
-			>
+			<nav aria-label="Global" className="flex items-center justify-between py-3 ">
 				<div className="flex lg:flex-1">
 					<Logo />
 				</div>
