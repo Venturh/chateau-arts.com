@@ -23,7 +23,7 @@ export async function generateMetadata({ params }): Promise<Metadata> {
 export default function Exhibitions() {
 	const t = useTranslations()
 	const locale = useLocale()
-	const allExhibitions = use(getAllExhibitions(locale))
+	const allExhibitions = use(getAllExhibitions())
 
 	const currentExhibition = allExhibitions[allExhibitions.length - 1]
 	const pastExhibitions = allExhibitions

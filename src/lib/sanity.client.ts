@@ -31,16 +31,15 @@ export function urlFor(source: SanityImageSource) {
 }
 
 async function fetchAPI(query: string, previewData?: {}) {
-	const res = await client.fetch(query, previewData)
-	return res
+	return await client.fetch(query, previewData)
 }
 
-export async function getAllExhibitions(lang: string): Promise<Exhibition[]> {
-	return await fetchAPI(exhibitionIndexQuery, { lang })
+export async function getAllExhibitions(): Promise<Exhibition[]> {
+	return await fetchAPI(exhibitionIndexQuery)
 }
 
-export async function getExhibitionBySlug(lang: string, slug: string): Promise<Exhibition> {
-	return await fetchAPI(exhibitionSlugQuery, { lang, slug })
+export async function getExhibitionBySlug(slug: string): Promise<Exhibition> {
+	return await fetchAPI(exhibitionSlugQuery, { slug })
 }
 
 export async function getPaginatedExhibits(perPage: number, start?: number): Promise<Exhibit[]> {
@@ -53,10 +52,10 @@ export async function getExhibitsCount(): Promise<number> {
 	return await fetchAPI(exhibitIndexCountQuery, {})
 }
 
-export async function getLatestExceptSlugExhibits(lang: string, slug: string): Promise<Exhibit[]> {
-	return await fetchAPI(exhibitLatestExceptSlugQuery, { lang, slug })
+export async function getLatestExceptSlugExhibits(slug: string): Promise<Exhibit[]> {
+	return await fetchAPI(exhibitLatestExceptSlugQuery, { slug })
 }
 
-export async function getExhibitBySlug(lang: string, slug: string): Promise<Exhibit> {
-	return await fetchAPI(exhibitSlugQuery, { lang, slug })
+export async function getExhibitBySlug(slug: string): Promise<Exhibit> {
+	return await fetchAPI(exhibitSlugQuery, { slug })
 }

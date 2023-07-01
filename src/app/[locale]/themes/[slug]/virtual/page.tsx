@@ -13,7 +13,7 @@ type Props = {
 export default function VirtualExhibition({ params: { slug } }: Props) {
 	const locale = useLocale()
 	const t = useTranslations()
-	const exhibition = use(getExhibitionBySlug(locale, slug))
+	const exhibition = use(getExhibitionBySlug(slug))
 
 	const breadcrumbs: Breadcrumb[] = [
 		{ name: t('home'), href: '/' },

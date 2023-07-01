@@ -19,7 +19,7 @@ type Props = {
 
 export async function generateMetadata({ params }): Promise<Metadata> {
 	const { locale, slug } = params
-	const exhibit = await getExhibitBySlug(locale, slug)
+	const exhibit = await getExhibitBySlug(slug)
 
 	if (!exhibit) {
 		return notFound()
@@ -43,8 +43,8 @@ export default function ExhibitionPage({ params: { slug } }: Props) {
 	const locale = useLocale()
 	const t = useTranslations()
 
-	const exhibit = use(getExhibitBySlug(locale, slug))
-	const latestExhibits = use(getLatestExceptSlugExhibits(locale, slug))
+	const exhibit = use(getExhibitBySlug(slug))
+	const latestExhibits = use(getLatestExceptSlugExhibits(slug))
 
 	const breadcrumbs: Breadcrumb[] = [
 		{ name: t('home'), href: '/' },

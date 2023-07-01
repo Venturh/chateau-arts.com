@@ -13,7 +13,7 @@ import { makeMetaData } from '@/lib/utils'
 export async function generateMetadata({ params }): Promise<Metadata> {
 	const { locale } = params
 
-	const allExhibitions = await getAllExhibitions(locale)
+	const allExhibitions = await getAllExhibitions()
 
 	const currentExhibition = allExhibitions[allExhibitions.length - 1]
 
@@ -27,7 +27,7 @@ export async function generateMetadata({ params }): Promise<Metadata> {
 export default function Landing() {
 	const locale = useLocale()
 	const t = useTranslations()
-	const allExhibitions = use(getAllExhibitions(locale))
+	const allExhibitions = use(getAllExhibitions())
 
 	const currentExhibition = allExhibitions[allExhibitions.length - 1]
 	const pastExhibitions = allExhibitions

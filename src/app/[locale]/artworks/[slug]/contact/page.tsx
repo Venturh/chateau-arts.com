@@ -29,7 +29,7 @@ export async function generateMetadata({ params }): Promise<Metadata> {
 export default function ExhibitContact({ params: { slug } }: Props) {
 	const locale = useLocale()
 	const t = useTranslations()
-	const exhibit = use(getExhibitBySlug(locale, slug))
+	const exhibit = use(getExhibitBySlug(slug))
 
 	const breadcrumbs: Breadcrumb[] = [
 		{ name: t('home'), href: '/' },
