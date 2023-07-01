@@ -2,6 +2,7 @@
 
 import 'swiper/swiper.min.css'
 import 'swiper/css/pagination'
+
 import { Link } from 'next-intl'
 
 import { SanityImage } from '@/components/ui/sanity-image'

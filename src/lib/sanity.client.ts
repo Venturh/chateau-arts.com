@@ -4,13 +4,13 @@ import { createClient } from 'next-sanity'
 
 import {
 	Exhibit,
-	Exhibition,
 	exhibitIndexCountQuery,
 	exhibitIndexPaginationQuery,
-	exhibitLatestExceptSlugQuery,
-	exhibitSlugQuery,
+	Exhibition,
 	exhibitionIndexQuery,
 	exhibitionSlugQuery,
+	exhibitLatestExceptSlugQuery,
+	exhibitSlugQuery,
 } from './sanity.queries'
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID

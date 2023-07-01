@@ -4,7 +4,9 @@ import { useLocale } from 'next-intl'
 
 import { MainLayout } from '@/components/main-layout'
 import { cn } from '@/lib/utils'
+
 import '@/styles/globals.css'
+
 import { notFound } from 'next/navigation'
 
 const inter = localFont({

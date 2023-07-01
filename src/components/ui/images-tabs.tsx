@@ -7,6 +7,7 @@ import 'swiper/swiper.min.css'
 import 'swiper/css/free-mode'
 import 'swiper/css/navigation'
 import 'swiper/css/thumbs'
+
 import { Navigation, Thumbs } from 'swiper'
 import { PaginationOptions } from 'swiper/types'
 

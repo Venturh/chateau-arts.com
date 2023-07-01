@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import { SendMailOptions, createTransport } from 'nodemailer'
+import { createTransport, SendMailOptions } from 'nodemailer'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
 	const transporter = createTransport({

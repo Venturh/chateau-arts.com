@@ -1,5 +1,5 @@
 import { Button, Flex } from '@sanity/ui'
-import { ToolLink, ToolMenuProps, defineConfig } from 'sanity'
+import { defineConfig, ToolLink, ToolMenuProps } from 'sanity'
 
 export function ToolMenu(props: ToolMenuProps) {
 	const { activeToolName, context, tools } = props
