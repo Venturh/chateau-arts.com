@@ -57,7 +57,6 @@ export function SanityImage({
 			src={urlFor(image).url() ?? ''}
 			alt={image.alt ?? ''}
 			sizes={sizes}
-			unoptimized
 			{...props}
 			{...rest}
 			loader={loader}

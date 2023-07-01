@@ -17,8 +17,8 @@ export function ExhibitionCard({ exhibition }: Props) {
 			className="group  overflow-hidden rounded"
 			key={slug}
 		>
-			<div className="relative min-h-[300px] w-full">
-				<SanityImage fill image={exhibition.images[0]} />
+			<div className="relative  w-full">
+				<SanityImage image={exhibition.images[0]} />
 			</div>
 
 			<div className="mt-4">

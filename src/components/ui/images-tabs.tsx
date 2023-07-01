@@ -21,29 +21,27 @@ type Props = {
 export function ImagesTabs({ images }: Props) {
 	const [thumbsSwiper, setThumbsSwiper] = useState<any>(null)
 
-	const pagination: PaginationOptions = {
-		clickable: true,
-	}
-
 	return (
-		<div className="h-96 lg:grid lg:h-[650px] lg:grid-cols-12 lg:gap-x-8">
+		<div className="h-96 lg:grid lg:h-full lg:grid-cols-12 lg:gap-x-8">
 			<Swiper
 				onSwiper={setThumbsSwiper}
 				spaceBetween={10}
 				slidesPerView={images.length}
 				watchSlidesProgress
-				className={cn('tabs-swiper col-span-2 !hidden w-full   overscroll-auto lg:!flex')}
+				className={cn('tabs-swiper col-span-2 !hidden w-full overscroll-auto lg:!flex')}
 				direction="vertical"
 			>
 				{images.map((image) => (
-					<SwiperSlide className="!h-20 rounded-md border dark:border-neutral-800" key={image._key}>
+					<SwiperSlide
+						className="!h-20 rounded-md border border-neutral-300 bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800"
+						key={image._key}
+					>
 						<SanityImage fill image={image} />
 					</SwiperSlide>
 				))}
 			</Swiper>
 			<Swiper
-				className="h-full w-full rounded-md border dark:border-neutral-800 lg:col-span-8"
-				zoom
+				className="dark:bg-neutral-80 h-[550px] w-full rounded-md border border-neutral-300 bg-neutral-50 px-2 dark:border-neutral-700 dark:bg-neutral-800 lg:col-span-8"
 				speed={900}
 				watchSlidesProgress
 				thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}

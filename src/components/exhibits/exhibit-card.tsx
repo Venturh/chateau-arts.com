@@ -15,7 +15,7 @@ export function ExhibitCard(exhibit: Exhibit) {
 			<div className="relative h-[250px] w-full">
 				<SanityImage
 					fill
-					className="rounded-md border bg-neutral-100 dark:border-neutral-800 dark:bg-neutral-800"
+					className="rounded-md border bg-neutral-100 dark:border-neutral-700 dark:bg-neutral-800"
 					image={exhibit.images[0]}
 				/>
 			</div>

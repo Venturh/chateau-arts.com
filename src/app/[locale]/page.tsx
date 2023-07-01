@@ -44,28 +44,21 @@ export default function Landing() {
 					Kunsthandel
 				</p>
 			</div>
-			<div className="mt-16 flow-root sm:mt-24">
-				<div className="-m-2 rounded-xl bg-neutral-900/5 p-2 ring-1 ring-inset ring-neutral-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
+			<div className="mx-auto max-w-5xl">
+				<div className="-m-2 rounded-xl bg-neutral-50 p-2 ring-1 ring-inset ring-neutral-300 dark:bg-neutral-800 dark:ring-neutral-700 lg:-m-4 lg:rounded-2xl lg:p-4">
 					{currentExhibition ? (
-						<ExhibitionLandingShowcase
-							exhibition={currentExhibition}
-							width={2432}
-							height={1442}
-							locale={locale}
-						/>
+						<ExhibitionLandingShowcase exhibition={currentExhibition} locale={locale} />
 					) : null}
 				</div>
 			</div>
 			{pastExhibitions.length > 0 && (
-				<div className="mt-6 sm:mt-24">
+				<div className="mx-auto mt-6 max-w-5xl sm:mt-24">
 					<Divider>{t('all-exhibitions')}</Divider>
 					<div className="grid gap-6 md:grid-cols-2">
 						{pastExhibitions.map((exhibition) => (
 							<ExhibitionLandingShowcase
 								key={exhibition.slug}
 								exhibition={exhibition}
-								width={500}
-								height={500}
 								locale={locale}
 							/>
 						))}
