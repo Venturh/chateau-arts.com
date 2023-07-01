@@ -17,14 +17,10 @@ export function ExhibitRowCard(exhibit: Exhibit) {
 					<h3 className="font-medium leading-none">{exhibit.title[locale]}</h3>
 					{sold && <Badge>{t('sold')}</Badge>}
 				</div>
-				<p className="text-neutral-1000 mt-2 text-sm dark:text-neutral-200">
-					{exhibit.artist[locale]}
-				</p>
-				<p className="text-neutral-1000 mt-1 text-sm dark:text-neutral-200">
-					{exhibit.year[locale]}
-				</p>
+				<p className="text-zinc-1000 mt-2 text-sm dark:text-zinc-200">{exhibit.artist[locale]}</p>
+				<p className="text-zinc-1000 mt-1 text-sm dark:text-zinc-200">{exhibit.year[locale]}</p>
 				{!sold && (
-					<p className="text-neutral-1000 mt-1 text-sm dark:text-neutral-200">
+					<p className="text-zinc-1000 mt-1 text-sm dark:text-zinc-200">
 						{toCurrency(exhibit.price)}
 					</p>
 				)}

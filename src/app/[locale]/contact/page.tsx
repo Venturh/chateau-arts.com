@@ -25,12 +25,12 @@ export default function Disclorure() {
 			{/* <Breadcrumbs breadcrumbs={breadcrumbs} /> */}
 			<div className=" mx-auto max-w-prose ">
 				<div>
-					<dl className="mt-10 space-y-4 text-base leading-7 text-neutral-600 dark:text-neutral-300">
+					<dl className="mt-10 space-y-4 text-base leading-7 text-zinc-600 dark:text-zinc-300">
 						<div className="flex gap-x-4">
 							<dt className="flex-none">
 								<span className="sr-only">Telephone</span>
 								<BuildingOffice2Icon
-									className="h-7 w-6 text-neutral-400 dark:text-neutral-300"
+									className="h-7 w-6 text-zinc-400 dark:text-zinc-300"
 									aria-hidden="true"
 								/>
 							</dt>
@@ -44,13 +44,13 @@ export default function Disclorure() {
 							<dt className="flex-none">
 								<span className="sr-only">Telephone</span>
 								<PhoneIcon
-									className="h-7 w-6 text-neutral-400 dark:text-neutral-300"
+									className="h-7 w-6 text-zinc-400 dark:text-zinc-300"
 									aria-hidden="true"
 								/>
 							</dt>
 							<dd>
 								<a
-									className="hover:text-neutral-900 dark:hover:text-neutral-100"
+									className="hover:text-zinc-900 dark:hover:text-zinc-100"
 									href="tel:+49 1772896682"
 								>
 									+49 1772896682
@@ -61,13 +61,13 @@ export default function Disclorure() {
 							<dt className="flex-none">
 								<span className="sr-only">Telephone</span>
 								<EnvelopeIcon
-									className="h-7 w-6 text-neutral-400 dark:text-neutral-300"
+									className="h-7 w-6 text-zinc-400 dark:text-zinc-300"
 									aria-hidden="true"
 								/>
 							</dt>
 							<dd>
 								<a
-									className="hover:text-neutral-900 dark:hover:text-neutral-100"
+									className="hover:text-zinc-900 dark:hover:text-zinc-100"
 									href="mailto:hello@example.com"
 								>
 									info@elisabethwerpers.com

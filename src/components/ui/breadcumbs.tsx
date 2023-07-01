@@ -26,7 +26,7 @@ export function Breadcrumbs({ breadcrumbs }: Props) {
 									locale={locale}
 									href={href as Url}
 									className={cn(
-										'mr-3 truncate text-sm font-medium text-neutral-900 dark:text-neutral-100',
+										'mr-3 truncate text-sm font-medium text-zinc-900 dark:text-zinc-100',
 										{
 											underline: href,
 										}
@@ -39,7 +39,7 @@ export function Breadcrumbs({ breadcrumbs }: Props) {
 										viewBox="0 0 6 20"
 										xmlns="http://www.w3.org/2000/svg"
 										aria-hidden="true"
-										className="h-5 w-auto text-neutral-300"
+										className="h-5 w-auto text-zinc-300"
 									>
 										<path d="M4.878 4.34H3.551L.27 16.532h1.327l3.281-12.19z" fill="currentColor" />
 									</svg>

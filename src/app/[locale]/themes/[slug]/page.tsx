@@ -55,8 +55,8 @@ export default function Exhibition({ params: { slug } }: Props) {
 			<Breadcrumbs breadcrumbs={breadcrumbs} />
 
 			<div className="mx-auto flex max-w-2xl flex-col-reverse pb-16 pt-10 lg:grid lg:max-w-7xl lg:grid-cols-3  lg:gap-x-8 lg:pb-24 lg:pt-16">
-				<div className="mt-6 lg:col-span-2 lg:mt-0 lg:border-r lg:border-neutral-200 lg:pr-8 lg:dark:border-neutral-700">
-					<p className="mx-auto max-w-2xl text-base text-neutral-900 dark:text-neutral-100">
+				<div className="mt-6 lg:col-span-2 lg:mt-0 lg:border-r lg:border-zinc-200 lg:pr-8 lg:dark:border-zinc-700">
+					<p className="mx-auto max-w-2xl text-base text-zinc-900 dark:text-zinc-100">
 						{exhibition.description[locale]}
 					</p>
 				</div>

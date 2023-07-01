@@ -57,7 +57,7 @@ export default async function RootLayout({ children, params }) {
 				src="https://umami-analytics-sage.vercel.app/umami.js"
 			/>
 			<head></head>
-			<body className="h-full text-neutral-900 dark:bg-neutral-900 dark:text-neutral-100">
+			<body className="h-full text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100">
 				<MainLayout>{children}</MainLayout>
 			</body>
 		</html>

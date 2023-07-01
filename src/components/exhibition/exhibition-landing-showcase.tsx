@@ -18,18 +18,13 @@ export function ExhibitionLandingShowcase({ exhibition, locale }: Props) {
 	const href = `/themes/${slug}`
 	return (
 		<Link href={href} className="relative h-full w-full ">
-			<div className="absolute left-4 top-4 rounded bg-neutral-200 p-2 dark:bg-neutral-800">
-				<h1 className="text-xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 lg:text-3xl">
+			<div className="absolute left-4 top-4 rounded bg-zinc-200 p-2 dark:bg-zinc-800">
+				<h1 className="text-xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 lg:text-3xl">
 					{title[locale]}
 				</h1>
 			</div>
 
-			<div>
-				<SanityImage
-					className="rounded-md shadow-2xl ring-1 ring-neutral-900/10"
-					image={images[0]}
-				/>
-			</div>
+			<SanityImage className="rounded-md shadow-2xl ring-1 ring-zinc-900 " image={images[0]} />
 		</Link>
 	)
 }

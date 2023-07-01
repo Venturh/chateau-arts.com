@@ -12,14 +12,14 @@ interface Props {
 export default function ServerSidePagination({ total, perPage, page, path }: Props) {
 	const t = useTranslations()
 	return (
-		<nav className="flex items-center justify-between border-t border-neutral-300 px-4 dark:border-neutral-700 sm:px-0">
+		<nav className="flex items-center justify-between border-t border-zinc-300 px-4 dark:border-zinc-700 sm:px-0">
 			<div className="-mt-px flex w-0 flex-1">
 				{page > 1 && (
 					<Link
-						className="inline-flex items-center border-t-2 border-transparent pr-1 pt-4 text-sm font-medium text-neutral-500 hover:border-neutral-300 hover:text-neutral-700 dark:hover:border-neutral-700 dark:hover:text-neutral-400"
+						className="inline-flex items-center border-t-2 border-transparent pr-1 pt-4 text-sm font-medium text-zinc-500 hover:border-zinc-300 hover:text-zinc-700 dark:hover:border-zinc-700 dark:hover:text-zinc-400"
 						href={`/${path}?page=${page - 1}`}
 					>
-						<ArrowLongLeftIcon className="mr-3 h-5 w-5 text-neutral-400" aria-hidden="true" />
+						<ArrowLongLeftIcon className="mr-3 h-5 w-5 text-zinc-400" aria-hidden="true" />
 						{t('previous')}
 					</Link>
 				)}
@@ -31,7 +31,7 @@ export default function ServerSidePagination({ total, perPage, page, path }: Pro
 						className={clsx(
 							i + 1 === page
 								? 'border-amber-500 text-amber-600'
-								: 'border-t-2 border-transparent text-neutral-500 hover:border-neutral-300 hover:text-neutral-700 dark:hover:border-neutral-700 dark:hover:text-neutral-400',
+								: 'border-t-2 border-transparent text-zinc-500 hover:border-zinc-300 hover:text-zinc-700 dark:hover:border-zinc-700 dark:hover:text-zinc-400',
 
 							'inline-flex items-center border-t-2  px-4 pt-4 text-sm font-medium'
 						)}
@@ -44,11 +44,11 @@ export default function ServerSidePagination({ total, perPage, page, path }: Pro
 			<div className="-mt-px flex w-0 flex-1 justify-end">
 				{page < Math.ceil(total / perPage) && (
 					<Link
-						className="inline-flex items-center border-t-2 border-transparent pr-1 pt-4 text-sm font-medium text-neutral-500 hover:border-neutral-300 hover:text-neutral-700 dark:hover:border-neutral-700 dark:hover:text-neutral-400"
+						className="inline-flex items-center border-t-2 border-transparent pr-1 pt-4 text-sm font-medium text-zinc-500 hover:border-zinc-300 hover:text-zinc-700 dark:hover:border-zinc-700 dark:hover:text-zinc-400"
 						href={`/${path}?page=${page + 1}`}
 					>
 						{t('next')}
-						<ArrowLongRightIcon className="ml-3 h-5 w-5 text-neutral-400" aria-hidden="true" />
+						<ArrowLongRightIcon className="ml-3 h-5 w-5 text-zinc-400" aria-hidden="true" />
 					</Link>
 				)}
 			</div>

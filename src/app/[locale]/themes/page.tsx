@@ -43,7 +43,7 @@ export default function Exhibitions() {
 						{pastExhibitions.map((exhibition) => (
 							<div key={exhibition.slug}>
 								<ExhibitionCard exhibition={exhibition} />
-								<div className="z-10 my-6 h-[1px] w-full bg-neutral-200 dark:bg-neutral-700 md:hidden " />
+								<div className="z-10 my-6 h-[1px] w-full bg-zinc-200 dark:bg-zinc-700 md:hidden " />
 							</div>
 						))}
 					</div>

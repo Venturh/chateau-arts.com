@@ -16,7 +16,7 @@ type Props = {
 
 export function Footer({ footer, locale, languageLocale }: Props) {
 	const className =
-		'text-sm leading-6 text-neutral-600 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-neutral-100 '
+		'text-sm leading-6 text-zinc-600 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-zinc-100 '
 	const footerItems = Object.entries(footer).map(([title, values]) => ({
 		title,
 		content: values.map(({ href, name, external }) =>
@@ -32,12 +32,12 @@ export function Footer({ footer, locale, languageLocale }: Props) {
 		),
 	}))
 	return (
-		<div className="flex w-full    flex-col space-y-6 border-t border-neutral-900/10 bg-neutral-50 pt-6 text-base dark:border-neutral-700 dark:bg-neutral-900">
+		<div className="flex w-full    flex-col space-y-6 border-t border-zinc-900/10 bg-zinc-50 pt-6 text-base dark:border-zinc-700 dark:bg-zinc-900">
 			<div className="w-full py-3">
 				<div className="grid grid-cols-2 gap-8 pb-4 md:grid-cols-4">
 					{footerItems.map(({ title, content }) => (
 						<div className="space-y-2" key={title}>
-							<span className="text-sm font-semibold leading-6 text-neutral-900 dark:text-neutral-100">
+							<span className="text-sm font-semibold leading-6 text-zinc-900 dark:text-zinc-100">
 								{title}
 							</span>
 							<div className="flex w-min flex-col space-y-3 ">{content.map((c) => c)}</div>
@@ -45,17 +45,15 @@ export function Footer({ footer, locale, languageLocale }: Props) {
 					))}
 
 					<div className="space-y-2">
-						<h3 className="text-sm font-semibold leading-6 text-neutral-900 dark:text-neutral-100">
+						<h3 className="text-sm font-semibold leading-6 text-zinc-900 dark:text-zinc-100">
 							{languageLocale}
 						</h3>
 						<LanguageSelect locale={locale} />
 					</div>
 				</div>
 
-				<div className="flex items-center justify-between border-t py-6 text-sm dark:border-neutral-700">
-					<span className="text-neutral-700 dark:text-neutral-300">
-						© {new Date().getFullYear()}
-					</span>
+				<div className="flex items-center justify-between border-t py-6 text-sm dark:border-zinc-700">
+					<span className="text-zinc-700 dark:text-zinc-300">© {new Date().getFullYear()}</span>
 					<Logo />
 				</div>
 			</div>

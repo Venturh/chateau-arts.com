@@ -22,7 +22,7 @@ export function ImageModal({ isOpen, setIsOpen, children }: Props) {
 								'focus:outline-none focus-visible:ring'
 							)}
 						>
-							<XMarkIcon className="h-4 w-4 text-neutral-500 hover:text-neutral-700  " />
+							<XMarkIcon className="h-4 w-4 text-zinc-500 hover:text-zinc-700  " />
 						</DialogPrimitive.Close>
 					</DialogPrimitive.Content>
 				</div>

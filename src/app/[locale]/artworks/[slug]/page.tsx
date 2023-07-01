@@ -62,7 +62,7 @@ export default function ExhibitionPage({ params: { slug } }: Props) {
 					</div>
 					<div className="mt-10 space-y-6 px-4 sm:mt-16 sm:px-0 lg:mt-0">
 						<h1 className="sr-only">Title</h1>
-						<h1 className="text-3xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100">
+						<h1 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
 							{exhibit.title[locale]}
 						</h1>
 						<div className="mt-3">
@@ -70,15 +70,15 @@ export default function ExhibitionPage({ params: { slug } }: Props) {
 							{exhibit.sold ? (
 								<Badge size="lg">{t('sold')}</Badge>
 							) : (
-								<p className="text-3xl tracking-tight text-neutral-900 dark:text-neutral-100">
+								<p className="text-3xl tracking-tight text-zinc-900 dark:text-zinc-100">
 									{toCurrency(exhibit.price)}
 								</p>
 							)}
 						</div>
 						<div>
 							<h3 className="sr-only">Information</h3>
-							<div className="text-neutral-800 dark:text-neutral-200">{exhibit.artist[locale]}</div>
-							<div className="text-neutral-800 dark:text-neutral-200">{exhibit.year[locale]}</div>
+							<div className="text-zinc-800 dark:text-zinc-200">{exhibit.artist[locale]}</div>
+							<div className="text-zinc-800 dark:text-zinc-200">{exhibit.year[locale]}</div>
 						</div>
 						<ButtonLink href={`/artworks/${exhibit.slug}/contact`}>
 							{t('request-exhibit')}
@@ -87,13 +87,13 @@ export default function ExhibitionPage({ params: { slug } }: Props) {
 							<h2 id="details-heading" className="sr-only">
 								Additional details
 							</h2>
-							<ul className="list-disc space-y-2 border-t pl-4 pt-6 dark:border-t-neutral-800">
+							<ul className="list-disc space-y-2 border-t pl-4 pt-6 dark:border-t-zinc-800">
 								{exhibit.info[locale]
 									.split('\n')
 									.filter((line: string) => line !== '')
 									.map((line: string) => (
 										<li key={line}>
-											<div className="text-sm font-medium text-neutral-900 dark:text-neutral-100">
+											<div className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
 												{line}
 											</div>
 										</li>

@@ -34,7 +34,7 @@ export function ImagesTabs({ images }: Props) {
 			>
 				{images.map((image) => (
 					<SwiperSlide
-						className="!h-20 rounded-md border border-neutral-300 bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800"
+						className="!h-20 rounded-md border border-zinc-300 bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-800"
 						key={image._key}
 					>
 						<SanityImage fill image={image} />
@@ -42,7 +42,7 @@ export function ImagesTabs({ images }: Props) {
 				))}
 			</Swiper>
 			<Swiper
-				className="dark:bg-neutral-80 h-[550px] w-full rounded-md border border-neutral-300 bg-neutral-50 px-2 dark:border-neutral-700 dark:bg-neutral-800 lg:col-span-8"
+				className="dark:bg-zinc-80 h-[550px] w-full rounded-md border border-zinc-300 bg-zinc-50 px-2 dark:border-zinc-700 dark:bg-zinc-800 lg:col-span-8"
 				speed={900}
 				watchSlidesProgress
 				thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}

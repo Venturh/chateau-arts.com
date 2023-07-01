@@ -41,7 +41,7 @@ export default function ExhibitContact({ params: { slug } }: Props) {
 	return (
 		<div className="h-full">
 			<Breadcrumbs breadcrumbs={breadcrumbs} />
-			<div className="mx-auto w-full max-w-2xl space-y-6 rounded-lg border border-neutral-200 p-6 dark:border-neutral-700">
+			<div className="mx-auto w-full max-w-2xl space-y-6 rounded-lg border border-zinc-200 p-6 dark:border-zinc-700">
 				<SectionHeader title={t('contact')} />
 				<ExhibitRowCard {...exhibit} />
 				<ContactForm
