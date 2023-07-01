@@ -14,6 +14,7 @@ const inter = localFont({
 })
 
 export const metadata = {
+	metadataBase: 'https://www.elisabethwerpers.com/',
 	title: {
 		default: 'Kunsthandel Elisabeth Werpers',
 		template: '%s | Kunsthandel Elisabeth Werpers',
