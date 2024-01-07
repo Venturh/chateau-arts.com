@@ -28,6 +28,23 @@ export const exhibitionIndexQuery = groq`
   ${exhibitionFields}
 }`
 
+export const exhibitionIndexPaginationQuery = groq`
+*[_type == "exhibition"] | order(date desc, _updatedAt desc)  [$from...$to] {
+  ${exhibitionFields}
+}`
+
+export const exhibitionIndexCountQuery = groq`count(*[_type == "exhibition"])`
+
+export const exhibitionLatestQuery = groq`
+*[_type == "exhibition"] | order(from desc)[0...1] {
+  ${exhibitionFields}
+}`
+
+export const exhibitionsLatestQuery = groq`
+*[_type == "exhibition"] | order(from desc)[0...5] {
+  ${exhibitionFields}
+}`
+
 export const exhibitionSlugQuery = groq`
 *[_type=='exhibition' && slug.current == $slug][0]{
     ${exhibitionFields}

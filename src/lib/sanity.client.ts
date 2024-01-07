@@ -7,7 +7,11 @@ import {
 	exhibitIndexCountQuery,
 	exhibitIndexPaginationQuery,
 	Exhibition,
+	exhibitionIndexCountQuery,
+	exhibitionIndexPaginationQuery,
 	exhibitionIndexQuery,
+	exhibitionLatestQuery,
+	exhibitionsLatestQuery,
 	exhibitionSlugQuery,
 	exhibitLatestExceptSlugQuery,
 	exhibitSlugQuery,
@@ -36,6 +40,27 @@ async function fetchAPI(query: string, previewData?: {}) {
 
 export async function getAllExhibitions(): Promise<Exhibition[]> {
 	return await fetchAPI(exhibitionIndexQuery)
+}
+export async function getLatestExhibition(): Promise<Exhibition> {
+	const result = await fetchAPI(exhibitionLatestQuery)
+	return result[0]
+}
+export async function getLatestExhibitions(): Promise<Exhibition[]> {
+	return await fetchAPI(exhibitionsLatestQuery)
+}
+
+export async function getPaginatedExhibitions(
+	perPage: number,
+	start?: number
+): Promise<Exhibition[]> {
+	const from = start ? (start - 1) * perPage : 0
+	const to = start ? from + perPage : perPage
+
+	return await fetchAPI(exhibitionIndexPaginationQuery, { perPage, from, to })
+}
+
+export async function getExhibitionsCount(): Promise<number> {
+	return await fetchAPI(exhibitionIndexCountQuery, {})
 }
 
 export async function getExhibitionBySlug(slug: string): Promise<Exhibition> {

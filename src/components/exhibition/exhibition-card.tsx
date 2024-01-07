@@ -11,7 +11,7 @@ export function ExhibitionCard({ exhibition }: Props) {
 	const { slug, title } = exhibition
 	return (
 		<Link locale={locale} href={`/themes/${slug}`} className="group overflow-hidden" key={slug}>
-			<SanityImage className="rounded-md" image={exhibition.images[0]} />
+			<SanityImage className="aspect-square rounded-md" image={exhibition.images[0]} />
 
 			<div className="mt-4">
 				<h2 className="relative z-10 text-xl tracking-tight text-zinc-900 dark:text-zinc-100">

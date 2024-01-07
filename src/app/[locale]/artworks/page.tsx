@@ -4,7 +4,6 @@ import { Link, useLocale, useTranslations } from 'next-intl'
 
 import { ExhibitGrid } from '@/components/exhibits/exhibit-grid'
 import { Breadcrumb, Breadcrumbs } from '@/components/ui/breadcumbs'
-import { Button } from '@/components/ui/button'
 import ServerSidePagination from '@/components/ui/server-side-pagination'
 import { getExhibitsCount, getPaginatedExhibits } from '@/lib/sanity.client'
 import { makeMetaData } from '@/lib/utils'

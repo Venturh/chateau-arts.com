@@ -24,7 +24,10 @@ export function ExhibitionLandingShowcase({ exhibition, locale }: Props) {
 				</h1>
 			</div>
 
-			<SanityImage className="rounded-md shadow-2xl ring-1 ring-zinc-900 " image={images[0]} />
+			<SanityImage
+				className="aspect-square rounded-md shadow-2xl ring-1 ring-zinc-900 "
+				image={images[0]}
+			/>
 		</Link>
 	)
 }

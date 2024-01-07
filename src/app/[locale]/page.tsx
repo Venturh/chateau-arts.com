@@ -7,7 +7,7 @@ import { ExhibitionCard } from '@/components/exhibition/exhibition-card'
 import { ExhibitionLandingShowcase } from '@/components/exhibition/exhibition-landing-showcase'
 import { Divider } from '@/components/ui/divider'
 import EmptyState from '@/components/ui/empty-state'
-import { getAllExhibitions } from '@/lib/sanity.client'
+import { getAllExhibitions, getLatestExhibition, getLatestExhibitions } from '@/lib/sanity.client'
 import { makeMetaData } from '@/lib/utils'
 
 export async function generateMetadata({ params }): Promise<Metadata> {
@@ -27,12 +27,12 @@ export async function generateMetadata({ params }): Promise<Metadata> {
 export default function Landing() {
 	const locale = useLocale()
 	const t = useTranslations()
-	const allExhibitions = use(getAllExhibitions())
 
-	const currentExhibition = allExhibitions[allExhibitions.length - 1]
-	const pastExhibitions = allExhibitions
-		.slice(0, allExhibitions.length - 1)
-		.filter((exhibition) => new Date(exhibition.from) < new Date())
+	const latestExhibitions = use(getLatestExhibitions())
+
+	const currentExhibition = latestExhibitions[0]
+
+	const pastExhibitions = latestExhibitions.slice(1)
 
 	return (
 		<div>
