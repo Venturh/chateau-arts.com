@@ -3,6 +3,7 @@
 import 'swiper/swiper.min.css'
 import 'swiper/css/pagination'
 
+import clsx from 'clsx'
 import { Link } from 'next-intl'
 
 import { SanityImage } from '@/components/ui/sanity-image'
@@ -11,9 +12,10 @@ import type { Exhibition } from '@/lib/sanity.queries'
 type Props = {
 	locale: string
 	exhibition: Exhibition
+	withAspect?: boolean
 }
 
-export function ExhibitionLandingShowcase({ exhibition, locale }: Props) {
+export function ExhibitionLandingShowcase({ exhibition, locale, withAspect }: Props) {
 	const { title, slug, images } = exhibition
 	const href = `/themes/${slug}`
 	return (
@@ -25,7 +27,9 @@ export function ExhibitionLandingShowcase({ exhibition, locale }: Props) {
 			</div>
 
 			<SanityImage
-				className="aspect-square rounded-md shadow-2xl ring-1 ring-zinc-900 "
+				className={clsx('rounded-md shadow-2xl ring-1 ring-zinc-900', {
+					'aspect-square': withAspect,
+				})}
 				image={images[0]}
 			/>
 		</Link>

@@ -57,6 +57,7 @@ export default function Landing() {
 					<div className="grid gap-6 md:grid-cols-2">
 						{pastExhibitions.map((exhibition) => (
 							<ExhibitionLandingShowcase
+								with-aspect
 								key={exhibition.slug}
 								exhibition={exhibition}
 								locale={locale}
