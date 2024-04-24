@@ -6,7 +6,6 @@ const exhibitFields = groq`
   artist,
   year,
   info,
-  price,
   sold,
   images,
   "slug": slug.current,
@@ -101,7 +100,6 @@ export interface Exhibit {
 	artist: LocaleString
 	year: LocaleString
 	info: LocaleString
-	price: number
 	sold: boolean
 	images: SanityImageType[]
 	_updatedAt: string

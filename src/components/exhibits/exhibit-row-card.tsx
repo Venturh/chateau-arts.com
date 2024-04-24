@@ -19,11 +19,6 @@ export function ExhibitRowCard(exhibit: Exhibit) {
 				</div>
 				<p className="text-zinc-1000 mt-2 text-sm dark:text-zinc-200">{exhibit.artist[locale]}</p>
 				<p className="text-zinc-1000 mt-1 text-sm dark:text-zinc-200">{exhibit.year[locale]}</p>
-				{!sold && (
-					<p className="text-zinc-1000 mt-1 text-sm dark:text-zinc-200">
-						{toCurrency(exhibit.price)}
-					</p>
-				)}
 			</div>
 		</Link>
 	)

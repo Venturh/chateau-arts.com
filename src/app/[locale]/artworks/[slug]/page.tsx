@@ -65,16 +65,7 @@ export default function ExhibitionPage({ params: { slug } }: Props) {
 						<h1 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
 							{exhibit.title[locale]}
 						</h1>
-						<div className="mt-3">
-							<h2 className="sr-only">Price</h2>
-							{exhibit.sold ? (
-								<Badge size="lg">{t('sold')}</Badge>
-							) : (
-								<p className="text-3xl tracking-tight text-zinc-900 dark:text-zinc-100">
-									{toCurrency(exhibit.price)}
-								</p>
-							)}
-						</div>
+						<div>{exhibit.sold && <Badge size="lg">{t('sold')}</Badge>}</div>
 						<div>
 							<h3 className="sr-only">Information</h3>
 							<div className="text-zinc-800 dark:text-zinc-200">{exhibit.artist[locale]}</div>

@@ -37,12 +37,6 @@ export default defineType({
 			validation: (Rule) => Rule.required(),
 		}),
 		defineField({
-			name: 'price',
-			title: 'Preis',
-			type: 'number',
-			validation: (Rule) => Rule.required(),
-		}),
-		defineField({
 			name: 'sold',
 			title: 'Verkauft',
 			type: 'boolean',

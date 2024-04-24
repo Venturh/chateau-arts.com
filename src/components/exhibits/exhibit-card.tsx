@@ -28,7 +28,6 @@ export function ExhibitCard(exhibit: Exhibit) {
 				<div className="text-zinc-1000 text-sm dark:text-zinc-200">
 					<p className="mt-2 ">{exhibit.artist[locale]}</p>
 					<p className="mt-1 ">{exhibit.year[locale]}</p>
-					<p className="mt-1 ">{toCurrency(exhibit.price)}</p>
 				</div>
 			</div>
 		</Link>
