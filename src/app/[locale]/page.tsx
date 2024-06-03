@@ -9,6 +9,7 @@ import { Divider } from '@/components/ui/divider'
 import EmptyState from '@/components/ui/empty-state'
 import { getAllExhibitions, getLatestExhibition, getLatestExhibitions } from '@/lib/sanity.client'
 import { makeMetaData } from '@/lib/utils'
+import { metadata } from './layout'
 
 export async function generateMetadata({ params }): Promise<Metadata> {
 	const { locale } = params
@@ -38,7 +39,7 @@ export default function Landing() {
 		<div>
 			<div className="mx-auto max-w-2xl py-12 text-center">
 				<h1 className="font-serif text-4xl font-thin uppercase tracking-tight text-zinc-700 underline decoration-1 underline-offset-2  dark:text-zinc-300 sm:text-5xl">
-					elisabeth werpers
+					Elisabeth Werpers
 				</h1>
 				<p className="mt-1 font-serif text-4xl font-thin  leading-8 text-zinc-600 dark:text-zinc-400">
 					Kunsthandel
