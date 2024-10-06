@@ -18,8 +18,8 @@ const inter = localFont({
 export const metadata = {
 	metadataBase: 'https://www.elisabethwerpers.com/',
 	title: {
-		default: 'Kunsthandel Elisabeth Werpers',
-		template: '%s | Kunsthandel Elisabeth Werpers',
+		default: 'A touch of château',
+		template: '%s | A touch of château',
 	},
 	robots: {
 		index: true,
@@ -33,7 +33,7 @@ export const metadata = {
 		},
 	},
 	twitter: {
-		title: 'Elisabeth Werpers',
+		title: 'A touch of château',
 		card: 'summary_large_image',
 	},
 	icons: {

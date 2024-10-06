@@ -32,7 +32,7 @@ export function toShortDate(value: string) {
 }
 
 export function getOgImage(locale: string) {
-	return `https://elisabethwerpers.com/api/og?locale=${locale}`
+	return `${process.env.NEXT_PUBLIC_URL}/api/og?locale=${locale}`
 }
 
 export async function makeMetaData(
@@ -59,7 +59,7 @@ export async function makeMetaData(
 		? t(optionalTitleKey as any)
 		: t('og.title')
 	const description = optionalDescription ?? t('og.description')
-	const url = optionalUrl || 'https://elisabethwerpers.com'
+	const url = optionalUrl || process.env.NEXT_PUBLIC_URL
 	const ogImage = optionalImage
 		? urlFor(optionalImage).width(1200).height(630).url()
 		: getOgImage(locale)
@@ -68,10 +68,10 @@ export async function makeMetaData(
 		description,
 		url,
 		openGraph: {
-			title: `${title} | Elisabeth Werpers`,
+			title: `${title} | A touch of château`,
 			description,
 			url,
-			siteName: 'Elisabeth Werpers',
+			siteName: 'A touch of château',
 			images: [
 				{
 					url: ogImage,

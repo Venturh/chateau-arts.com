@@ -26,7 +26,7 @@ export async function generateMetadata({ params }): Promise<Metadata> {
 	}
 	const { description, images, from } = exhibition
 	const title = `${exhibition.title[locale]}, ${toDate(from)}}`
-	const url = `https://elisabethwerpers.com/${locale}/artworks/${slug}`
+	const url = `${process.env.NEXT_PUBLIC_URL}/${locale}/artworks/${slug}`
 
 	const metaData = await makeMetaData(locale, {
 		optionalTitle: title,

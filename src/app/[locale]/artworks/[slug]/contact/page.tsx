@@ -20,7 +20,7 @@ export async function generateMetadata({ params }): Promise<Metadata> {
 
 	const metaData = await makeMetaData(locale, {
 		optionalTitleKey: 'request-exhibit',
-		optionalUrl: `https://elisabethwerpers.com/${locale}/exhibits/${slug}/contact`,
+		optionalUrl: `${process.env.NEXT_PUBLIC_URL}/${locale}/exhibits/${slug}/contact`,
 	})
 
 	return metaData

@@ -32,7 +32,7 @@ export function Footer({ footer, locale, languageLocale }: Props) {
 		),
 	}))
 	return (
-		<div className="flex w-full    flex-col space-y-6 border-t border-zinc-900/10 bg-zinc-50 pt-6 text-base dark:border-zinc-700 dark:bg-zinc-900">
+		<div className="flex w-full flex-col space-y-6 border-t border-zinc-900/10 pt-6 text-base dark:border-zinc-700 dark:bg-zinc-900">
 			<div className="w-full py-3">
 				<div className="grid grid-cols-2 gap-8 pb-4 md:grid-cols-4">
 					{footerItems.map(({ title, content }) => (
