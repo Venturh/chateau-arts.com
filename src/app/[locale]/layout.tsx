@@ -50,12 +50,14 @@ export default async function RootLayout({ children, params }) {
 
 	return (
 		<html lang={locale} className={cn('h-full', inter.variable)}>
-			<Script
-				async
-				defer
-				data-website-id="c73161e2-5632-42ac-a5e6-2b0b8e746b89"
-				src="https://umami-analytics-sage.vercel.app/umami.js"
-			/>
+			{process.env.NODE_ENV === 'production' && (
+				<Script
+					async
+					defer
+					data-website-id="bf13c4d6-5d27-4b4e-9707-96d3ddac0fc9"
+					src="https://umami.werpers.dev/script.js"
+				/>
+			)}
 			<head></head>
 			<body className="h-full text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100">
 				<MainLayout>{children}</MainLayout>

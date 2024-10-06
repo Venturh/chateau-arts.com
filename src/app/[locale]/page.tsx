@@ -38,6 +38,14 @@ export default function Landing() {
 	return (
 		<div>
 			<div className="mx-auto max-w-5xl">
+				<div className="mx-auto max-w-2xl py-12 text-center">
+					<h1 className="font-serif text-4xl font-thin uppercase tracking-tight text-zinc-700 underline decoration-1 underline-offset-2  dark:text-zinc-300 sm:text-5xl">
+						A touch of château
+					</h1>
+					<p className="mt-1 font-serif text-4xl font-thin  leading-8 text-zinc-600 dark:text-zinc-400">
+						Kunsthandel
+					</p>
+				</div>
 				<div className="-m-2 rounded-xl bg-zinc-50 p-2 ring-1 ring-inset ring-zinc-300 dark:bg-zinc-800 dark:ring-zinc-700 lg:-m-4 lg:rounded-2xl lg:p-4">
 					{currentExhibition ? (
 						<ExhibitionLandingShowcase exhibition={currentExhibition} locale={locale} />

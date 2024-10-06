@@ -22,7 +22,7 @@ export function ToolMenu(props: ToolMenuProps) {
 			))}
 			<Button
 				as="a"
-				href="https://umami-analytics-sage.vercel.app/websites/c73161e2-5632-42ac-a5e6-2b0b8e746b89/elisabethwerpers.com"
+				href="https://umami.werpers.dev/websites/bf13c4d6-5d27-4b4e-9707-96d3ddac0fc9"
 				key="analytics"
 				name="analytics"
 				text="Analytics"
