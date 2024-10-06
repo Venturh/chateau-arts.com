@@ -28,11 +28,11 @@ export function LanguageSelect({ locale }: Props) {
 					</SelectPrimitive.Icon>
 				</Button>
 			</SelectPrimitive.Trigger>
-			<SelectPrimitive.Content>
+			<SelectPrimitive.Content className="z-50">
 				<SelectPrimitive.ScrollUpButton className="flex items-center justify-center text-zinc-700">
 					<ChevronUpIcon />
 				</SelectPrimitive.ScrollUpButton>
-				<SelectPrimitive.Viewport className="rounded-lg bg-white p-2 shadow-lg dark:bg-zinc-800 ">
+				<SelectPrimitive.Viewport className="z-50 rounded-lg bg-white p-2 shadow-lg dark:bg-zinc-800">
 					<SelectPrimitive.Group>
 						{languages.map(({ id, title }, i) => (
 							<SelectPrimitive.Item
