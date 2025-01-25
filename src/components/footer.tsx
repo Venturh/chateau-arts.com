@@ -17,6 +17,7 @@ type Props = {
 export function Footer({ footer, locale, languageLocale }: Props) {
 	const className =
 		'text-sm leading-6 text-zinc-600 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-zinc-100 '
+
 	const footerItems = Object.entries(footer).map(([title, values]) => ({
 		title,
 		content: values.map(({ href, name, external }) =>

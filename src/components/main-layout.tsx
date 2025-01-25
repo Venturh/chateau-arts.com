@@ -25,7 +25,7 @@ export function MainLayout({ children }: Props) {
 		[t('social')]: [
 			{
 				name: 'Instagram',
-				href: 'https://instagram.com',
+				href: 'https://www.instagram.com/chateau.arts',
 				external: true,
 			},
 			{
